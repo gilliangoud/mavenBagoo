@@ -31,7 +31,7 @@ public class MainSceneController implements Initializable {
         if(gebruikersnaam.getText().equals("test") && wachtwoord.getText().equals("test"))
             System.out.println("Correct");    
         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermService.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SecondScene.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         // scherm aanmaken
         Stage stageVolgende = new Stage();
