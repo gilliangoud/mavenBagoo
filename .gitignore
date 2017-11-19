@@ -1,0 +1,6 @@
+
+target/mavenBagoo-1.0-SNAPSHOT.jar
+*.properties
+*.class
+target/maven-archiver/pom.properties
+target/mavenBagoo-1.0-SNAPSHOT.jar
