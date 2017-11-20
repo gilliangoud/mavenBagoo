@@ -11,31 +11,29 @@ package com.fortw.bagoo;
  */
 public class FoundLuggage {
     
-    private String registrationNr;
+    private int registrationNr;
     private String dateFound;
     private String timeFound;
     private String luggageType;
     private String brand;
+    public static int lastGivenregistrationNr = 0;
     
     public FoundLuggage(){
-        this.registrationNr = "XXX";
+        lastGivenregistrationNr++;
+        int newRegistrationNr = lastGivenregistrationNr;
+        this.registrationNr = newRegistrationNr;
         this.dateFound = "xxx";
         this.timeFound = "xxx";
         this.luggageType = "xxx";
         this.brand = "xxx";
     }
     
-    public FoundLuggage(String registrationNr){
-        this.registrationNr = registrationNr;
-        this.dateFound = "xxx";
-        this.timeFound = "xxx";
-        this.luggageType = "xxx";
-        this.brand = "xxx";
-    }
-    
-    public FoundLuggage(String registrationNr, String dateFound, 
+    public FoundLuggage(int registrationNr, String dateFound, 
             String timeFound, String luggageType, String brand){
-        this.registrationNr = registrationNr;
+        if (registrationNr > lastGivenregistrationNr){
+        lastGivenregistrationNr = registrationNr;}
+        int newRegistrationNr = registrationNr;
+        this.registrationNr = newRegistrationNr;
         this.dateFound = dateFound;
         this.timeFound = timeFound;
         this.luggageType = luggageType;
@@ -45,14 +43,14 @@ public class FoundLuggage {
     /**
      * @return the registrationNr
      */
-    public String getRegistrationNr() {
+    public int getRegistrationNr() {
         return registrationNr;
     }
 
     /**
      * @param registrationNr the registrationNr to set
      */
-    public void setRegistrationNr(String registrationNr) {
+    public void setRegistrationNr(int registrationNr) {
         this.registrationNr = registrationNr;
     }
 

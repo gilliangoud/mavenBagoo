@@ -51,7 +51,7 @@
             </StackPane>
          </center>
          <bottom>
-            <Label text="status message" BorderPane.alignment="CENTER_LEFT">
+            <Label fx:id="labelStatus" text="status message" BorderPane.alignment="CENTER_LEFT">
                <BorderPane.margin>
                   <Insets left="5.0" />
                </BorderPane.margin></Label>

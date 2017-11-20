@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -48,6 +49,9 @@ public class SecondSceneController implements Initializable {
     @FXML
     private TableColumn brand;
     
+    @FXML
+    private TextField fieldRegistrationNr;
+    
     private final ObservableList<FoundLuggage> foundLuggageList
              = FXCollections.observableArrayList();
 
@@ -57,7 +61,10 @@ public class SecondSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // add dummy
-        foundLuggageList.add(new FoundLuggage());
+        foundLuggageList.add(new FoundLuggage(1000,"xxx","xxx","xxx","xxx"));
+        
+        // test database conn
+        MyJDBC.createTestDatabase("AirlineDemo");
         
         // associate items with the tableview
         foundLuggageTableView.setItems(this.foundLuggageList);
@@ -82,7 +89,8 @@ public class SecondSceneController implements Initializable {
     @FXML
     private void handleButtonAddItem() {
         // add dummy
-        foundLuggageList.add(new FoundLuggage("1003"));
+        //fieldRegistrationNr.getText()
+        foundLuggageList.add(new FoundLuggage());
     }
     
     @FXML

@@ -21,7 +21,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="changeItemButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="change item" />
-                  <Button fx:id="deleteItemButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="delete item" />
+                  <Button fx:id="deleteItemButton" onAction="#handleButtonDeleteItem" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="delete item" />
                     <Button fx:id="button" onAction="#handleButtonAction" prefHeight="29.0" prefWidth="101.0" text="Click Me!">
                      <VBox.margin>
                         <Insets bottom="40.0" />
@@ -51,7 +51,7 @@
             </StackPane>
          </center>
          <bottom>
-            <Label text="status message" BorderPane.alignment="CENTER_LEFT">
+            <Label fx:id="labelStatus" text="status message" BorderPane.alignment="CENTER_LEFT">
                <BorderPane.margin>
                   <Insets left="5.0" />
                </BorderPane.margin></Label>
