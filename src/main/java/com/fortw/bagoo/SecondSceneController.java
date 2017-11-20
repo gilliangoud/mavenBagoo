@@ -28,7 +28,13 @@ public class SecondSceneController implements Initializable {
     @FXML
     private Button button;
     @FXML
+    private Button addItemButton;
+    @FXML
+    private Button deleteItemButton;
+    @FXML
     private Label label;
+    @FXML
+    private Label labelStatus;
     @FXML
     private TableView foundLuggageTableView;
     @FXML
@@ -71,6 +77,19 @@ public class SecondSceneController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
+    }
+    
+    @FXML
+    private void handleButtonAddItem() {
+        // add dummy
+        foundLuggageList.add(new FoundLuggage("1003"));
+    }
+    
+    @FXML
+    private void handleButtonDeleteItem() {
+        FoundLuggage selectedItem = (FoundLuggage) foundLuggageTableView.getSelectionModel().getSelectedItem();
+        labelStatus.setText("Deleted luggage with nr: " + selectedItem.getRegistrationNr());
+        foundLuggageList.remove(selectedItem);
     }
     
 }

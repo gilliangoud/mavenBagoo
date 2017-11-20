@@ -2,3 +2,7 @@
 *.properties
 target/
 
+target/classes/com/fortw/bagoo/SecondScene.fxml
+target/classes/com/fortw/bagoo/SecondScene.fxml
+target/classes/com/fortw/bagoo/SecondSceneController.class
+target/maven-archiver/pom.properties

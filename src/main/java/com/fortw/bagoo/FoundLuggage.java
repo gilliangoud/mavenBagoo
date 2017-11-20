@@ -18,11 +18,28 @@ public class FoundLuggage {
     private String brand;
     
     public FoundLuggage(){
-        registrationNr = "XXX";
-        dateFound = "10";
-        timeFound = "11";
-        luggageType = "none";
-        brand = "gucci";
+        this.registrationNr = "XXX";
+        this.dateFound = "xxx";
+        this.timeFound = "xxx";
+        this.luggageType = "xxx";
+        this.brand = "xxx";
+    }
+    
+    public FoundLuggage(String registrationNr){
+        this.registrationNr = registrationNr;
+        this.dateFound = "xxx";
+        this.timeFound = "xxx";
+        this.luggageType = "xxx";
+        this.brand = "xxx";
+    }
+    
+    public FoundLuggage(String registrationNr, String dateFound, 
+            String timeFound, String luggageType, String brand){
+        this.registrationNr = registrationNr;
+        this.dateFound = dateFound;
+        this.timeFound = timeFound;
+        this.luggageType = luggageType;
+        this.brand = brand;
     }
 
     /**
