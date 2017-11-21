@@ -68,7 +68,7 @@ public class SecondSceneController implements Initializable {
         foundLuggageList.add(new FoundLuggage(1000, "xxx", "xxx", "xxx", "xxx"));
 
         // test database conn
-        MyJDBC.createTestDatabase("AirlineDemo");
+        //MyJDBC.createTestDatabase("AirlineDemo");
 
         // associate items with the tableview
         foundLuggageTableView.setItems(this.foundLuggageList);
