@@ -7,3 +7,10 @@ target/classes/com/fortw/bagoo/SecondScene.fxml
 target/classes/com/fortw/bagoo/SecondSceneController.class
 target/maven-archiver/pom.properties
 *.jar
+target/maven-archiver/pom.properties
+target/classes/com/fortw/bagoo/SecondSceneController.class
+target/mavenBagoo-1.0-SNAPSHOT.jar
+target/maven-archiver/pom.properties
+target/classes/com/fortw/bagoo/SecondSceneController.class
+target/maven-archiver/pom.properties
+target/mavenBagoo-1.0-SNAPSHOT.jar
