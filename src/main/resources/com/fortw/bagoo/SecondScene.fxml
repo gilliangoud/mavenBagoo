@@ -20,7 +20,7 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="changeItemButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="change item" />
+                  <Button fx:id="changeItemButton" onAction="#handleButtonChangeItem" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="change item" />
                   <Button fx:id="deleteItemButton" onAction="#handleButtonDeleteItem" mnemonicParsing="false" prefHeight="29.0" prefWidth="106.0" text="delete item" />
                     <Button fx:id="button" onAction="#handleButtonAction" prefHeight="29.0" prefWidth="101.0" text="Click Me!">
                      <VBox.margin>
@@ -47,6 +47,7 @@
                         <TableColumn fx:id="brand" editable="false" prefWidth="75.0" text="brand" />
                     </columns>
                   </TableView>
+                  <fx:include fx:id="foundLuggagePane" source="FoundLuggagePane.fxml" visible="false"></fx:include>
                </children>
             </StackPane>
          </center>

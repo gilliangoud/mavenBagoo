@@ -22,13 +22,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author gilli
  */
-public class SecondSceneController implements Initializable {
+public class SecondSceneController implements Initializable, ParentControllerContext {
 
     @FXML
     private Button button;
@@ -55,6 +56,11 @@ public class SecondSceneController implements Initializable {
 
     @FXML
     private TextField fieldRegistrationNr;
+    
+    @FXML
+    private AnchorPane foundLuggagePane;
+    @FXML
+    private FoundLuggagePaneController FoundLuggagePaneController;
 
     private final ObservableList<FoundLuggage> foundLuggageList
             = FXCollections.observableArrayList();
@@ -96,6 +102,32 @@ public class SecondSceneController implements Initializable {
         //fieldRegistrationNr.getText()
         foundLuggageList.add(new FoundLuggage());
     }
+    
+    @FXML
+    private void handleButtonChangeItem() {
+        System.out.println("clicked change");
+        
+        //get current selected row
+        FoundLuggage selectedItem = (FoundLuggage) foundLuggageTableView.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText("Look, an Error Dialog");
+            alert.setContentText("Ooops, you didn't select anything!");
+
+            alert.showAndWait();
+        } else {
+            displayStatusMessage("Changing entry");
+            System.out.println(selectedItem + "][" + selectedItem.getBrand());
+            //FoundLuggagePaneController.setParentContext(this, selectedItem);
+            showFoundLuggagePane(); 
+        }   
+    }
+    
+    private void showFoundLuggagePane() {
+        this.foundLuggageTableView.setVisible(false);
+        this.foundLuggagePane.setVisible(true);
+    }
 
     @FXML
     private void handleButtonDeleteItem() {
@@ -122,6 +154,27 @@ public class SecondSceneController implements Initializable {
             }
         }
 
+    }
+    
+    // Show the table view
+    private void showTableView(){
+        this.foundLuggagePane.setVisible(false);
+        this.foundLuggageTableView.setVisible(true);
+    }
+
+    @Override
+    public void notifyCloseChild() {
+        showTableView();
+    }
+
+    @Override
+    public void notifyChildHasUpdated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayStatusMessage(String message) {
+        labelStatus.setText(message);
     }
 
 }
