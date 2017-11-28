@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.sql.*;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -22,32 +23,51 @@ import javafx.stage.Stage;
  * @author Anouar
  */
 public class MainSceneController implements Initializable {
-
-    @FXML
+ public ModleLoginClass loginmodel= new ModleLoginClass();
+    
+ 
+ 
+ 
+ 
+ @FXML
     private TextField gebruikersnaam;
     @FXML
     private PasswordField wachtwoord;
+    @FXML
+    private Label status;
+    
+    
 
     /**
      * Initializes the controller class.
      */
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+         if(loginmodel.isDbConnected()){
+          status.setText("Connected");
+      }else{
+          status.setText("not connected");
+      }
+    }    
+   
 
     @FXML
     private void handleLoginAction(ActionEvent event) {
-
-        Connection conn = null;
-
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "8XSrt+sa");
-            if (conn != null) {
-                System.out.println("connected to database succesfully");
-            }
-        } catch (Exception e) {
-            System.out.println("connection to database was unsuccesfull");
+          if(loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){
+        status.setText("Het is goed!");
+        
+        }else{status.setText("niet goed");}   
+     } catch (Exception e) {
+         status.setText("niet goed");
         }
-    }
+       
+      
+    
+    
+}
+
 }
