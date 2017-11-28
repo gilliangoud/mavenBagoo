@@ -37,7 +37,6 @@ public class MainSceneController implements Initializable {
         Stage stageVolgende = new Stage();
         stageVolgende.setScene(new Scene(root1));  
         // oude scherm selecteren
-        // ik ben ramon
         Stage stageHuidige = (Stage) loginScherm.getScene().getWindow();
         //Scherm sluiten
         stageHuidige.close();
