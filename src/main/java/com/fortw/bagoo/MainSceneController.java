@@ -51,3 +51,13 @@ public class MainSceneController implements Initializable {
         }
     }
 }
+
+//Volgende Scherm.
+
+//FXMLLoader fxmlLoader = new FMXLLoader (getClass().getResource("bestand.fxml"));
+//Parent root1 = (Parent) fxmlLoader.load();
+//Stage stageVolgende = new Stage();
+//stageVolgende.setScene(new Scene (root1));
+//Stage stageHuidige = (Stage) scherm.getScene().getWindow();
+//stageHuidige.close();
+//stageVolgende.show();
