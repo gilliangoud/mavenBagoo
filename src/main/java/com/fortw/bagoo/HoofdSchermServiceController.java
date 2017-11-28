@@ -7,28 +7,23 @@ package com.fortw.bagoo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import java.sql.*;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author Anouar
  */
-public class MainSceneController implements Initializable {
+public class HoofdSchermServiceController implements Initializable {
 
     @FXML
-    private TextField gebruikersnaam;
+    private AnchorPane hoofdSchermService;
     @FXML
-    private PasswordField wachtwoord;
-     
-   
+    private Button klantzoeken;
+
     /**
      * Initializes the controller class.
      */
@@ -36,13 +31,5 @@ public class MainSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void handleLoginAction(ActionEvent event) {
-
-        
-        
-                
-    }
     
 }

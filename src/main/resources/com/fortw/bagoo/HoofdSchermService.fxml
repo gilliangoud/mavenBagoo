@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="hoofdSchermService" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.HoofdSchermServiceController">
+   <children>
+      <SplitPane dividerPositions="0.2054794520547945" prefHeight="768.0" prefWidth="1024.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="212.0">
+               <children>
+                  <Button fx:id="klantzoeken" layoutX="38.0" layoutY="159.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Klant opzoeken" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="753.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
