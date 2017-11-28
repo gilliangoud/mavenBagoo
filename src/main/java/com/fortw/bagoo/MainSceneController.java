@@ -27,22 +27,27 @@ public class MainSceneController implements Initializable {
     private TextField gebruikersnaam;
     @FXML
     private PasswordField wachtwoord;
-     
-   
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void handleLoginAction(ActionEvent event) {
 
-        
-        
-                
+        Connection conn = null;
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "8XSrt+sa");
+            if (conn != null) {
+                System.out.println("connected to database succesfully");
+            }
+        } catch (Exception e) {
+            System.out.println("connection to database was unsuccesfull");
+        }
     }
-    
 }
