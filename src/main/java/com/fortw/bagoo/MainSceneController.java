@@ -33,10 +33,12 @@ public class MainSceneController implements Initializable {
     private TextField gebruikersnaam;
     @FXML
     private PasswordField wachtwoord;
+
     @FXML
     private Label status;
     
     
+
 
     /**
      * Initializes the controller class.
@@ -46,6 +48,7 @@ public class MainSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
          if(loginmodel.isDbConnected()){
           status.setText("Connected");
       }else{
@@ -56,18 +59,10 @@ public class MainSceneController implements Initializable {
 
     @FXML
     private void handleLoginAction(ActionEvent event) {
-        try {
-          if(loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){
-        status.setText("Het is goed!");
-        
-        }else{status.setText("niet goed");}   
-     } catch (Exception e) {
-         status.setText("niet goed");
-        }
+     if (loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){
+     
+     status.setText("goed");
+     }
        
       
-    
-    
-}
-}
-
+    }}
