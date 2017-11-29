@@ -33,7 +33,7 @@ public class ModleLoginClass {
  public boolean islogin(String user, String pass){
      PreparedStatement preparedStatement;
      ResultSet resultSet;
-     String query= "SELECT*FROM mydb.user WHERE gebruikersnaam =? and wachtwoord = ?";
+     String query= "SELECT*FROM mydb.user WHERE gebruikersnaam =? and wachtwoord =?";
  
      try {
          preparedStatement = conection.prepareStatement(query);
