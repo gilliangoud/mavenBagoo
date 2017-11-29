@@ -5,6 +5,7 @@
  */
 package com.fortw.bagoo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,8 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import java.sql.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -36,6 +40,8 @@ public class MainSceneController implements Initializable {
 
     @FXML
     private Label status;
+    @FXML
+    private AnchorPane login;
     
     
 
@@ -58,10 +64,18 @@ public class MainSceneController implements Initializable {
    
 
     @FXML
-    private void handleLoginAction(ActionEvent event) {
-     if (loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){
-     
+    private void handleLoginAction(ActionEvent event) throws IOException {
+     if (loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){ 
      status.setText("goed");
+     
+       // Volgende Scherm.
+    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
+    Parent root1 = (Parent) fxmlLoader.load();
+    Stage stageVolgende = new Stage();
+    stageVolgende.setScene(new Scene (root1));
+    Stage stageHuidige = (Stage) login.getScene().getWindow();
+    stageHuidige.close();
+    stageVolgende.show();
      }
        
       

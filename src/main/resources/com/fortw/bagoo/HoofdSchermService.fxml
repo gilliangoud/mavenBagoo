@@ -4,17 +4,28 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane fx:id="hoofdSchermService" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.HoofdSchermServiceController">
    <children>
       <SplitPane dividerPositions="0.2054794520547945" prefHeight="768.0" prefWidth="1024.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="212.0">
                <children>
-                  <Button fx:id="klantzoeken" layoutX="38.0" layoutY="159.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" text="Klant opzoeken" />
+                  <Button fx:id="klantzoeken" layoutX="25.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleOpenKlantZoeken" prefHeight="31.0" prefWidth="164.0" text="Klant opzoeken" />
+                  <Button fx:id="knopVermissingMelden" layoutX="25.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleVermissingAction" prefHeight="31.0" prefWidth="164.0" text="vermissing melden" />
+                  <Button fx:id="knnopOpenLogboek" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleOpenlogBoekAction" prefHeight="31.0" prefWidth="164.0" text="Logboek" />
+                  <Button fx:id="knopClaim" layoutX="25.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleClaimAction" prefHeight="31.0" prefWidth="164.0" text="Claim" />
+                  <Button fx:id="knopLoguit" layoutX="21.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="31.0" prefWidth="164.0" text="Log uit" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="753.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="753.0">
+               <children>
+                  <SplitPane dividerPositions="0.1505235602094241" orientation="VERTICAL" prefHeight="766.0" prefWidth="808.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
         </items>
       </SplitPane>
    </children>
