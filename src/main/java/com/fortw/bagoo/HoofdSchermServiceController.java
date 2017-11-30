@@ -82,6 +82,7 @@ public class HoofdSchermServiceController implements Initializable {
 
     @FXML
     private void handleVermissingAction(ActionEvent event) {
+        
     }
 
     @FXML

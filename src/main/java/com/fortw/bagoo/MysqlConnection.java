@@ -16,7 +16,7 @@ public class MysqlConnection {
     public static Connection connector() {
         try {
       
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","8XSrt+sa");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","Qwerty@29");
             return conn;
         } catch (Exception e) {return null;
         }
