@@ -63,13 +63,14 @@ public class LogoekSchermController implements Initializable {
     
     @FXML
     private void handleOpslaanAction(ActionEvent event) {
-        String query = "INSERT INTO mydb.logboek(datum,event,opmerking)Values (?,?,?)";
+        String query = "INSERT INTO c2bagoo.logboek(datum,event,opmerking,idvermissing)Values (?,?,?,?)";
         
 
   
         String datum = textDatum.getText();
         String eventlog = textEvent.getText();
         String opmerking = textOpmerking.getText();
+        String idVermissing = "1";
         
         try {
             
@@ -78,6 +79,7 @@ public class LogoekSchermController implements Initializable {
             pst.setString(1, datum);
             pst.setString(2, eventlog);
             pst.setString(3, opmerking);
+            pst.setString(4, idVermissing);
             
             int i = pst.executeUpdate();
             
