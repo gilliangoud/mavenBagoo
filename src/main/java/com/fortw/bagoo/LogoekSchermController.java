@@ -5,6 +5,7 @@
  */
 package com.fortw.bagoo;
 
+import java.io.IOException;
 import java.net.ConnectException;
 import java.net.URL;
 import java.sql.Connection;
@@ -23,6 +24,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.sql.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -48,6 +53,9 @@ public class LogoekSchermController implements Initializable {
     
     private Connection conn = null;
     private PreparedStatement pst = null;
+    private ResultSet rs = null;
+    
+    
     @FXML
     private TextField textDatum;
     private TextField textid;
@@ -58,8 +66,11 @@ public class LogoekSchermController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        conn = MysqlConnection.connector();
+       
                
     }    
+    
+    
     
     @FXML
     private void handleOpslaanAction(ActionEvent event) {
@@ -91,8 +102,14 @@ public class LogoekSchermController implements Initializable {
     }
 
     @FXML
-    private void handleAnullerenAction(ActionEvent event) {
-        
+    private void handleAnullerenAction(ActionEvent event) throws IOException {
+              FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
+    Parent root1 = (Parent) fxmlLoader.load();
+    Stage stageVolgende = new Stage();
+    stageVolgende.setScene(new Scene (root1));
+    Stage stageHuidige = (Stage) schermLogboek.getScene().getWindow();
+    stageHuidige.close();
+    stageVolgende.show();
     }
     
 }
