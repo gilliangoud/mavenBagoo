@@ -65,7 +65,7 @@ public class LogoekSchermController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       conn = MysqlConnection.connector();
+       conn = DbConnection.Connect();
        
                
     }    

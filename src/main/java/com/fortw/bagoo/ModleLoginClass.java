@@ -14,15 +14,15 @@ import java.util.logging.Logger;
  * @author Anouar
  */
 public class ModleLoginClass {
-    Connection conection;
+    Connection connection;
     public ModleLoginClass() {
         
-       conection= MysqlConnection.connector();
-       if(conection == null) System.exit(1);
+       connection= DbConnection.Connect();
+       if(connection == null) System.exit(1);
     }
         public boolean isDbConnected(){
         try {
-           return !conection.isClosed();
+           return !connection.isClosed();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -36,7 +36,7 @@ public class ModleLoginClass {
      String query= "SELECT * FROM c2bagoo.user WHERE gebruikersnaam =? and wachtwoord =?";
  
      try {
-         preparedStatement = conection.prepareStatement(query);
+         preparedStatement = connection.prepareStatement(query);
          preparedStatement.setString(1, user);
          preparedStatement.setString(2, pass);
          
