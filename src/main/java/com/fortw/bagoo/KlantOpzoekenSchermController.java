@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -101,11 +102,11 @@ public class KlantOpzoekenSchermController implements Initializable {
 
         // Zet de value van KlantenData.java om in tableview data. Hiervoor 
         // gebruik je de valuefactory. 
-        columnBagageNummer.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
-        columnFlightNummer.setCellValueFactory(new PropertyValueFactory<>("flightNummer"));
-        columnAchternaam.setCellValueFactory(new PropertyValueFactory<>("achternaam"));
-        columnVoornaam.setCellValueFactory(new PropertyValueFactory<>("voornaam"));
-        columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
+        columnBagageNummer.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("bagageNummer"));
+        columnFlightNummer.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("flightNummer"));
+        columnAchternaam.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("achternaam"));
+        columnVoornaam.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("voornaam"));
+        columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("checkInDatum"));
 
         KlantenTable.setItems(null);
         KlantenTable.setItems(data);
