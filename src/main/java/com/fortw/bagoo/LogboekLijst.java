@@ -23,6 +23,7 @@ public class LogboekLijst {
         
     }
 
+
     /**
      * @return the Datum
      */

@@ -24,9 +24,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.sql.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -43,34 +46,57 @@ public class LogoekSchermController implements Initializable {
     @FXML
     private TextField textEvent;
     @FXML
-    private TableView<?> tableLogboek;
+    private TableView <LogboekLijst> tableLogboek;
     @FXML
-    private TableColumn<?, ?> columDate;
+    private TableColumn columDate;
     @FXML
-    private TableColumn<?, ?> columEvent;
+    private TableColumn columEvent;
     @FXML
-    private TableColumn<?, ?> columOpmerking;
+    private TableColumn columOpmerking;
     
     private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
+    private ObservableList <LogboekLijst> data;
     
     
     @FXML
     private TextField textDatum;
     private TextField textid;
 
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        conn = DbConnection.Connect();
-       
-               
-    }    
+        SetCell();
+        data =FXCollections.observableArrayList();
+        LoadLogFromDataBase();
+    }
     
+    private void SetCell(){
+        columDate.setCellValueFactory(new PropertyValueFactory<>("Datum"));
+        columEvent.setCellValueFactory(new PropertyValueFactory<>("event"));
+        columOpmerking.setCellValueFactory(new PropertyValueFactory<>("opmerking"));
+    }
     
+    private void LoadLogFromDataBase(){
+        try {
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.logboek");
+            rs= pst.executeQuery();
+            
+            while (rs.next()){
+            data.add(new LogboekLijst(rs.getString(1),rs.getString(2),rs.getString(3)));
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tableLogboek.setItems(data);
+    }
     
     @FXML
     private void handleOpslaanAction(ActionEvent event) {

@@ -36,21 +36,23 @@ public class KlantOpzoekenSchermController implements Initializable {
     @FXML
     private AnchorPane klantOpzoeken;
     @FXML
-    private TableColumn<KlantenData, String> columnBagageNummer;
-    private TableColumn<KlantenData, String> columnFlightNummer;
+    private TableColumn columnBagageNummer;
+    private TableColumn columnFlightNummer;
     @FXML
-    private TableColumn<KlantenData, String> columnAchternaam;
+    private TableColumn columnAchternaam;
     @FXML
-    private TableColumn<KlantenData, String> columnVoornaam;
+    private TableColumn columnVoornaam;
     @FXML
-    private TableColumn<KlantenData, String> columnCheckInDatum;
+    private TableColumn columnCheckInDatum;
 
     @FXML
     private Button LoadKlantenData;
 
     // Maak een observable list aan voor de database data
+    private Connection conn = null;
     private ObservableList<KlantenData> data;
-    private DbConnection dc;
+    
+   
 
     @FXML
 
@@ -59,9 +61,20 @@ public class KlantOpzoekenSchermController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        conn = DbConnection.Connect();
+        SetCell();
+         data =FXCollections.observableArrayList();
     }
 
+         private void SetCell(){
+         columnBagageNummer.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
+         columnFlightNummer.setCellValueFactory(new PropertyValueFactory<>("flightNummer"));
+         columnVoornaam.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
+         columnAchternaam.setCellValueFactory(new PropertyValueFactory<>("achternaam"));
+         columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
+        
+         
+         }
     @FXML
     private void handleZoekAction(ActionEvent event) {
     }
@@ -80,7 +93,7 @@ public class KlantOpzoekenSchermController implements Initializable {
     @FXML
     private void loadDataFromDatabase(ActionEvent event) {
         try {
-            Connection conn = dc.Connect();
+            Connection conn = 
             data = FXCollections.observableArrayList();
 
             // Execute query en sla deze op in een resultset
