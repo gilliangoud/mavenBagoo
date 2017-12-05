@@ -90,6 +90,7 @@ public class KlantOpzoekenSchermController implements Initializable {
         stageVolgende.show();
     }
 
+<<<<<<< HEAD
     @FXML
     private void loadDataFromDatabase(ActionEvent event) {
         try {
@@ -103,26 +104,14 @@ public class KlantOpzoekenSchermController implements Initializable {
                 data.add(new KlantenData(rs.getString(1), rs.getString(12),
                         rs2.getString(4), rs2.getString(2), rs2.getString(12)));
             }
+=======
+>>>>>>> f262a352857e1102a554ef12c0e19d327d00ea40
 
             // bagagenummer = bagage
             // flightnummer = bagage
             // achternaam = klant
             // voornaam = klant
-            // check in datum = list moet nog toegevoegd worden aan klant: rij 12
-        } catch (SQLException ex) {
-            System.err.println("Error" + ex);
-        }
-
-        // Zet de value van KlantenData.java om in tableview data. Hiervoor 
-        // gebruik je de valuefactory. 
-        columnBagageNummer.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("bagageNummer"));
-        columnFlightNummer.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("flightNummer"));
-        columnAchternaam.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("achternaam"));
-        columnVoornaam.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("voornaam"));
-        columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<KlantenData, String>("checkInDatum"));
-
-        KlantenTable.setItems(null);
-        KlantenTable.setItems(data);
+   
     }
 
-}
+
