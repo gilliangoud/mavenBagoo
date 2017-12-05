@@ -84,7 +84,7 @@ public class ClaimaanmakenController implements Initializable {
     
     private void LoadLogFromDataBase(){
         try {
-            pst = conn.prepareStatement("SELECT * FROM c2bagoo.logboek");
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.claim");
             rs= pst.executeQuery();
             
             while (rs.next()){
@@ -100,12 +100,11 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleOpslaanAction(ActionEvent event) {
-        String query = "INSERT INTO c2bagoo.logboek(datum,event,opmerking,idvermissing)Values (?,?,?,?)";
+        String query = "INSERT INTO c2bagoo.claim(klantennummer,datum,reden)Values (?,?,?)";
         
 
-  
-        String datum = textDatum.getText();
         String klantennummer = textKlantennummer.getText();
+        String datum = textDatum.getText();
         String reden = textRedenClaim.getText();
         
         
@@ -123,7 +122,7 @@ public class ClaimaanmakenController implements Initializable {
            if (i == 1) System.out.println("Data in database");
             
         } catch (SQLException ex) {
-            Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
