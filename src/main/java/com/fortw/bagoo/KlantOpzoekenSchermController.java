@@ -93,8 +93,8 @@ public class KlantOpzoekenSchermController implements Initializable {
     @FXML
     private void loadDataFromDatabase(ActionEvent event) {
         try {
-            Connection conn = 
-            data = FXCollections.observableArrayList();
+            //Connection conn = 
+            //data = FXCollections.observableArrayList();
 
             // Execute query en sla deze op in een resultset
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM c2bagoo.bagage");
