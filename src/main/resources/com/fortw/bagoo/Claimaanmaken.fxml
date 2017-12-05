@@ -36,9 +36,9 @@
                <children>
                   <TableView prefHeight="369.0" prefWidth="721.0">
                     <columns>
-                      <TableColumn prefWidth="116.0" text="Klantennummer" />
-                      <TableColumn minWidth="0.0" prefWidth="142.0" text="Datum" />
-                        <TableColumn minWidth="0.0" prefWidth="462.0" text="Reden" />
+                      <TableColumn fx:id="columnKlantennummer" prefWidth="116.0" text="Klantennummer" />
+                      <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="142.0" text="Datum" />
+                        <TableColumn fx:id="columnReden" minWidth="0.0" prefWidth="462.0" text="Reden" />
                     </columns>
                   </TableView>
                </children>
