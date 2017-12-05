@@ -16,9 +16,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -58,15 +64,19 @@ public class HoofdSchermManagementController implements Initializable {
     @FXML
     private TableView medewerkerTableView;
     
-    private final ObservableList<User> medewerkerList 
-            = FXCollections.observableArrayList();
+    private ObservableList<User> medewerkerList 
+            = FXCollections.observableArrayList(User.getAllUsers());
+    @FXML
+    private VBox vboxMedewerker;
+    @FXML
+    private Button knopRefreshMedewerker;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        medewerkerList.add(new User("giel", "giel", 5));
+        //medewerkerList.add(new User("giel", "giel","nooit", 5));
         
         // associate items with the tableview
         medewerkerTableView.setItems(this.medewerkerList);
@@ -79,17 +89,27 @@ public class HoofdSchermManagementController implements Initializable {
                 // this assumes that the class has getters and setters that match
                 // propertyname in the fx:id of the table column in the fxml view
                 tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
-                System.out.println("attached column '" + propertyName + "'");
+                //System.out.println("attached column '" + propertyName + "'");
             }
         }
     }    
 
     @FXML
-    private void handleLoginAction(ActionEvent event) {
+    private void handleLoginAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("MainScene.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stageVolgende = new Stage();
+        stageVolgende.setScene(new Scene (root1));
+        Stage stageHuidige = (Stage) hoofdSchermService.getScene().getWindow();
+        stageHuidige.close();
+        stageVolgende.show();
     }
 
     @FXML
     private void handleHoofdMenuAction(ActionEvent event) {
+        this.vboxMedewerker.setVisible(false);
+        this.medewerkerTableView.setVisible(false);
+        this.kpiPane.setVisible(true);
     }
 
     @FXML
@@ -98,7 +118,9 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleMedewerkersAction(ActionEvent event) {
+        this.kpiPane.setVisible(false);
         this.medewerkerTableView.setVisible(true);
+        this.vboxMedewerker.setVisible(true);
     }
 
     @FXML
@@ -111,6 +133,17 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleKlantenAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleRefreshMedewerkerAction(ActionEvent event) {
+        ObservableList<User> tempList 
+            = FXCollections.observableArrayList(User.getAllUsers());
+        System.out.println("Updated");
+        medewerkerList = null;
+        medewerkerList = tempList;
+        medewerkerTableView.setItems(medewerkerList);
+        //System.out.println(tempList);
     }
     
 }
