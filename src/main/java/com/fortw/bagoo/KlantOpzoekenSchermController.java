@@ -99,6 +99,9 @@ public class KlantOpzoekenSchermController implements Initializable {
         try {
 //          Connection conn = Connection.Connect();
             data = FXCollections.observableArrayList();
+=======
+            //Connection conn = 
+            //data = FXCollections.observableArrayList();
 
             // Execute query en sla deze op in een resultset
             pst = conn.prepareStatement("SELECT * FROM c2bagoo.ramon");
