@@ -7,10 +7,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+
+<AnchorPane id="AnchorPane" fx:id="schermVermissingMelden" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.fortw.bagoo.VermissingMeldenController">
 <AnchorPane id="AnchorPane" fx:id="schermVermissingMelden" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.VermissingMeldenController">
    <children>
+      <SplitPane dividerPositions="0.3542074363992172" layoutX="-1.0" prefHeight="768.0" prefWidth="1024.0">
       <SplitPane dividerPositions="0.34637964774951074" prefHeight="768.0" prefWidth="1024.0">
         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="77.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="775.0" />
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Text fx:id="extMail" layoutX="24.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
