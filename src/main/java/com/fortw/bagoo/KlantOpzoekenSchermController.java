@@ -99,7 +99,6 @@ public class KlantOpzoekenSchermController implements Initializable {
         try {
 //          Connection conn = Connection.Connect();
             data = FXCollections.observableArrayList();
-=======
             //Connection conn = 
             //data = FXCollections.observableArrayList();
 
