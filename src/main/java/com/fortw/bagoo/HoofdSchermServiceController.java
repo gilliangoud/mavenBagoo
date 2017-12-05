@@ -81,7 +81,14 @@ public class HoofdSchermServiceController implements Initializable {
     }
 
     @FXML
-    private void handleVermissingAction(ActionEvent event) {
+    private void handleVermissingAction(ActionEvent event) throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("VermissingMelden.fxml"));
+    Parent root1 = (Parent) fxmlLoader.load();
+    Stage stageVolgende = new Stage();
+    stageVolgende.setScene(new Scene (root1));
+    Stage stageHuidige = (Stage) hoofdSchermService.getScene().getWindow();
+    stageHuidige.close();
+    stageVolgende.show();
         
     }
 

@@ -88,7 +88,7 @@ public class LogoekSchermController implements Initializable {
             rs= pst.executeQuery();
             
             while (rs.next()){
-            data.add(new LogboekLijst(rs.getString(1),rs.getString(2),rs.getString(3)));
+            data.add(new LogboekLijst(rs.getString(2),rs.getString(3),rs.getString(4)));
             }
             
             
@@ -115,7 +115,7 @@ public class LogoekSchermController implements Initializable {
          
             pst.setString(1, datum);
             pst.setString(2, eventlog);
-            pst.setString(3, opmerking);
+            pst.setString(3,opmerking);
             pst.setString(4, idVermissing);
             
             int i = pst.executeUpdate();
