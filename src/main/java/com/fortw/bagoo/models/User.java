@@ -42,11 +42,11 @@ public class User {
      * @param level
      */
     public User(int personeelNr, String gebruikersnaam, String wachtwoord,
-            String aangemaaktDatum, int level){
+            int level){
         this.personeelNr = personeelNr;
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
-        this.aangemaaktDatum = aangemaaktDatum;
+        this.aangemaaktDatum = "vandaag";
         this.level = level;
     }
     
@@ -56,12 +56,11 @@ public class User {
      * @param wachtwoord
      * @param level
      */
-    public User(String gebruikersnaam, String wachtwoord,
-            String aangemaaktDatum, int level){
+    public User(String gebruikersnaam, String wachtwoord, int level){
         //this.personeelNr = personeelNr;
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
-        this.aangemaaktDatum = aangemaaktDatum;
+        this.aangemaaktDatum = "vandaag";
         this.level = level;
     }
 

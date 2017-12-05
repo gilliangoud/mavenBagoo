@@ -6,7 +6,7 @@
 package com.fortw.bagoo.interfaces;
 
 import com.fortw.bagoo.models.User;
-import java.util.Set;
+import java.util.List;
 
 /**
  *
@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public interface UserDao {
     User getUser();
-    Set<User> getAllUsers();
+    List<User> getAllUsers();
     User getUserByUserNameAndPassword();
     boolean insertUser();
     boolean updateUser();

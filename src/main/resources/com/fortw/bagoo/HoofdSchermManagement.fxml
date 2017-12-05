@@ -40,6 +40,9 @@
                   <VBox fx:id="vboxMedewerker" prefHeight="202.0" prefWidth="200.0" visible="false">
                      <children>
                         <Button fx:id="knopRefreshMedewerker" mnemonicParsing="false" onAction="#handleRefreshMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Refresh" />
+                        <Button fx:id="knopNieuweMedewerker" mnemonicParsing="false" onAction="#handleNieuweMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Nieuwe medewerker" />
+                        <Button fx:id="knopVerwijderMedewerker" mnemonicParsing="false" onAction="#handleVerwijderMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Verwijder geselecteerde" />
+                        <Button fx:id="knopVeranderMedewerker" mnemonicParsing="false" onAction="#handleVerandersMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Verander geselecteerde" />
                      </children>
                      <VBox.margin>
                         <Insets top="50.0" />

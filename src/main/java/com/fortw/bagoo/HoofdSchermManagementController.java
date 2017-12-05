@@ -17,14 +17,22 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
 import java.io.IOException;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -70,6 +78,12 @@ public class HoofdSchermManagementController implements Initializable {
     private VBox vboxMedewerker;
     @FXML
     private Button knopRefreshMedewerker;
+    @FXML
+    private Button knopNieuweMedewerker;
+    @FXML
+    private Button knopVerwijderMedewerker;
+    @FXML
+    private Button knopVeranderMedewerker;
 
     /**
      * Initializes the controller class.
@@ -137,13 +151,64 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleRefreshMedewerkerAction(ActionEvent event) {
+        refresh();
+    }
+
+    @FXML
+    private void handleNieuweMedewerkerAction(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MedewerkerPane.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Nieuwe medewerker");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(HoofdSchermManagementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void refresh(){
         ObservableList<User> tempList 
             = FXCollections.observableArrayList(User.getAllUsers());
         System.out.println("Updated");
         medewerkerList = null;
         medewerkerList = tempList;
         medewerkerTableView.setItems(medewerkerList);
-        //System.out.println(tempList);
+    }
+
+    @FXML
+    private void handleVerwijderMedewerkerAction(ActionEvent event) {
+        User selectedItem = (User) medewerkerTableView.getSelectionModel().getSelectedItem();
+        if (selectedItem == null) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error Dialog");
+            alert.setHeaderText("Look, an Error Dialog");
+            alert.setContentText("Ooops, you didn't select anything!");
+
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Delete item");
+            alert.setHeaderText("Deleting item with nr: " + selectedItem.getGebruikersnaam());
+            alert.setContentText("Are you ok with this?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                //labelStatus.setText("Deleted luggage with nr: " + selectedItem.getGebruikersnaam());
+                //foundLuggageList.remove(selectedItem);
+                selectedItem.deleteUser(selectedItem.getPersoneelNr());
+                refresh();
+            } else {
+                // ... user chose CANCEL or closed the dialog
+            }
+        }
+    }
+
+    @FXML
+    private void handleVerandersMedewerkerAction(ActionEvent event) {
     }
     
 }
