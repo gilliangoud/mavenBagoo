@@ -8,7 +8,7 @@ package com.fortw.bagoo;
 
 /**
  *
- * @author Anouar
+ * @author Jules
  */
 public class ClaimLijst {
 private String Klantennummer;
