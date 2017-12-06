@@ -38,6 +38,8 @@ public class KlantOpzoekenSchermController implements Initializable {
     @FXML
     private AnchorPane klantOpzoeken;
     @FXML
+    private TableColumn columnKlantID;
+    @FXML
     private TableColumn columnBagageNummer;
     @FXML
     private TableColumn columnFlightNummer;
@@ -45,8 +47,8 @@ public class KlantOpzoekenSchermController implements Initializable {
     private TableColumn columnAchternaam;
     @FXML
     private TableColumn columnVoornaam;
-    @FXML
-    private TableColumn columnCheckInDatum;
+//    @FXML
+//    private TableColumn columnCheckInDatum;
 
     @FXML
     private Button LoadKlantenData;
@@ -58,8 +60,6 @@ public class KlantOpzoekenSchermController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs1 = null;
     private ObservableList<KlantenData> data;
-    @FXML
-    private TableColumn<?, ?> columnKlantID;
 
     /**
      * Initializes the controller class.
@@ -72,11 +72,12 @@ public class KlantOpzoekenSchermController implements Initializable {
     }
 
     private void SetCell() {
+        columnKlantID.setCellValueFactory(new PropertyValueFactory<>("klantID"));
         columnBagageNummer.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
         columnFlightNummer.setCellValueFactory(new PropertyValueFactory<>("flightNummer"));
         columnVoornaam.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
         columnAchternaam.setCellValueFactory(new PropertyValueFactory<>("achternaam"));
-        columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
+//      columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
     }
 
     @FXML
@@ -103,7 +104,7 @@ public class KlantOpzoekenSchermController implements Initializable {
             //data = FXCollections.observableArrayList();
 
             // Execute query en sla deze op in een resultset
-            pst = conn.prepareStatement("SELECT * FROM c2bagoo.ramon");
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.Ramon_KlantenOpzoekenScherm");
                         
             rs1 = pst.executeQuery();
 
