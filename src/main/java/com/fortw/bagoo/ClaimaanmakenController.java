@@ -35,7 +35,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Anouar
+ * @author Jules
  */
 public class ClaimaanmakenController implements Initializable {
 
@@ -112,8 +112,8 @@ public class ClaimaanmakenController implements Initializable {
             
             pst = conn.prepareStatement(query);
          
-            pst.setString(1, datum);
-            pst.setString(2, klantennummer);
+            pst.setString(1, klantennummer);
+            pst.setString(2, datum);
             pst.setString(3, reden);
             
             
