@@ -7,31 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+
+<AnchorPane id="AnchorPane" fx:id="schermVermissingMelden" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.fortw.bagoo.VermissingMeldenController">
 <AnchorPane id="AnchorPane" fx:id="schermVermissingMelden" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.VermissingMeldenController">
    <children>
+      <SplitPane dividerPositions="0.3542074363992172" layoutX="-1.0" prefHeight="768.0" prefWidth="1024.0">
       <SplitPane dividerPositions="0.34637964774951074" prefHeight="768.0" prefWidth="1024.0">
         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="77.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="775.0" />
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Text fx:id="extMail" layoutX="25.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-                  <Text layoutX="24.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achternaam:" />
-                  <Text layoutX="24.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefoonnummer:" />
+                  <Text fx:id="extMail" layoutX="24.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                  <Text layoutX="24.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tussenvoegsel:" />
+                  <Text layoutX="23.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefoonnummer:" />
                   <Text layoutX="24.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voornaam:" />
-                  <Text layoutX="27.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" />
+                  <Text layoutX="26.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" />
                   <Text layoutX="24.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres:" />
-                  <Text layoutX="24.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode:" />
-                  <Text layoutX="24.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plaats:" />
-                  <Text layoutX="25.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flightnummer:" />
-                  <TextField fx:id="textAchternaam" layoutX="149.0" layoutY="128.0" />
+                  <Text layoutX="23.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode:" />
+                  <Text layoutX="23.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plaats:" />
+                  <TextField fx:id="textTussenvoegsel" layoutX="149.0" layoutY="128.0" />
                   <TextField fx:id="textVoornaam" layoutX="149.0" layoutY="167.0" />
                   <TextField fx:id="textAdres" layoutX="149.0" layoutY="205.0" />
-                  <TextField fx:id="textPostcode" layoutX="149.0" layoutY="242.0" />
-                  <TextField fx:id="textPlaats" layoutX="149.0" layoutY="279.0" />
-                  <TextField fx:id="textLand" layoutX="149.0" layoutY="316.0" />
-                  <TextField fx:id="textTelefoon" layoutX="149.0" layoutY="355.0" />
-                  <TextField fx:id="textmail" layoutX="149.0" layoutY="393.0" />
-                  <TextField fx:id="textFlightnummer" layoutX="149.0" layoutY="430.0" />
+                  <TextField fx:id="textPostcode" layoutX="148.0" layoutY="285.0" />
+                  <TextField fx:id="textPlaats" layoutX="148.0" layoutY="322.0" />
+                  <TextField fx:id="textLand" layoutX="148.0" layoutY="359.0" />
+                  <TextField fx:id="textTelefoon" layoutX="148.0" layoutY="398.0" />
+                  <TextField fx:id="textmail" layoutX="148.0" layoutY="436.0" />
                   <Button layoutX="14.0" layoutY="721.0" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="31.0" prefWidth="187.0" text="Annuleren" />
+                  <Text layoutX="23.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achternaam:" />
+                  <TextField fx:id="textAchternaam" layoutX="148.0" layoutY="86.0" />
+                  <Text layoutX="26.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huis Nummer:" />
+                  <TextField fx:id="texthuisnummer" layoutX="149.0" layoutY="244.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
