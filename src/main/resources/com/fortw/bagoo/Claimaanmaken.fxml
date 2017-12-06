@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane id="AnchorPane" fx:id="schermClaim" prefHeight="768.0" prefWidth="1042.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.fortw.bagoo.ClaimaanmakenController">
+<AnchorPane id="AnchorPane" fx:id="schermClaim" prefHeight="768.0" prefWidth="1042.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.ClaimaanmakenController">
    <children>
       <BorderPane prefHeight="768.0" prefWidth="1024.0">
          <bottom>
@@ -20,8 +19,8 @@
                   <TextArea fx:id="textRedenClaim" layoutX="682.0" layoutY="56.0" prefHeight="116.0" prefWidth="226.0" />
                   <TextField fx:id="textDatum" layoutX="386.0" layoutY="102.0" />
                   <TextField fx:id="textKlantennummer" layoutX="386.0" layoutY="56.0" />
-                  <Button layoutX="929.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="Opslaan" />
-                  <Button layoutX="47.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
+                  <Button layoutX="922.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="Opslaan" />
+                  <Button layoutX="47.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
                   <Label layoutX="295.0" layoutY="60.0" text="Klantennummer: " />
                   <Label layoutX="340.0" layoutY="106.0" text="Datum: " />
                   <Label layoutX="577.0" layoutY="60.0" text="Reden voor claim: " />
@@ -37,8 +36,8 @@
                   <TableView fx:id="tableClaimAanmaken" prefHeight="369.0" prefWidth="721.0">
                     <columns>
                       <TableColumn fx:id="columnKlantennummer" prefWidth="116.0" text="Klantennummer" />
-                      <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="142.0" text="Datum" />
-                        <TableColumn fx:id="columnReden" minWidth="0.0" prefWidth="462.0" text="Reden" />
+                      <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="161.0" text="Datum" />
+                        <TableColumn fx:id="columnReden" minWidth="0.0" prefWidth="443.0" text="Reden" />
                     </columns>
                   </TableView>
                </children>
