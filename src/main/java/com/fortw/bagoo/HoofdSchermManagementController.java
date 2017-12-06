@@ -95,13 +95,13 @@ public class HoofdSchermManagementController implements Initializable {
     @FXML
     private TableView klantTableView;
     @FXML
-    private TableColumn<?, ?> voorNaam;
+    private TableColumn voorNaam;
     @FXML
-    private TableColumn<?, ?> email;
+    private TableColumn email;
     @FXML
-    private TableColumn<?, ?> land;
+    private TableColumn land;
     @FXML
-    private TableColumn<?, ?> telefoon;
+    private TableColumn telefoon;
 
     /**
      * Initializes the controller class.
@@ -152,12 +152,17 @@ public class HoofdSchermManagementController implements Initializable {
         stageHuidige.close();
         stageVolgende.show();
     }
-
-    @FXML
-    private void handleHoofdMenuAction(ActionEvent event) {
+    
+    private void allPanesInvisible(){
         this.klantTableView.setVisible(false);
         this.vboxMedewerker.setVisible(false);
         this.medewerkerTableView.setVisible(false);
+        this.vboxMedewerker.setVisible(false);
+    }
+
+    @FXML
+    private void handleHoofdMenuAction(ActionEvent event) {
+        allPanesInvisible();
         this.kpiPane.setVisible(true);
     }
 
@@ -167,7 +172,7 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleMedewerkersAction(ActionEvent event) {
-        this.kpiPane.setVisible(false);
+        allPanesInvisible();
         this.medewerkerTableView.setVisible(true);
         this.vboxMedewerker.setVisible(true);
     }
@@ -182,12 +187,13 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleKlantenAction(ActionEvent event) {
+        allPanesInvisible();
         this.klantTableView.setVisible(true);
     }
 
     @FXML
     private void handleRefreshMedewerkerAction(ActionEvent event) {
-        refresh();
+        refreshMedewerkerTableView();
     }
 
     @FXML
@@ -206,10 +212,10 @@ public class HoofdSchermManagementController implements Initializable {
         }
     }
     
-    private void refresh(){
+    public void refreshMedewerkerTableView(){
         ObservableList<User> tempList 
             = FXCollections.observableArrayList(UserDao.getAllUsers());
-        System.out.println("Updated");
+        //System.out.println("Updated");
         medewerkerList = null;
         medewerkerList = tempList;
         medewerkerTableView.setItems(medewerkerList);
@@ -228,7 +234,7 @@ public class HoofdSchermManagementController implements Initializable {
         } else {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Delete item");
-            alert.setHeaderText("Deleting item with nr: " + selectedItem.getGebruikersnaam());
+            alert.setHeaderText("Deleting user: " + selectedItem.getGebruikersnaam());
             alert.setContentText("Are you ok with this?");
 
             Optional<ButtonType> result = alert.showAndWait();
@@ -236,7 +242,7 @@ public class HoofdSchermManagementController implements Initializable {
                 //labelStatus.setText("Deleted luggage with nr: " + selectedItem.getGebruikersnaam());
                 //foundLuggageList.remove(selectedItem);
                 UserDao.deleteUser(selectedItem.getPersoneelNr());
-                refresh();
+                refreshMedewerkerTableView();
             } else {
                 // ... user chose CANCEL or closed the dialog
             }
