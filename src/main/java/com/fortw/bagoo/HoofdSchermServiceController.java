@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 91e5400966a55878a7a0fdb334a45a316686a4b5
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -81,6 +84,7 @@ public class HoofdSchermServiceController implements Initializable {
     stageVolgende.show();
     }
 
+<<<<<<< HEAD
     @FXML
     private void handleVermissingAction(ActionEvent event) throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("VermissingMelden.fxml"));
@@ -94,6 +98,15 @@ public class HoofdSchermServiceController implements Initializable {
     }
 
      @FXML
+=======
+    
+
+    @FXML
+    private void handleVermissingAction(ActionEvent event) {
+    }
+    
+    @FXML
+>>>>>>> 91e5400966a55878a7a0fdb334a45a316686a4b5
     private void handleClaimAction(ActionEvent event)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("Claimaanmaken.fxml"));
     Parent root1 = (Parent) fxmlLoader.load();
@@ -103,6 +116,10 @@ public class HoofdSchermServiceController implements Initializable {
     stageHuidige.close();
     stageVolgende.show();
     }
+<<<<<<< HEAD
     
 }
 
+=======
+}
+>>>>>>> 91e5400966a55878a7a0fdb334a45a316686a4b5
