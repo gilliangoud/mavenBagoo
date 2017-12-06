@@ -35,7 +35,7 @@ public interface UserDao {
         if(connection == null) System.exit(1);
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM c2bagoo.user WHERE"
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user WHERE"
                     + " iduser=" + id);
             if(rs.next())
             {
@@ -70,7 +70,7 @@ public interface UserDao {
         if(connection == null) System.exit(1);
         try {
             PreparedStatement ps = connection.prepareStatement("SELECT * FROM"
-                    + " c2bagoo.user WHERE gebruikersnaam=? AND wachtwoord=?");
+                    + " user WHERE gebruikersnaam=? AND wachtwoord=?");
             ps.setString(1, gebruikersnaam);
             ps.setString(2, wachtwoord);
             ResultSet rs = ps.executeQuery();
@@ -89,7 +89,7 @@ public interface UserDao {
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE user SET"
                     + " gebruikersnaam=?, wachtwoord=?, gemaakt-op=?, level=?,"
-                    + " WHERE id=?");
+                    + " WHERE iduser=?");
             ps.setString(1, user.getGebruikersnaam());
             ps.setString(2, user.getWachtwoord());
             ps.setString(3, user.getAangemaaktDatum());

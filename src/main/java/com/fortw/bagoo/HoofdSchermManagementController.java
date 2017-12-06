@@ -34,6 +34,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import com.fortw.bagoo.models.Klant;
+import com.fortw.bagoo.interfaces.KlantDao;
 
 /**
  * FXML Controller class
@@ -85,6 +87,21 @@ public class HoofdSchermManagementController implements Initializable {
     private Button knopVerwijderMedewerker;
     @FXML
     private Button knopVeranderMedewerker;
+    @FXML
+    private TableColumn klantNr;
+    
+    private ObservableList<Klant> klantenList 
+            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+    @FXML
+    private TableView klantTableView;
+    @FXML
+    private TableColumn<?, ?> voorNaam;
+    @FXML
+    private TableColumn<?, ?> email;
+    @FXML
+    private TableColumn<?, ?> land;
+    @FXML
+    private TableColumn<?, ?> telefoon;
 
     /**
      * Initializes the controller class.
@@ -96,9 +113,25 @@ public class HoofdSchermManagementController implements Initializable {
         // associate items with the tableview
         medewerkerTableView.setItems(this.medewerkerList);
         
+        
         // associate every tableview collum with its data
         for (int cnr = 0; cnr < medewerkerTableView.getColumns().size(); cnr++) {
             TableColumn tc = (TableColumn) medewerkerTableView.getColumns().get(cnr);
+            String propertyName = tc.getId();
+            if (propertyName != null && !propertyName.isEmpty()) {
+                // this assumes that the class has getters and setters that match
+                // propertyname in the fx:id of the table column in the fxml view
+                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+                //System.out.println("attached column '" + propertyName + "'");
+            }
+        }
+        
+        // associate items with the tableview
+        klantTableView.setItems(this.klantenList);
+        
+        // associate every tableview collum with its data
+        for (int cnr = 0; cnr < klantTableView.getColumns().size(); cnr++) {
+            TableColumn tc = (TableColumn) klantTableView.getColumns().get(cnr);
             String propertyName = tc.getId();
             if (propertyName != null && !propertyName.isEmpty()) {
                 // this assumes that the class has getters and setters that match
@@ -122,6 +155,7 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleHoofdMenuAction(ActionEvent event) {
+        this.klantTableView.setVisible(false);
         this.vboxMedewerker.setVisible(false);
         this.medewerkerTableView.setVisible(false);
         this.kpiPane.setVisible(true);
@@ -148,6 +182,7 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleKlantenAction(ActionEvent event) {
+        this.klantTableView.setVisible(true);
     }
 
     @FXML
