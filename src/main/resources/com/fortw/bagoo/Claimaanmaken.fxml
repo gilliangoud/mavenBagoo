@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1042.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.fortw.bagoo.ClaimaanmakenController">
+<AnchorPane id="AnchorPane" fx:id="schermClaim" prefHeight="768.0" prefWidth="1042.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.fortw.bagoo.ClaimaanmakenController">
    <children>
       <BorderPane prefHeight="768.0" prefWidth="1024.0">
          <bottom>
@@ -34,7 +34,7 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView prefHeight="369.0" prefWidth="721.0">
+                  <TableView fx:id="tableClaimAanmaken" prefHeight="369.0" prefWidth="721.0">
                     <columns>
                       <TableColumn fx:id="columnKlantennummer" prefWidth="116.0" text="Klantennummer" />
                       <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="142.0" text="Datum" />
