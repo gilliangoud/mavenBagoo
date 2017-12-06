@@ -16,6 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
+import com.fortw.bagoo.interfaces.UserDao;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -73,7 +74,7 @@ public class HoofdSchermManagementController implements Initializable {
     private TableView medewerkerTableView;
     
     private ObservableList<User> medewerkerList 
-            = FXCollections.observableArrayList(User.getAllUsers());
+            = FXCollections.observableArrayList(UserDao.getAllUsers());
     @FXML
     private VBox vboxMedewerker;
     @FXML
@@ -172,7 +173,7 @@ public class HoofdSchermManagementController implements Initializable {
     
     private void refresh(){
         ObservableList<User> tempList 
-            = FXCollections.observableArrayList(User.getAllUsers());
+            = FXCollections.observableArrayList(UserDao.getAllUsers());
         System.out.println("Updated");
         medewerkerList = null;
         medewerkerList = tempList;
@@ -199,7 +200,7 @@ public class HoofdSchermManagementController implements Initializable {
             if (result.get() == ButtonType.OK) {
                 //labelStatus.setText("Deleted luggage with nr: " + selectedItem.getGebruikersnaam());
                 //foundLuggageList.remove(selectedItem);
-                selectedItem.deleteUser(selectedItem.getPersoneelNr());
+                UserDao.deleteUser(selectedItem.getPersoneelNr());
                 refresh();
             } else {
                 // ... user chose CANCEL or closed the dialog
