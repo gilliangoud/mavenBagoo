@@ -204,10 +204,10 @@ public class VermissingMeldenController implements Initializable {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("ramon.mocking@hva.nl"));//naar email
-            message.setSubject("you've got mail");//titel in email
+                    InternetAddress.parse(textmail.getText()));//naar email
+            message.setSubject("Gemelde mail");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
-            +"aandacht" + "<br/><br/>"
+            + "aandacht" + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             

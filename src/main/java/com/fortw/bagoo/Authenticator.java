@@ -6,7 +6,7 @@
 package com.fortw.bagoo;
 
 import java.net.InetAddress;
-import javax.mail.PasswordAuthentication;
+import java.net.PasswordAuthentication;
 
 /**
  *
