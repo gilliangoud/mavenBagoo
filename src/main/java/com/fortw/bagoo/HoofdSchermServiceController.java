@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -38,6 +40,28 @@ public class HoofdSchermServiceController implements Initializable {
     private Button knopClaim;
     @FXML
     private Button knopLoguit;
+    @FXML
+    private TableView VermissingTable;
+    @FXML
+    private TableColumn vermissingNr;
+    @FXML
+    private TableColumn datumGevonden;
+    @FXML
+    private TableColumn tijdGevonden;
+    @FXML
+    private TableColumn vluchthaven;
+    @FXML
+    private TableColumn klantNr;
+    @FXML
+    private TableColumn bagageNr;
+    @FXML
+    private TableColumn aangemaakt;
+    @FXML
+    private TableColumn laatsteUpdate;
+    @FXML
+    private TableColumn vluchtNr;
+    @FXML
+    private TableColumn bagageLabel;
 
     /**
      * Initializes the controller class.
@@ -92,8 +116,6 @@ public class HoofdSchermServiceController implements Initializable {
         
     }
 
-
-    
     @FXML
     private void handleClaimAction(ActionEvent event)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("Claimaanmaken.fxml"));

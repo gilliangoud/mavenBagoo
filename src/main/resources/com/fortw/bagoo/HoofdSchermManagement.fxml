@@ -58,7 +58,6 @@
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
                   <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" visible="false">
-                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
                      <items>
                         <SplitPane dividerPositions="0.5006675567423231" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                           <items>
@@ -123,9 +122,6 @@
                       <TableColumn fx:id="personeelNr" prefWidth="167.0" text="Personeels nummer" />
                       <TableColumn fx:id="gebruikersnaam" minWidth="7.0" prefWidth="159.0" text="Gebruikersnaam" />
                         <TableColumn fx:id="aangemaaktDatum" minWidth="0.0" prefWidth="114.0" text="Aangemaakt op" />
-                      <TableColumn fx:id="personeelNr" prefWidth="130.0" text="Personeels nummer" />
-                      <TableColumn fx:id="gebruikersnaam" minWidth="7.0" prefWidth="188.0" text="Gebruikersnaam" />
-                        <TableColumn fx:id="aangemaaktDatum" minWidth="0.0" prefWidth="122.0" text="Aangemaakt op" />
                         <TableColumn fx:id="level" prefWidth="60.0" text="Level" />
                         <TableColumn fx:id="wachtwoord" prefWidth="131.0" text="Wachtwoord" />
                     </columns>
