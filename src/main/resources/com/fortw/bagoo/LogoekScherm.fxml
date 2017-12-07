@@ -41,7 +41,8 @@
               <columns>
                 <TableColumn fx:id="columDate" prefWidth="142.0" text="datum" />
                 <TableColumn fx:id="columEvent" prefWidth="150.0" text="Event" />
-                  <TableColumn fx:id="columOpmerking" prefWidth="273.0" text="Opmerking" />
+                  <TableColumn fx:id="columOpmerking" prefWidth="134.0" text="Opmerking" />
+                  <TableColumn fx:id="columVermissingID" prefWidth="140.0" text="Vermissing ID" />
               </columns>
             </TableView>
          </center>
@@ -54,11 +55,13 @@
                   <TextArea fx:id="textOpmerking" layoutX="802.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0" />
                   <TextField fx:id="textEvent" layoutX="522.0" layoutY="69.0" />
                   <Text layoutX="465.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datum:" />
-                  <Text layoutX="468.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event" />
+                  <Text layoutX="468.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event:" />
                   <Text layoutX="718.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opmerking:" />
                   <Button layoutX="877.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleOpslaanAction" prefHeight="31.0" prefWidth="125.0" text="Opslaan" />
                   <Button layoutX="23.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleAnullerenAction" prefHeight="31.0" prefWidth="125.0" text="Annuleren" />
                   <TextField fx:id="textDatum" layoutX="522.0" layoutY="15.0" />
+                  <TextField fx:id="textVermissingID" layoutX="522.0" layoutY="115.0" />
+                  <Text layoutX="421.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vermissing ID:" />
                </children>
             </Pane>
          </bottom>
