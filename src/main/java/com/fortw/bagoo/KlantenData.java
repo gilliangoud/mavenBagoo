@@ -13,22 +13,31 @@ import javafx.beans.property.StringProperty;
 public class KlantenData {
 
     // Attributen
+    private final StringProperty klantID;
     private final StringProperty bagageNummer;
     private final StringProperty flightNummer;
     private final StringProperty achternaam;
     private final StringProperty voornaam;
     private final StringProperty checkInDatum;
+//    private final StringProperty checkInDatum;
 
     // Constructor
     public KlantenData(String bagageNummer, String flightNummer, String achternaam, String voornaam, String checkInDatum) {
+    public KlantenData(String klantID, String bagageNummer, String flightNummer, String achternaam, String voornaam) {
+        this.klantID = new SimpleStringProperty(klantID);
         this.bagageNummer = new SimpleStringProperty(bagageNummer);
         this.flightNummer = new SimpleStringProperty(flightNummer);
         this.achternaam = new SimpleStringProperty(achternaam);
         this.voornaam = new SimpleStringProperty(voornaam);
         this.checkInDatum = new SimpleStringProperty(checkInDatum);
+//        this.checkInDatum = new SimpleStringProperty(checkInDatum);
     }
 
     // Getters
+    public String getklantID() {
+        return klantID.get();
+    }
+    
     public String getBagageNummer() {
         return bagageNummer.get();
     }
@@ -48,8 +57,15 @@ public class KlantenData {
     public String getCheckInDatum() {
         return checkInDatum.get();
     }
+//    public String getCheckInDatum() {
+//        return checkInDatum.get();
+//    }
 
     // Setters
+    public void setklantID(String value) {
+        klantID.set(value);
+    }
+    
     public void setBagageNummer(String value) {
         bagageNummer.set(value);
     }
@@ -69,6 +85,9 @@ public class KlantenData {
     public void setCheckInDatum(String value) {
         checkInDatum.set(value);
     }
+//    public void setCheckInDatum(String value) {
+//        checkInDatum.set(value);
+//    }
 
     // String property values
     public StringProperty bagageNummerProperty() {
@@ -90,5 +109,8 @@ public class KlantenData {
     public StringProperty checkInDatumProperty() {
         return checkInDatum;
     }
+//    public StringProperty checkInDatumProperty() {
+//        return checkInDatum;
+//    }
 
 }

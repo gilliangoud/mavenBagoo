@@ -16,6 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
+import com.fortw.bagoo.interfaces.UserDao;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -33,6 +34,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import com.fortw.bagoo.models.Klant;
+import com.fortw.bagoo.interfaces.KlantDao;
 
 /**
  * FXML Controller class
@@ -72,8 +75,10 @@ public class HoofdSchermManagementController implements Initializable {
     @FXML
     private TableView medewerkerTableView;
     
+    private final ObservableList<User> medewerkerList 
+            = FXCollections.observableArrayList();
     private ObservableList<User> medewerkerList 
-            = FXCollections.observableArrayList(User.getAllUsers());
+            = FXCollections.observableArrayList(UserDao.getAllUsers());
     @FXML
     private VBox vboxMedewerker;
     @FXML
@@ -84,20 +89,53 @@ public class HoofdSchermManagementController implements Initializable {
     private Button knopVerwijderMedewerker;
     @FXML
     private Button knopVeranderMedewerker;
+    @FXML
+    private TableColumn klantNr;
+    
+    private ObservableList<Klant> klantenList 
+            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+    @FXML
+    private TableView klantTableView;
+    @FXML
+    private TableColumn voorNaam;
+    @FXML
+    private TableColumn email;
+    @FXML
+    private TableColumn land;
+    @FXML
+    private TableColumn telefoon;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        medewerkerList.add(new User("giel", "giel", 5));
         //medewerkerList.add(new User("giel", "giel","nooit", 5));
         
         // associate items with the tableview
         medewerkerTableView.setItems(this.medewerkerList);
         
+        
         // associate every tableview collum with its data
         for (int cnr = 0; cnr < medewerkerTableView.getColumns().size(); cnr++) {
             TableColumn tc = (TableColumn) medewerkerTableView.getColumns().get(cnr);
+            String propertyName = tc.getId();
+            if (propertyName != null && !propertyName.isEmpty()) {
+                // this assumes that the class has getters and setters that match
+                // propertyname in the fx:id of the table column in the fxml view
+                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+                System.out.println("attached column '" + propertyName + "'");
+                //System.out.println("attached column '" + propertyName + "'");
+            }
+        }
+        
+        // associate items with the tableview
+        klantTableView.setItems(this.klantenList);
+        
+        // associate every tableview collum with its data
+        for (int cnr = 0; cnr < klantTableView.getColumns().size(); cnr++) {
+            TableColumn tc = (TableColumn) klantTableView.getColumns().get(cnr);
             String propertyName = tc.getId();
             if (propertyName != null && !propertyName.isEmpty()) {
                 // this assumes that the class has getters and setters that match
@@ -109,6 +147,7 @@ public class HoofdSchermManagementController implements Initializable {
     }    
 
     @FXML
+    private void handleLoginAction(ActionEvent event) {
     private void handleLoginAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("MainScene.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -118,11 +157,17 @@ public class HoofdSchermManagementController implements Initializable {
         stageHuidige.close();
         stageVolgende.show();
     }
+    
+    private void allPanesInvisible(){
+        this.klantTableView.setVisible(false);
+        this.vboxMedewerker.setVisible(false);
+        this.medewerkerTableView.setVisible(false);
+        this.vboxMedewerker.setVisible(false);
+    }
 
     @FXML
     private void handleHoofdMenuAction(ActionEvent event) {
-        this.vboxMedewerker.setVisible(false);
-        this.medewerkerTableView.setVisible(false);
+        allPanesInvisible();
         this.kpiPane.setVisible(true);
     }
 
@@ -132,7 +177,7 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleMedewerkersAction(ActionEvent event) {
-        this.kpiPane.setVisible(false);
+        allPanesInvisible();
         this.medewerkerTableView.setVisible(true);
         this.vboxMedewerker.setVisible(true);
     }
@@ -147,11 +192,13 @@ public class HoofdSchermManagementController implements Initializable {
 
     @FXML
     private void handleKlantenAction(ActionEvent event) {
+        allPanesInvisible();
+        this.klantTableView.setVisible(true);
     }
 
     @FXML
     private void handleRefreshMedewerkerAction(ActionEvent event) {
-        refresh();
+        refreshMedewerkerTableView();
     }
 
     @FXML
@@ -170,10 +217,10 @@ public class HoofdSchermManagementController implements Initializable {
         }
     }
     
-    private void refresh(){
+    public void refreshMedewerkerTableView(){
         ObservableList<User> tempList 
-            = FXCollections.observableArrayList(User.getAllUsers());
-        System.out.println("Updated");
+            = FXCollections.observableArrayList(UserDao.getAllUsers());
+        //System.out.println("Updated");
         medewerkerList = null;
         medewerkerList = tempList;
         medewerkerTableView.setItems(medewerkerList);
@@ -192,15 +239,15 @@ public class HoofdSchermManagementController implements Initializable {
         } else {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Delete item");
-            alert.setHeaderText("Deleting item with nr: " + selectedItem.getGebruikersnaam());
+            alert.setHeaderText("Deleting user: " + selectedItem.getGebruikersnaam());
             alert.setContentText("Are you ok with this?");
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 //labelStatus.setText("Deleted luggage with nr: " + selectedItem.getGebruikersnaam());
                 //foundLuggageList.remove(selectedItem);
-                selectedItem.deleteUser(selectedItem.getPersoneelNr());
-                refresh();
+                UserDao.deleteUser(selectedItem.getPersoneelNr());
+                refreshMedewerkerTableView();
             } else {
                 // ... user chose CANCEL or closed the dialog
             }

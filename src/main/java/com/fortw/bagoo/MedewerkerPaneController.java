@@ -13,13 +13,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.User;
+import com.fortw.bagoo.interfaces.UserDao;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 /**
@@ -66,7 +65,7 @@ public class MedewerkerPaneController implements Initializable {
         String wachtwoord = inputWachtwoord.getText();
         int level = 1;
         User nieuweGebruiker = new User(gebruikersnaam, wachtwoord, level);
-        if (nieuweGebruiker.insertUser(nieuweGebruiker)){
+        if (UserDao.insertUser(nieuweGebruiker)){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
@@ -90,14 +89,14 @@ public class MedewerkerPaneController implements Initializable {
     private void handleWachtwoordHerhaalInput(KeyEvent event) {
         String wachtwoord1 = inputWachtwoordHerhaal.getText();
         String wachtwoord2 = inputWachtwoord.getText();
-        System.out.println("test");
+        //System.out.println("test");
         if(wachtwoord1.length() > 2 && wachtwoord2.length() > 2){
             if (wachtwoord1 != wachtwoord2){
                 labelWachtwoord.setText("Wachtwoorden Matchen!");
-                System.out.println("test2");
+                //System.out.println("test2");
             } else {
                 labelWachtwoord.setText("De wachtwoorden moeten gelijk zijn!");
-                System.out.println("test3");
+                //System.out.println("test3");
             }
         }
     }
