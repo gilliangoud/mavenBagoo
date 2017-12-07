@@ -71,13 +71,13 @@ public interface KlantDao {
         return null;
     }
     
-    public static List<Klant> getKlantenByVoornaam(String naam) {
+    public static List<Klant> getKlantenByAchternaam(String naam) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM klant WHERE"
-                    + " voornaam=" + naam);
+                    + " achternaam=" + naam);
             List<Klant> klanten = new ArrayList<>();
             while(rs.next())
             {
