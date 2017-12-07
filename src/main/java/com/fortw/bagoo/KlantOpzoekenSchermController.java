@@ -37,7 +37,6 @@ import com.fortw.bagoo.interfaces.KlantDao;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
-public class KlantOpzoekenSchermController implements Initializable {
 public class KlantOpzoekenSchermController implements BagageDao, KlantDao,
         Initializable {
 
@@ -47,63 +46,35 @@ public class KlantOpzoekenSchermController implements BagageDao, KlantDao,
     private ObservableList<Klant> klantenOpzoekenList
             = FXCollections.observableArrayList(KlantDao.getAllKlanten());
     @FXML
-    private TableColumn columnBagageNummer;
     private TableView KlantenTable;
     @FXML
-    private TableColumn columnFlightNummer;
     private TableColumn klantNr;
     @FXML
-    private TableColumn columnAchternaam;
     private TableColumn achternaam;
     @FXML
-    private TableColumn columnVoornaam;
     private TableColumn voornaam;
     @FXML
-<<<<<<< HEAD
-    private TableColumn columnCheckInDatum;
-    @FXML
-    private TableColumn columnKlantID;
-    
-=======
     private TableColumn checkInDatum;
     
     private ObservableList<Bagage> bagageKlantOpzoekenList
             = FXCollections.observableArrayList(BagageDao.getAllBagage());
->>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
     @FXML
-    private Button LoadKlantenData;
     private TableColumn bagageNr;
     @FXML
-<<<<<<< HEAD
-    private Button ZoekButton;
-
-    // Maak een observable list aan voor de database data
-    private Connection conn = null;
-    private PreparedStatement pst = null;
-    private ResultSet rs1 = null;
-    private ObservableList<KlantenData> klantendata;
-    
-=======
     private TableColumn vluchtNr;
-    
-    @FXML
-    private Button LoadKlantenData;
     @FXML
     private TextField zoekVeld;
->>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
+    
+    @FXML
+    private Button AnnulerenButton;
+    @FXML
+    private Button RefreshKlantenOpzoeken;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< HEAD
-        conn = DbConnection.Connect();
-        SetCell();
-        klantendata = FXCollections.observableArrayList();
-    }
-=======
->>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
 
         KlantenTable.setItems(this.klantenOpzoekenList);
 
@@ -131,42 +102,16 @@ public class KlantOpzoekenSchermController implements BagageDao, KlantDao,
         stageVolgende.show();
     }
 
-    @FXML
-    private void loadDataFromDatabase(ActionEvent event) {
-<<<<<<< HEAD
-        try {
-//          Connection conn = Connection.Connect();
-            klantendata = FXCollections.observableArrayList();
-
-            // Execute query en sla deze op in een resultset
-            pst = conn.prepareStatement("SELECT * FROM c2bagoo.Ramon_KlantenOpzoekenScherm");
-                        
-            rs1 = pst.executeQuery();
-
-            while (rs1.next()) {
-                klantendata.add(new KlantenData(rs1.getString(1), rs1.getString(2), rs1.getString(3), rs1.getString(4), rs1.getString(5)));
-            }
-
-            // klantID = klant
-            // bagagenummer = bagage
-            // flightnummer = bagage
-            // achternaam = klant
-            // voornaam = klant
-            // check in datum = nog toevoegen aan klanten table
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        KlantenTable.setItems(klantendata);
-=======
-    }
 
     // Klanten is tijdelijk, dit is proof of concept
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
         ObservableList<Klant> tempList
                 = FXCollections.observableArrayList(KlantDao.getAllKlanten());
->>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
+    }
+
+    @FXML
+    private void handleRefreshKlantenOpzoekenAction(ActionEvent event) {
     }
 
 }

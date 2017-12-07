@@ -95,8 +95,6 @@ public class HoofdSchermServiceController implements Initializable {
 
     
     @FXML
-    private void handleClaimAction(ActionEvent event) {
-
     private void handleClaimAction(ActionEvent event)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("Claimaanmaken.fxml"));
     Parent root1 = (Parent) fxmlLoader.load();

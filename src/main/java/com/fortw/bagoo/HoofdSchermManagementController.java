@@ -75,8 +75,7 @@ public class HoofdSchermManagementController implements Initializable {
     @FXML
     private TableView medewerkerTableView;
     
-    private final ObservableList<User> medewerkerList 
-            = FXCollections.observableArrayList();
+    
     private ObservableList<User> medewerkerList 
             = FXCollections.observableArrayList(UserDao.getAllUsers());
     @FXML
@@ -147,7 +146,6 @@ public class HoofdSchermManagementController implements Initializable {
     }    
 
     @FXML
-    private void handleLoginAction(ActionEvent event) {
     private void handleLoginAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("MainScene.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
