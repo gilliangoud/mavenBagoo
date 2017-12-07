@@ -131,6 +131,13 @@ public class LogoekSchermController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
+        
+        
+        
+        
     }
 
     @FXML

@@ -179,6 +179,17 @@ public class VermissingMeldenController implements Initializable {
         } catch (SQLException ex) {
              Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+         String queryVerissing = "INSERT INTO vermissing(klant_idklant,bagage_idbagage) Values (?,?)";
+         
+         
+         
+         try {
+            
+        } catch (Exception e) {
+        }
+         
+         
 
          //start van de email code
         final String username = "4TWbagoo@gmail.com";
@@ -222,5 +233,9 @@ public class VermissingMeldenController implements Initializable {
         }
         //einde van de email code
     }
+    
+    
+    
+    
 
 }
