@@ -130,6 +130,7 @@
                      </columns>
                   </TableView>
                   <fx:include fx:id="medewerkerEditPane" source="MedewerkerEditPane.fxml" visible="false" />
+                  <fx:include fx:id="klantPane" source="KlantPane.fxml" visible="false" />
                </children>
             </StackPane>
          </center>

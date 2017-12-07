@@ -34,8 +34,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import com.fortw.bagoo.models.Klant;
-import com.fortw.bagoo.interfaces.KlantDao;
 import com.fortw.bagoo.interfaces.ParentControllerContext;
 import javafx.scene.control.Label;
 
@@ -89,32 +87,19 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     @FXML
     private Button knopVerwijderMedewerker;
     @FXML
-    private Button knopVeranderMedewerker;
-    @FXML
-    private TableColumn klantNr;
-    
-    private ObservableList<Klant> klantenList 
-            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
-    @FXML
-    private TableView klantTableView;
-    @FXML
-    private TableColumn voorNaam;
-    @FXML
-    private TableColumn email;
-    @FXML
-    private TableColumn land;
-    @FXML
-    private TableColumn telefoon;
-    
+    private Button knopVeranderMedewerker; 
     @FXML
     private AnchorPane medewerkerEditPane;
-// Hieronder hoort dit te staan, dankzij scenebuilder kan dit misschien verwijderd worden.
-//    @FXML
-//    private MedewerkerEditPaneController medewerkerEditPaneController;
+    // Hieronder hoort dit te staan, dankzij scenebuilder kan dit misschien verwijderd worden.
+    //    @FXML
+    //    private MedewerkerEditPaneController medewerkerEditPaneController;
     @FXML
     private MedewerkerEditPaneController medewerkerEditPaneController;
     @FXML
     private Label statusMessage;
+    
+    @FXML
+    private AnchorPane klantPane;
 
     /**
      * Initializes the controller class.
@@ -140,21 +125,6 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
                 //System.out.println("attached column '" + propertyName + "'");
             }
         }
-        
-        // associate items with the tableview
-        klantTableView.setItems(this.klantenList);
-        
-        // associate every tableview collum with its data
-        for (int cnr = 0; cnr < klantTableView.getColumns().size(); cnr++) {
-            TableColumn tc = (TableColumn) klantTableView.getColumns().get(cnr);
-            String propertyName = tc.getId();
-            if (propertyName != null && !propertyName.isEmpty()) {
-                // this assumes that the class has getters and setters that match
-                // propertyname in the fx:id of the table column in the fxml view
-                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
-                //System.out.println("attached column '" + propertyName + "'");
-            }
-        }
     }   
 
     @FXML
@@ -170,7 +140,7 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     
     private void allPanesInvisible(){
         kpiPane.setVisible(false);
-        klantTableView.setVisible(false);
+        klantPane.setVisible(false);
         vboxMedewerker.setVisible(false);
         medewerkerTableView.setVisible(false);
         vboxMedewerker.setVisible(false);
@@ -205,7 +175,7 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     @FXML
     private void handleKlantenAction(ActionEvent event) {
         allPanesInvisible();
-        klantTableView.setVisible(true);
+        klantPane.setVisible(true);
     }
 
     @FXML
