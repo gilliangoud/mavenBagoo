@@ -27,13 +27,10 @@ import javafx.stage.Stage;
  * @author Anouar
  */
 public class MainSceneController implements Initializable {
- public ModleLoginClass loginmodel= new ModleLoginClass();
-    
- 
- 
- 
- 
- @FXML
+
+    public ModleLoginClass loginmodel = new ModleLoginClass();
+
+    @FXML
     private TextField gebruikersnaam;
     @FXML
     private PasswordField wachtwoord;
@@ -42,45 +39,36 @@ public class MainSceneController implements Initializable {
     private Label status;
     @FXML
     private AnchorPane login;
-    
-    
-
 
     /**
      * Initializes the controller class.
      */
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-         if(loginmodel.isDbConnected()){
-          status.setText("Connected");
-      }else{
-          status.setText("not connected");
-      }
-    }    
-   
+        if (loginmodel.isDbConnected()) {
+            status.setText("Connected");
+        } else {
+            status.setText("not connected");
+        }
+    }
 
     @FXML
     private void handleLoginAction(ActionEvent event) throws IOException {
-     if (loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())){ 
-     status.setText("goed");
-     
-       // Volgende Scherm.
-<<<<<<< HEAD
-=======
+        if (loginmodel.islogin(gebruikersnaam.getText(), wachtwoord.getText())) {
+            status.setText("goed");
+
+//    Volgende scherm
 //    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermManagement.fxml"));
->>>>>>> 6eb4b9db7c282b97e20329f22d6a2dd754cc1d1b
-    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
-    Parent root1 = (Parent) fxmlLoader.load();
-    Stage stageVolgende = new Stage();
-    stageVolgende.setScene(new Scene (root1));
-    Stage stageHuidige = (Stage) login.getScene().getWindow();
-    stageHuidige.close();
-    stageVolgende.show();
-     }
-       
-      
-    }}
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermService.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stageVolgende = new Stage();
+            stageVolgende.setScene(new Scene(root1));
+            Stage stageHuidige = (Stage) login.getScene().getWindow();
+            stageHuidige.close();
+            stageVolgende.show();
+        }
+
+    }
+}
