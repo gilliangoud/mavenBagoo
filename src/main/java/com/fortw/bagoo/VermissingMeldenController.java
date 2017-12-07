@@ -20,12 +20,20 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.sql.*;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.text.Text;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * FXML Controller class
@@ -172,6 +180,43 @@ public class VermissingMeldenController implements Initializable {
              Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+         //start van de email code
+        final String username = "4TWbagoo@gmail.com";
+        final String password = "Gieljansen";
+        
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");//smtp server adres
+        props.put("mail.smtp.port", "587");//port voor smtp server
+        
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);//om je email te verifieren
+                    }
+                            
+                });
+        
+        try {
+            
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse("ramon.mocking@hva.nl"));//naar email
+            message.setSubject("you've got mail");//titel in email
+            message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
+            +"aandacht" + "<br/><br/>"
+            + "</body>", "text/html; charset=utf-8");//set de content in de email
+            Transport.send(message);//verzend alles
+            
+            System.out.println("was the email send: Done");//verifieerd het
+            
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);//als het email niet bestaat
+        }
+        //einde van de email code
     }
 
 }
