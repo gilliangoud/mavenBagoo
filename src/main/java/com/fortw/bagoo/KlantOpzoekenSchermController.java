@@ -47,7 +47,9 @@ public class KlantOpzoekenSchermController implements Initializable {
     private TableColumn columnVoornaam;
     @FXML
     private TableColumn columnCheckInDatum;
-
+    @FXML
+    private TableColumn columnKlantID;
+    
     @FXML
     private Button LoadKlantenData;
     @FXML
@@ -57,9 +59,8 @@ public class KlantOpzoekenSchermController implements Initializable {
     private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet rs1 = null;
-    private ObservableList<KlantenData> data;
-    @FXML
-    private TableColumn<?, ?> columnKlantID;
+    private ObservableList<KlantenData> klantendata;
+    
 
     /**
      * Initializes the controller class.
@@ -68,7 +69,7 @@ public class KlantOpzoekenSchermController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.Connect();
         SetCell();
-        data = FXCollections.observableArrayList();
+        klantendata = FXCollections.observableArrayList();
     }
 
     private void SetCell() {
@@ -98,29 +99,28 @@ public class KlantOpzoekenSchermController implements Initializable {
     private void loadDataFromDatabase(ActionEvent event) {
         try {
 //          Connection conn = Connection.Connect();
-            data = FXCollections.observableArrayList();
-            //Connection conn = 
-            //data = FXCollections.observableArrayList();
+            klantendata = FXCollections.observableArrayList();
 
             // Execute query en sla deze op in een resultset
-            pst = conn.prepareStatement("SELECT * FROM c2bagoo.ramon");
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.Ramon_KlantenOpzoekenScherm");
                         
             rs1 = pst.executeQuery();
 
             while (rs1.next()) {
-                data.add(new KlantenData(rs1.getString(1), rs1.getString(2), rs1.getString(3), rs1.getString(4), rs1.getString(5)));
+                klantendata.add(new KlantenData(rs1.getString(1), rs1.getString(2), rs1.getString(3), rs1.getString(4), rs1.getString(5)));
             }
 
+            // klantID = klant
             // bagagenummer = bagage
             // flightnummer = bagage
             // achternaam = klant
             // voornaam = klant
-            // check in datum = list moet nog toegevoegd worden aan klant: rij 12
+            // check in datum = nog toevoegen aan klanten table
             
         } catch (SQLException ex) {
             Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        KlantenTable.setItems(data);
+        KlantenTable.setItems(klantendata);
     }
 
 }

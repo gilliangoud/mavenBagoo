@@ -31,9 +31,9 @@
                            <children>
                               <TableView fx:id="KlantenTable" prefHeight="545.0" prefWidth="812.0">
                                 <columns>
-                                    <TableColumn fx:id="columnKlantID" text="Klant ID" />
-                                  <TableColumn fx:id="columnBagageNummer" prefWidth="182.0" text="Bagagenummer" />
-                                  <TableColumn fx:id="columnFlightNummer" prefWidth="143.0" text="Flight nummer" />
+                                    <TableColumn fx:id="columnKlantID" prefWidth="100.0" text="Klant ID" />
+                                  <TableColumn fx:id="columnBagageNummer" prefWidth="149.0" text="Bagagenummer" />
+                                  <TableColumn fx:id="columnFlightNummer" prefWidth="156.0" text="Flight nummer" />
                                     <TableColumn fx:id="columnAchternaam" prefWidth="129.0" text="Achternaam" />
                                     <TableColumn fx:id="columnVoornaam" prefWidth="114.0" text="Voornaam" />
                                     <TableColumn fx:id="columnCheckInDatum" prefWidth="161.0" text="Check-in datum" />
