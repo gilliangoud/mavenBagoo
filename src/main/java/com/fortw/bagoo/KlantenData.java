@@ -18,16 +18,16 @@ public class KlantenData {
     private final StringProperty flightNummer;
     private final StringProperty achternaam;
     private final StringProperty voornaam;
-//    private final StringProperty checkInDatum;
+    private final StringProperty checkInDatum;
 
     // Constructor
-    public KlantenData(String klantID, String bagageNummer, String flightNummer, String achternaam, String voornaam) {
+    public KlantenData(String klantID, String bagageNummer, String flightNummer, String achternaam, String voornaam, String checkInDatum) {
         this.klantID = new SimpleStringProperty(klantID);
         this.bagageNummer = new SimpleStringProperty(bagageNummer);
         this.flightNummer = new SimpleStringProperty(flightNummer);
         this.achternaam = new SimpleStringProperty(achternaam);
         this.voornaam = new SimpleStringProperty(voornaam);
-//        this.checkInDatum = new SimpleStringProperty(checkInDatum);
+        this.checkInDatum = new SimpleStringProperty(checkInDatum);
     }
 
     // Getters
@@ -51,6 +51,9 @@ public class KlantenData {
         return voornaam.get();
     }
 
+    public String getCheckInDatum() {
+        return checkInDatum.get();
+    }
 //    public String getCheckInDatum() {
 //        return checkInDatum.get();
 //    }
@@ -76,6 +79,9 @@ public class KlantenData {
         voornaam.set(value);
     }
 
+    public void setCheckInDatum(String value) {
+        checkInDatum.set(value);
+    }
 //    public void setCheckInDatum(String value) {
 //        checkInDatum.set(value);
 //    }
@@ -97,6 +103,9 @@ public class KlantenData {
         return voornaam;
     }
 
+    public StringProperty checkInDatumProperty() {
+        return checkInDatum;
+    }
 //    public StringProperty checkInDatumProperty() {
 //        return checkInDatum;
 //    }

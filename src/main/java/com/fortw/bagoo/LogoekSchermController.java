@@ -29,6 +29,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -63,6 +64,10 @@ public class LogoekSchermController implements Initializable {
     @FXML
     private TextField textDatum;
     private TextField textid;
+    @FXML
+    private TextField textVermissingID;
+    @FXML
+    private TableColumn columVermissingID;
 
     
     /**
@@ -80,6 +85,7 @@ public class LogoekSchermController implements Initializable {
         columDate.setCellValueFactory(new PropertyValueFactory<>("Datum"));
         columEvent.setCellValueFactory(new PropertyValueFactory<>("event"));
         columOpmerking.setCellValueFactory(new PropertyValueFactory<>("opmerking"));
+        columVermissingID.setCellValueFactory(new PropertyValueFactory<>("vermissingID"));
     }
     
     private void LoadLogFromDataBase(){
@@ -88,7 +94,7 @@ public class LogoekSchermController implements Initializable {
             rs= pst.executeQuery();
             
             while (rs.next()){
-            data.add(new LogboekLijst(rs.getString(2),rs.getString(3),rs.getString(4)));
+            data.add(new LogboekLijst(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
             }
             
             
@@ -107,7 +113,7 @@ public class LogoekSchermController implements Initializable {
         String datum = textDatum.getText();
         String eventlog = textEvent.getText();
         String opmerking = textOpmerking.getText();
-        String idVermissing = "1";
+        String idVermissing = textVermissingID.getText();
         
         try {
             
@@ -125,6 +131,13 @@ public class LogoekSchermController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
+        
+        
+        
+        
     }
 
     @FXML
@@ -137,5 +150,6 @@ public class LogoekSchermController implements Initializable {
     stageHuidige.close();
     stageVolgende.show();
     }
+
     
 }

@@ -46,9 +46,11 @@ public class User {
      * @param level
      */
     public User(String gebruikersnaam, String wachtwoord, int level){
+        //this.personeelNr =
         //this.personeelNr = personeelNr;
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
+        //this.aangemaaktDatum = 
         this.aangemaaktDatum = "vandaag";
         this.level = level;
     }

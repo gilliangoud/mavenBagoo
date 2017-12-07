@@ -15,12 +15,23 @@ public class LogboekLijst {
     private String Datum;
     private String event;
     private String opmerking;
+    private String vermissingID;
 
-    public LogboekLijst(String Datum, String event, String opmerking) {
+    public String getVermissingID() {
+        return vermissingID;
+    }
+
+    public void setVermissingID(String vermissingID) {
+        this.vermissingID = vermissingID;
+    }
+
+  
+
+    public LogboekLijst(String Datum, String event, String opmerking,String vermissing) {
         this.Datum = Datum;
         this.event = event;
         this.opmerking = opmerking;
-        
+        this.vermissingID = vermissing;
     }
 
 
