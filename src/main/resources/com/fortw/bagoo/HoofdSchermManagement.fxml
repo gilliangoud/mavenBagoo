@@ -57,12 +57,14 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
+<<<<<<< HEAD
                   <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" visible="false">
+=======
+                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+>>>>>>> 41a44fa8ef0d0d65acf1ba42557eddc9c2a85893
                      <items>
                         <SplitPane dividerPositions="0.5006675567423231" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                           <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="408.0" />
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="408.0">
                                  <children>
                                     <LineChart prefHeight="351.0" prefWidth="409.0" title="linechart">
@@ -89,8 +91,6 @@
                         </SplitPane>
                         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                           <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
                                     <StackedBarChart prefHeight="351.0" prefWidth="410.0" title="Barchart">

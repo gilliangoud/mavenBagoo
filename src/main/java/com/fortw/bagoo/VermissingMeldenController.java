@@ -20,12 +20,20 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.sql.*;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.text.Text;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * FXML Controller class
@@ -84,7 +92,7 @@ public class VermissingMeldenController implements Initializable {
     ObservableList<String> bagageSoort = FXCollections.observableArrayList("Handbagage", "koffer");
     ObservableList<String> bagageKleur = FXCollections.observableArrayList("Rood", "Oranje", "Geel", "Groen", "Blauw", "Zwart", "bruin", "Wit", "Grijs");
     ObservableList<String> bagageMateriaal = FXCollections.observableArrayList("Leer", "Plastic", "Kunststof", "Metaal", "Gestofeerd");
-    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling");
+    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling","Overig");
     @FXML
     private TextField textGewicht;
 
@@ -113,7 +121,7 @@ public class VermissingMeldenController implements Initializable {
 
     @FXML
     private void handleOpslaanAction(ActionEvent event) throws SQLException {
-        String queryKlant = "INSERT INTO c2bagoo.klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
+        String queryKlant = "INSERT INTO klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
 
         String achternaam = textAchternaam.getText();
         String tussenvoegsel = textTussenvoegsel.getText();
@@ -150,7 +158,7 @@ public class VermissingMeldenController implements Initializable {
             Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String queryBagage = "INSERT INTO c2bagoo.bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
+        String queryBagage = "INSERT INTO bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
 
         String type =   comboSoortBagage.getId();
         String merk =   comboMerk.getId();
@@ -161,8 +169,8 @@ public class VermissingMeldenController implements Initializable {
             pst = conn.prepareStatement(queryBagage);
             pst.setObject(1, type);
             pst.setString(2, merk);
-            pst.setString(1, kleur);
-            pst.setString(1, gewicht);
+            pst.setString(3, kleur);
+            pst.setString(4, gewicht);
             
             int i = pst.executeUpdate();
             if (i == 1) 
@@ -172,6 +180,47 @@ public class VermissingMeldenController implements Initializable {
              Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+         //start van de email code
+        final String username = "4TWbagoo@gmail.com";
+        final String password = "Gieljansen";
+        
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");//smtp server adres
+        props.put("mail.smtp.port", "587");//port voor smtp server
+        
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);//om je email te verifieren
+                    }
+                            
+                });
+        
+        try {
+            
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(textmail.getText()));//naar email
+            message.setSubject("Gemelde mail");//titel in email
+            message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
+            + "beste, Meneer en/of Mevrouw" + textAchternaam.getText()
+            + "/n/n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+            + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
+            + "/n/n Met Vriendelijke Groet, /n Het Corendon Serviceteam"
+            + "/n/n/n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+            + "</body>", "text/html; charset=utf-8");//set de content in de email
+            Transport.send(message);//verzend alles
+            
+            System.out.println("was the email send: Done");//verifieerd het
+            
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);//als het email niet bestaat
+        }
+        //einde van de email code
     }
 
 }

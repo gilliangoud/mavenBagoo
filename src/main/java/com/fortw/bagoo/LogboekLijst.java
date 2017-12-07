@@ -27,11 +27,11 @@ public class LogboekLijst {
 
   
 
-    public LogboekLijst(String Datum, String event, String opmerking) {
+    public LogboekLijst(String Datum, String event, String opmerking,String vermissing) {
         this.Datum = Datum;
         this.event = event;
         this.opmerking = opmerking;
-        this.vermissingID = vermissingID;
+        this.vermissingID = vermissing;
     }
 
 

@@ -77,7 +77,7 @@ public class ClaimaanmakenController implements Initializable {
     private void SetCell(){
         columnDatum.setCellValueFactory(new PropertyValueFactory<>("Datum"));
         columnKlantennummer.setCellValueFactory(new PropertyValueFactory<>("Klantennummer"));
-        columnReden.setCellValueFactory(new PropertyValueFactory<>("Reden Claim"));
+        columnReden.setCellValueFactory(new PropertyValueFactory<>("Reden"));
     }
     
     private void LoadLogFromDataBase(){
