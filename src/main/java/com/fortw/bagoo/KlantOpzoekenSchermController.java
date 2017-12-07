@@ -105,17 +105,8 @@ public class KlantOpzoekenSchermController implements BagageDao, KlantDao,
 =======
 >>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
 
-    private void SetCell() {
-        columnBagageNummer.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
-        columnFlightNummer.setCellValueFactory(new PropertyValueFactory<>("flightNummer"));
-        columnVoornaam.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
-        columnAchternaam.setCellValueFactory(new PropertyValueFactory<>("achternaam"));
-        columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
-    }
         KlantenTable.setItems(this.klantenOpzoekenList);
 
-    @FXML
-    private void handleZoekAction(ActionEvent event) {
         for (int cnr = 0; cnr < KlantenTable.getColumns().size(); cnr++) {
             TableColumn tc = (TableColumn) KlantenTable.getColumns().get(cnr);
             String propertyName = tc.getId();
