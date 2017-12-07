@@ -30,29 +30,51 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import com.fortw.bagoo.models.Klant;
+import com.fortw.bagoo.models.Bagage;
+import com.fortw.bagoo.interfaces.BagageDao;
+import com.fortw.bagoo.interfaces.KlantDao;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 public class KlantOpzoekenSchermController implements Initializable {
+public class KlantOpzoekenSchermController implements BagageDao, KlantDao,
+        Initializable {
 
     @FXML
-    private TableView<KlantenData> KlantenTable;
-    @FXML
     private AnchorPane klantOpzoeken;
+
+    private ObservableList<Klant> klantenOpzoekenList
+            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
     @FXML
     private TableColumn columnBagageNummer;
+    private TableView KlantenTable;
     @FXML
     private TableColumn columnFlightNummer;
+    private TableColumn klantNr;
     @FXML
     private TableColumn columnAchternaam;
+    private TableColumn achternaam;
     @FXML
     private TableColumn columnVoornaam;
+    private TableColumn voornaam;
     @FXML
+<<<<<<< HEAD
     private TableColumn columnCheckInDatum;
     @FXML
     private TableColumn columnKlantID;
     
+=======
+    private TableColumn checkInDatum;
+    
+    private ObservableList<Bagage> bagageKlantOpzoekenList
+            = FXCollections.observableArrayList(BagageDao.getAllBagage());
+>>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
     @FXML
     private Button LoadKlantenData;
+    private TableColumn bagageNr;
     @FXML
+<<<<<<< HEAD
     private Button ZoekButton;
 
     // Maak een observable list aan voor de database data
@@ -61,16 +83,27 @@ public class KlantOpzoekenSchermController implements Initializable {
     private ResultSet rs1 = null;
     private ObservableList<KlantenData> klantendata;
     
+=======
+    private TableColumn vluchtNr;
+    
+    @FXML
+    private Button LoadKlantenData;
+    @FXML
+    private TextField zoekVeld;
+>>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
         conn = DbConnection.Connect();
         SetCell();
         klantendata = FXCollections.observableArrayList();
     }
+=======
+>>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
 
     private void SetCell() {
         columnBagageNummer.setCellValueFactory(new PropertyValueFactory<>("bagageNummer"));
@@ -79,10 +112,22 @@ public class KlantOpzoekenSchermController implements Initializable {
         columnAchternaam.setCellValueFactory(new PropertyValueFactory<>("achternaam"));
         columnCheckInDatum.setCellValueFactory(new PropertyValueFactory<>("checkInDatum"));
     }
+        KlantenTable.setItems(this.klantenOpzoekenList);
 
     @FXML
     private void handleZoekAction(ActionEvent event) {
+        for (int cnr = 0; cnr < KlantenTable.getColumns().size(); cnr++) {
+            TableColumn tc = (TableColumn) KlantenTable.getColumns().get(cnr);
+            String propertyName = tc.getId();
+            if (propertyName != null && !propertyName.isEmpty()) {
+                // this assumes that the class has getters and setters that match
+                // propertyname in the fx:id of the table column in the fxml view
+                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+                //System.out.println("attached column '" + propertyName + "'");
+            }
+        }
     }
+
 
     @FXML
     private void handleAnnulerenAction(ActionEvent event) throws IOException {
@@ -97,6 +142,7 @@ public class KlantOpzoekenSchermController implements Initializable {
 
     @FXML
     private void loadDataFromDatabase(ActionEvent event) {
+<<<<<<< HEAD
         try {
 //          Connection conn = Connection.Connect();
             klantendata = FXCollections.observableArrayList();
@@ -121,6 +167,15 @@ public class KlantOpzoekenSchermController implements Initializable {
             Logger.getLogger(LogoekSchermController.class.getName()).log(Level.SEVERE, null, ex);
         }
         KlantenTable.setItems(klantendata);
+=======
+    }
+
+    // Klanten is tijdelijk, dit is proof of concept
+    @FXML
+    private void handleZoekVeldAction(KeyEvent event) {
+        ObservableList<Klant> tempList
+                = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+>>>>>>> 45efb76405848e92706a0bbbd2d078b75c6f5d84
     }
 
 }

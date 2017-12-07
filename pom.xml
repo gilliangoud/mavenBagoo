@@ -17,6 +17,8 @@
         </dependency>
     </dependencies>
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mainClass>com.fortw.bagoo.MainApp</mainClass>
     </properties>
@@ -94,6 +96,8 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
                     </compilerArguments>
