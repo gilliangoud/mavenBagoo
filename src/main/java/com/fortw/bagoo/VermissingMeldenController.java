@@ -207,11 +207,11 @@ public class VermissingMeldenController implements Initializable {
                     InternetAddress.parse(textmail.getText()));//naar email
             message.setSubject("Gemelde mail");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
-            + "beste, Meneer en/of Mevrouw" + textAchternaam.getText()
-            + "/n/n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+            + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
+            + "\n\n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
             + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
-            + "/n/n Met Vriendelijke Groet, /n Het Corendon Serviceteam"
-            + "/n/n/n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+            + "\n\n Met Vriendelijke Groet, \n Het Corendon Serviceteam"
+            + "\n\n\n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             
