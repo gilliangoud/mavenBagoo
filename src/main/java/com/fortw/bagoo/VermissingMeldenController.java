@@ -84,7 +84,7 @@ public class VermissingMeldenController implements Initializable {
     ObservableList<String> bagageSoort = FXCollections.observableArrayList("Handbagage", "koffer");
     ObservableList<String> bagageKleur = FXCollections.observableArrayList("Rood", "Oranje", "Geel", "Groen", "Blauw", "Zwart", "bruin", "Wit", "Grijs");
     ObservableList<String> bagageMateriaal = FXCollections.observableArrayList("Leer", "Plastic", "Kunststof", "Metaal", "Gestofeerd");
-    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling");
+    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling","Overig");
     @FXML
     private TextField textGewicht;
 
@@ -113,7 +113,7 @@ public class VermissingMeldenController implements Initializable {
 
     @FXML
     private void handleOpslaanAction(ActionEvent event) throws SQLException {
-        String queryKlant = "INSERT INTO c2bagoo.klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
+        String queryKlant = "INSERT INTO klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
 
         String achternaam = textAchternaam.getText();
         String tussenvoegsel = textTussenvoegsel.getText();
@@ -150,7 +150,7 @@ public class VermissingMeldenController implements Initializable {
             Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String queryBagage = "INSERT INTO c2bagoo.bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
+        String queryBagage = "INSERT INTO bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
 
         String type =   comboSoortBagage.getId();
         String merk =   comboMerk.getId();
@@ -161,8 +161,8 @@ public class VermissingMeldenController implements Initializable {
             pst = conn.prepareStatement(queryBagage);
             pst.setObject(1, type);
             pst.setString(2, merk);
-            pst.setString(1, kleur);
-            pst.setString(1, gewicht);
+            pst.setString(3, kleur);
+            pst.setString(4, gewicht);
             
             int i = pst.executeUpdate();
             if (i == 1) 
