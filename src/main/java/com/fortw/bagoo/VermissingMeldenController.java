@@ -22,6 +22,9 @@ import javafx.stage.Stage;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
 import javafx.scene.text.Text;
 
 /**
@@ -59,6 +62,31 @@ public class VermissingMeldenController implements Initializable {
     private TextField texthuisnummer;
     @FXML
     private Text extMail;
+    @FXML
+    private ComboBox comboSoortBagage;
+    @FXML
+    private ComboBox Combokleur;
+    @FXML
+    private TextField tijd;
+    @FXML
+    private ComboBox comboMateriaal;
+    @FXML
+    private ComboBox comboMerk;
+    @FXML
+    private Text extMail1;
+    @FXML
+    private TextField textmail1;
+    @FXML
+    private Text vluchthavenITA;
+    @FXML
+    private ComboBox comboVluchthavenITA;
+    // inhoud comboboxen
+    ObservableList<String> bagageSoort = FXCollections.observableArrayList("Handbagage", "koffer");
+    ObservableList<String> bagageKleur = FXCollections.observableArrayList("Rood", "Oranje", "Geel", "Groen", "Blauw", "Zwart", "bruin", "Wit", "Grijs");
+    ObservableList<String> bagageMateriaal = FXCollections.observableArrayList("Leer", "Plastic", "Kunststof", "Metaal", "Gestofeerd");
+    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling");
+    @FXML
+    private TextField textGewicht;
 
     /**
      * Initializes the controller class.
@@ -66,6 +94,10 @@ public class VermissingMeldenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.Connect();
+        comboSoortBagage.setItems(bagageSoort);
+        Combokleur.setItems(bagageKleur);
+        comboMateriaal.setItems(bagageMateriaal);
+        comboMerk.setItems(bagageMerk);
     }
 
     @FXML
@@ -80,8 +112,8 @@ public class VermissingMeldenController implements Initializable {
     }
 
     @FXML
-    private void handleOpslaanAction(ActionEvent event)throws SQLException {
-        String query = "INSERT INTO c2bagoo.klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
+    private void handleOpslaanAction(ActionEvent event) throws SQLException {
+        String queryKlant = "INSERT INTO c2bagoo.klant(voornaam,tussenvoegsel,achternaam,woonplaats,straat,huisnummer,postcode,land,telefoon,email) Values (?,?,?,?,?,?,?,?,?,?)";
 
         String achternaam = textAchternaam.getText();
         String tussenvoegsel = textTussenvoegsel.getText();
@@ -95,7 +127,7 @@ public class VermissingMeldenController implements Initializable {
         String email = textmail.getText();
 
         try {
-            pst = conn.prepareStatement(query);
+            pst = conn.prepareStatement(queryKlant);
 
             pst.setString(1, voornaam);
             pst.setString(2, tussenvoegsel);
@@ -117,6 +149,29 @@ public class VermissingMeldenController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        String queryBagage = "INSERT INTO c2bagoo.bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
+
+        String type =   comboSoortBagage.getId();
+        String merk =   comboMerk.getId();
+        String kleur =   Combokleur.getId();
+        String gewicht =  textGewicht.getText();
+
+        try {
+            pst = conn.prepareStatement(queryBagage);
+            pst.setObject(1, type);
+            pst.setString(2, merk);
+            pst.setString(1, kleur);
+            pst.setString(1, gewicht);
+            
+            int i = pst.executeUpdate();
+            if (i == 1) 
+                System.out.println("Data in database");
+            
+        } catch (SQLException ex) {
+             Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }

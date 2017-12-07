@@ -17,11 +17,23 @@ public class LogboekLog {
     private DatePicker datum;
     private String event;
     private String opmerking;
+    private String vermissingID;
+
+    public String getVermissingID() {
+        return vermissingID;
+    }
+
+    public void setVermissingID(String vermissingID) {
+        this.vermissingID = vermissingID;
+    }
+
+
 
     public LogboekLog(DatePicker datum, String event, String opmerking) {
         this.datum = datum;
         this.event = event;
         this.opmerking = opmerking;
+        this.vermissingID = vermissingID;
     }
 
     /**

@@ -63,6 +63,10 @@ public class LogoekSchermController implements Initializable {
     @FXML
     private TextField textDatum;
     private TextField textid;
+    @FXML
+    private TextField textVermissingID;
+    @FXML
+    private TableColumn columVermissingID;
 
     
     /**
@@ -80,6 +84,7 @@ public class LogoekSchermController implements Initializable {
         columDate.setCellValueFactory(new PropertyValueFactory<>("Datum"));
         columEvent.setCellValueFactory(new PropertyValueFactory<>("event"));
         columOpmerking.setCellValueFactory(new PropertyValueFactory<>("opmerking"));
+        columVermissingID.setCellValueFactory(new PropertyValueFactory<>("vermissingID"));
     }
     
     private void LoadLogFromDataBase(){
@@ -107,7 +112,7 @@ public class LogoekSchermController implements Initializable {
         String datum = textDatum.getText();
         String eventlog = textEvent.getText();
         String opmerking = textOpmerking.getText();
-        String idVermissing = "1";
+        String idVermissing = textVermissingID.getText();
         
         try {
             

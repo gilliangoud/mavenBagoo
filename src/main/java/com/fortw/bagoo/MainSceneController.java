@@ -69,7 +69,10 @@ public class MainSceneController implements Initializable {
      status.setText("goed");
      
        // Volgende Scherm.
+<<<<<<< HEAD
+=======
 //    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermManagement.fxml"));
+>>>>>>> 6eb4b9db7c282b97e20329f22d6a2dd754cc1d1b
     FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
     Parent root1 = (Parent) fxmlLoader.load();
     Stage stageVolgende = new Stage();
