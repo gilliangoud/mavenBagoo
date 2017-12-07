@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -13,17 +15,17 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Text fx:id="extMail" layoutX="24.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-                  <Text layoutX="24.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tussenvoegsel:" />
+                  <Text fx:id="extMail" layoutX="23.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                  <Text layoutX="23.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tussenvoegsel:" />
                   <Text layoutX="23.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefoonnummer:" />
-                  <Text layoutX="24.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voornaam:" />
-                  <Text layoutX="26.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" />
-                  <Text layoutX="24.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres:" />
+                  <Text layoutX="23.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voornaam:" />
+                  <Text layoutX="23.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" />
+                  <Text layoutX="23.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adres:" />
                   <Text layoutX="23.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode:" />
                   <Text layoutX="23.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plaats:" />
-                  <TextField fx:id="textTussenvoegsel" layoutX="149.0" layoutY="128.0" />
-                  <TextField fx:id="textVoornaam" layoutX="149.0" layoutY="167.0" />
-                  <TextField fx:id="textAdres" layoutX="149.0" layoutY="205.0" />
+                  <TextField fx:id="textTussenvoegsel" layoutX="148.0" layoutY="128.0" />
+                  <TextField fx:id="textVoornaam" layoutX="148.0" layoutY="167.0" />
+                  <TextField fx:id="textAdres" layoutX="148.0" layoutY="205.0" />
                   <TextField fx:id="textPostcode" layoutX="148.0" layoutY="285.0" />
                   <TextField fx:id="textPlaats" layoutX="148.0" layoutY="322.0" />
                   <TextField fx:id="textLand" layoutX="148.0" layoutY="359.0" />
@@ -32,10 +34,15 @@
                   <Button layoutX="14.0" layoutY="721.0" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="31.0" prefWidth="187.0" text="Annuleren" />
                   <Text layoutX="23.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achternaam:" />
                   <TextField fx:id="textAchternaam" layoutX="148.0" layoutY="86.0" />
-                  <Text layoutX="26.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huis Nummer:" />
-                  <TextField fx:id="texthuisnummer" layoutX="149.0" layoutY="244.0" />
-                  <Text fx:id="extMail1" layoutX="26.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bagage ID:" />
+                  <Text layoutX="23.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huis Nummer:" />
+                  <TextField fx:id="texthuisnummer" layoutX="148.0" layoutY="244.0" />
+                  <Text fx:id="extMail1" layoutX="23.0" layoutY="569.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bagage ID:" />
                   <TextField fx:id="textmail1" layoutX="150.0" layoutY="548.0" />
+                  <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="img/bagoo-logo.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

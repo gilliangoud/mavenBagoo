@@ -57,11 +57,7 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-<<<<<<< HEAD
                   <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" visible="false">
-=======
-                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
->>>>>>> 41a44fa8ef0d0d65acf1ba42557eddc9c2a85893
                      <items>
                         <SplitPane dividerPositions="0.5006675567423231" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                           <items>

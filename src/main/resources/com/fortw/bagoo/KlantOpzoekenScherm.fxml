@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" fx:id="klantOpzoeken" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.KlantOpzoekenSchermController">
@@ -16,6 +18,11 @@
                <children>
                   <TextField fx:id="zoekVeld" layoutX="8.0" layoutY="131.0" onKeyTyped="#handleZoekVeldAction" />
                   <Button fx:id="AnnulerenButton" layoutX="31.0" layoutY="721.0" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="31.0" prefWidth="129.0" text="Annuleren" />
+                  <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="img/bagoo-logo.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

@@ -215,14 +215,14 @@ public class VermissingMeldenController implements Initializable {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(textmail.getText()));//naar email
+                                  InternetAddress.parse(textmail.getText()));//naar email
             message.setSubject("Gemelde mail");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
             + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
-            + "\n\n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+            + "\n \n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
             + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
-            + "\n\n Met Vriendelijke Groet, \n Het Corendon Serviceteam"
-            + "\n\n\n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+            + "\n \n Met Vriendelijke Groet, \n Het Corendon Serviceteam"
+            + "\n \n \n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             
@@ -232,6 +232,7 @@ public class VermissingMeldenController implements Initializable {
             throw new RuntimeException(e);//als het email niet bestaat
         }
         //einde van de email code
+        
     }
     
     
