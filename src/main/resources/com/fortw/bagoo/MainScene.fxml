@@ -11,8 +11,8 @@
 <AnchorPane fx:id="login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="437.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.MainSceneController">
    <children>
       <Button layoutX="346.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Log in" />
-      <TextField fx:id="gebruikersnaam" layoutX="224.0" layoutY="42.0" />
-      <PasswordField fx:id="wachtwoord" layoutX="224.0" layoutY="96.0" />
+      <TextField fx:id="gebruikersnaam" layoutX="224.0" layoutY="42.0" onKeyPressed="#handleKeyPressedAction" />
+      <PasswordField fx:id="wachtwoord" layoutX="224.0" layoutY="96.0" onKeyPressed="#handleKeyPressedAction" />
       <Hyperlink layoutX="14.0" layoutY="178.0" prefHeight="29.0" prefWidth="187.0" text="Wachtwoord vergeten" />
       <Text layoutX="30.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gebruikersnaam: " />
       <Text layoutX="58.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wachtwoord:" />
