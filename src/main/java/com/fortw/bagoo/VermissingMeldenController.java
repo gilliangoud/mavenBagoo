@@ -219,29 +219,29 @@ public class VermissingMeldenController implements Initializable {
             message.setSubject("Bevestiging vermissing");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
             + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
-            + "\n "
-            + "\n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
-            + "\n Dit zijn uw persoonlijke gegevens: "
-            + "\n Naam: " + textVoornaam.getText() + " " + textTussenvoegsel.getText()
+            + "%n "
+            + "%n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+            + "%n %n Dit zijn uw persoonlijke gegevens: "
+            + "%n Naam: " + textVoornaam.getText() + " " + textTussenvoegsel.getText()
             + " " + textAchternaam.getText()
-            + "\n Adres: " + textAdres.getText() + " " + texthuisnummer.getText()
+            + "%n Adres: " + textAdres.getText() + " " + texthuisnummer.getText()
             + ", " + textPostcode.getText() + " " + textPlaats.getText()
-            + "\n Telefoonnummer: " + textTelefoon.getText()
-            + "\n Dit zijn uw bagage gegevens"
-            + "\n Bagage id: " + textmail1.getText()
-            + "\n Soort bagage: " + comboSoortBagage.getAccessibleText() 
-            + "\n Soort merk: " + comboMerk.getAccessibleText()
-            + "\n Kleur: " + Combokleur.getAccessibleText()
-            + "\n Materiaal: " + comboMateriaal.getAccessibleText()
-            + "\n Gewicht: " + textGewicht.getText()
-            + "\n Klopt een van de bovenstaande gegevens niet, mail dan naar lostandfound@corendon.nl"        
-            + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
-            + "\n"
-            + "\n Met Vriendelijke Groet,"
-            + "\n Het Corendon Serviceteam"
-            + "\n"
-            + "\n"
-            + "\n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+            + "%n Telefoonnummer: " + textTelefoon.getText()
+            + "%n %n Dit zijn uw bagage gegevens"
+            + "%n Bagage id: " + textmail1.getText()
+            + "%n Soort bagage: " + comboSoortBagage.getId()
+            + "%n Soort merk: " + comboMerk.getId()
+            + "%n Kleur: " + Combokleur.getId()
+            + "%n Materiaal: " + comboMateriaal.getId()
+            + "%n Gewicht: " + textGewicht.getText()
+            + "%n Klopt een van de bovenstaande gegevens niet, mail dan naar lostandfound@corendon.nl"        
+            + "%n Wij hopen u hiermee voldoende geïnformeerd te hebben."
+            + "%n"
+            + "%n Met Vriendelijke Groet,"
+            + "%n Het Corendon Serviceteam"
+            + "%n"
+            + "%n"
+            + "%n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             
