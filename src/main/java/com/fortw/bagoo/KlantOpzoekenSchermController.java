@@ -9,9 +9,6 @@ package com.fortw.bagoo;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,9 +16,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +24,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import com.fortw.bagoo.models.Klant;
 import com.fortw.bagoo.models.KlantOpzoeken;
 import com.fortw.bagoo.interfaces.BagageDao;
 import com.fortw.bagoo.interfaces.KlantOpzoekenDao;
@@ -43,8 +36,8 @@ public class KlantOpzoekenSchermController implements BagageDao, KlantOpzoekenDa
     @FXML
     private AnchorPane klantOpzoeken;
 
-    private ObservableList<KlantOpzoeken> klantOpzoekenList
-            = FXCollections.observableArrayList(KlantOpzoekenDao.getAllKlantenOpzoeken());
+//    private ObservableList<KlantOpzoeken> klantOpzoekenList
+//            = FXCollections.observableArrayList(KlantOpzoekenDao.getAllKlantenOpzoeken());
     
     @FXML
     private TableView KlantenTable;
@@ -75,18 +68,18 @@ public class KlantOpzoekenSchermController implements BagageDao, KlantOpzoekenDa
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        KlantenTable.setItems(this.klantOpzoekenList);
-
-        for (int cnr = 0; cnr < KlantenTable.getColumns().size(); cnr++) {
-            TableColumn tc = (TableColumn) KlantenTable.getColumns().get(cnr);
-            String propertyName = tc.getId();
-            if (propertyName != null && !propertyName.isEmpty()) {
-                // this assumes that the class has getters and setters that match
-                // propertyname in the fx:id of the table column in the fxml view
-                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
-                //System.out.println("attached column '" + propertyName + "'");
-            }
-        }
+//        KlantenTable.setItems(this.klantOpzoekenList);
+//
+//        for (int cnr = 0; cnr < KlantenTable.getColumns().size(); cnr++) {
+//            TableColumn tc = (TableColumn) KlantenTable.getColumns().get(cnr);
+//            String propertyName = tc.getId();
+//            if (propertyName != null && !propertyName.isEmpty()) {
+//                // this assumes that the class has getters and setters that match
+//                // propertyname in the fx:id of the table column in the fxml view
+//                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+//                //System.out.println("attached column '" + propertyName + "'");
+//            }
+//        }
     }
 
 
