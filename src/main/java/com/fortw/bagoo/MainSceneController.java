@@ -41,7 +41,7 @@ public class MainSceneController implements Initializable {
     @FXML
     private PasswordField wachtwoord;
 
-    private Label status;
+   
     @FXML
     private AnchorPane login;
 
@@ -75,7 +75,7 @@ public class MainSceneController implements Initializable {
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
             // login was succesvol
-            status.setText("goed");
+            
             sendNextScene(user.getLevel());
         } else {
             Alert alert = new Alert(AlertType.ERROR);
