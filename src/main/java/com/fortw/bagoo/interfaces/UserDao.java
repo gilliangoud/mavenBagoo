@@ -18,7 +18,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * User Data Acces Object.
+ * Voorziet de koppeling tussen de obejcten en de database tabellen.
+ * Vereist een User klasse overeenkomend met deze interface.
  * @author Giel
  */
 public interface UserDao {
@@ -143,7 +145,7 @@ public interface UserDao {
     }
     
     /**
-     *  Verweider een User uit de database via het ID van het object.
+     *  Verwijder een User uit de database via het ID van het object.
      * @param id het gegeven ID of medewerkerNr.
      * @return True bij succes, False als er een of andere fout is opgetreden. 
      */

@@ -29,6 +29,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -64,6 +65,10 @@ public class ClaimaanmakenController implements Initializable {
     @FXML
     private TextField textDatum;
     private TextField textid;
+    @FXML
+    private TextField zoekVeld;
+    @FXML
+    private Button RefreshClaim;
 
     
     /**

@@ -49,7 +49,7 @@
          <left>
             <Pane prefHeight="368.0" prefWidth="194.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="zoekVeld" layoutX="6.0" layoutY="2.0" onKeyTyped="#handleZoekVeldAction" promptText="Zoeken" />
+                  <TextField fx:id="zoekVeld" layoutX="14.0" layoutY="-1.0" onKeyTyped="#handleZoekVeldAction" prefHeight="31.0" prefWidth="135.0" promptText="Zoeken" />
                   <Button fx:id="RefreshClaim" layoutX="161.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRefreshClaimAction" prefHeight="25.0" prefWidth="75.0" text="Refresh" />
                </children></Pane>
          </left>
