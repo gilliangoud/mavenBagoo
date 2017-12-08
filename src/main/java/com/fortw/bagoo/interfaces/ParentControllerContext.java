@@ -12,8 +12,34 @@ package com.fortw.bagoo.interfaces;
  */
 public interface ParentControllerContext {
     
+    /**
+     *  Deze methode kan geimplementeerd worden bij de parent, the child kan
+     *  dan deze methode aanroepen om aan te geven dat de child gesloten moet
+     *  worden.
+     * 
+     *  verwacht wordt is dat de parent de subschermen sluit en zijn hoofdscherm
+     *  of vorige scherm opnieuw opent.
+     */
     public void notifyCloseChild();
+    
+    /**
+     *  Deze methode kan geimplementeerd worden bij de parent, de child kan deze
+     *  aanroepen wanneer die gegevens heeft aangepast en in de parent de 
+     *  gegevens ververst moeten worden.
+     * 
+     *  het liefst door meteen alle data te verversen.
+     */
     public void notifyChildHasUpdated();
+
+    /**
+     *  Deze methode kan geimplementeerd worden bij de parent, de child kan deze
+     *  aanroepen om zo in de parent zijn statusbalk een statusbericht achter te
+     *  laten.
+     * 
+     *  Deze methode zou ook gebruikt kunnen worden voor andere 
+     *  intracommunicatie.
+     * @param message
+     */
     public void displayStatusMessage(String message);
     
 }
