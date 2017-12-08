@@ -5,6 +5,8 @@
  */
 package com.fortw.bagoo;
 
+import com.fortw.bagoo.interfaces.KlantDao;
+import com.fortw.bagoo.models.Klant;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -28,6 +30,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -134,5 +137,17 @@ public class ClaimaanmakenController implements Initializable {
     stageHuidige.close();
     stageVolgende.show();
     }
+    
+     // Klanten is tijdelijk, dit is proof of concept
+    @FXML
+    private void handleZoekVeldAction(KeyEvent event) {
+       
+              
+    }
+
+    @FXML
+    private void handleRefreshClaimAction(ActionEvent event) {
+    }
+
     
 }
