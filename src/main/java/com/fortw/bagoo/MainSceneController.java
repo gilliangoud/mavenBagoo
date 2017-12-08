@@ -88,7 +88,7 @@ public class MainSceneController implements Initializable {
 
     FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
 //    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermManagement.fxml"));
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermSchade.fxml"));
+            //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermSchadeAfhandelaar.fxml"));
 
             alert.showAndWait();
         }
@@ -97,7 +97,7 @@ public class MainSceneController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "HoofdSchermManagement.fxml";
+            case 5: doel = "HoofdSchermSchadeManagement.fxml";
             break;
             default: doel = "HoofdSchermService.fxml";         
         }
