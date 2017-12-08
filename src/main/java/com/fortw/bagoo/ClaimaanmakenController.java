@@ -24,6 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.sql.*;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -60,7 +61,7 @@ public class ClaimaanmakenController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     private ObservableList <ClaimLijst> data;
-    
+    //  FXCollections.observableArrayList(ClaimDao.getAlldata());
     
     @FXML
     private TextField textDatum;
@@ -70,7 +71,7 @@ public class ClaimaanmakenController implements Initializable {
     @FXML
     private Button RefreshClaim;
 
-    
+  
     /**
      * Initializes the controller class.
      */
@@ -146,7 +147,20 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
-     
+      //String query = veldZoeken.getText();
+       // List<data> queryList = null;
+       // if(query != null && query.length() >1 ){
+       // queryList = KlantDao.getKlantenByField("voornaam",query);
+       // }
+       // if(queryList != null){
+       //     ObservableList<data> tempList 
+       //     = FXCollections.observableArrayList(queryList);
+       //     //System.out.println("Updated");
+       //     klantenList = null;
+       //     klantenList = tempList;
+       //     klantTableView.setItems(klantenList);
+       // } else {
+       //     refreshKlantTableView();
         
               
     }
