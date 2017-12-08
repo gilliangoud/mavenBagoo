@@ -41,7 +41,6 @@ public class MainSceneController implements Initializable {
     @FXML
     private PasswordField wachtwoord;
 
-    @FXML
     private Label status;
     @FXML
     private AnchorPane login;
