@@ -216,10 +216,11 @@ public class VermissingMeldenController implements Initializable {
             message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
             message.setRecipients(Message.RecipientType.TO,
                                   InternetAddress.parse(textmail.getText()));//naar email
-            message.setSubject("Gemelde mail");//titel in email
+            message.setSubject("Bevestiging vermissing");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
             + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
-            + "\n \n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+            + "\n "
+            + "\n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
             + "\n Dit zijn uw persoonlijke gegevens: "
             + "\n Naam: " + textVoornaam.getText() + " " + textTussenvoegsel.getText()
             + " " + textAchternaam.getText()
@@ -233,11 +234,14 @@ public class VermissingMeldenController implements Initializable {
             + "\n Kleur: " + Combokleur.getAccessibleText()
             + "\n Materiaal: " + comboMateriaal.getAccessibleText()
             + "\n Gewicht: " + textGewicht.getText()
-            + "\n Verloren op " + comboVluchthavenITA.getAccessibleText()
             + "\n Klopt een van de bovenstaande gegevens niet, mail dan naar lostandfound@corendon.nl"        
             + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
-            + "\n \n Met Vriendelijke Groet, \n Het Corendon Serviceteam"
-            + "\n \n \n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+            + "\n"
+            + "\n Met Vriendelijke Groet,"
+            + "\n Het Corendon Serviceteam"
+            + "\n"
+            + "\n"
+            + "\n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             
