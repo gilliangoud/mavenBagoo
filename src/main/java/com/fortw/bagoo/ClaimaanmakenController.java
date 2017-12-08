@@ -43,17 +43,11 @@ public class ClaimaanmakenController implements Initializable {
 
     @FXML
     private AnchorPane schermClaim;
-    @FXML
     private TextArea textRedenClaim;
-    @FXML
     private TextField textKlantennummer;
-    @FXML
     private TableView <ClaimLijst> tableClaimAanmaken;
-    @FXML
     private TableColumn columnKlantennummer;
-    @FXML
     private TableColumn columnDatum;
-    @FXML
     private TableColumn columnReden;
     
     private Connection conn = null;
@@ -62,13 +56,10 @@ public class ClaimaanmakenController implements Initializable {
     private ObservableList <ClaimLijst> data;
     
     
-    @FXML
     private TextField textDatum;
     private TextField textid;
     @FXML
     private TextField zoekVeld;
-    @FXML
-    private Button RefreshClaim;
 
     
     /**
@@ -104,7 +95,6 @@ public class ClaimaanmakenController implements Initializable {
         tableClaimAanmaken.setItems(data);
     }
     
-    @FXML
     private void handleOpslaanAction(ActionEvent event) {
         String query = "INSERT INTO c2bagoo.claim(klantennummer,datum,reden)Values (?,?,?)";
         
@@ -151,9 +141,6 @@ public class ClaimaanmakenController implements Initializable {
               
     }
 
-    @FXML
-    private void handleRefreshClaimAction(ActionEvent event) {
-    }
 
     
 }
