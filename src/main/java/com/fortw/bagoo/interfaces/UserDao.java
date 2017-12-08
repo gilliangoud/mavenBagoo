@@ -18,7 +18,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * User Data Acces Object.
+ * Voorziet de koppeling tussen de obejcten en de database tabellen.
+ * 
  * @author Giel
  */
 public interface UserDao {

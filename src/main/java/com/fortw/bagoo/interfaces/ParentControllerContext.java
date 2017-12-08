@@ -1,12 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.fortw.bagoo.interfaces;
 
 /**
- *
+ * ParentControllerContext Gekregen vanuit een voorbeeld op de VLO
+ * https://vlo.informatica.hva.nl/main/document/document.php?cidReq=1000PFYS14B&id_session=0&gidReq=0&gradebook=0&origin=&action=download&id=66442
+ * 
+ * De code voorziet een communicatielaag tussen controllers waarbij deze 
+ * geimplementeerd word. Dit maakt het mogelijk om delen van de applicatie beter
+ * te kunnen "nesten".
+ * 
  * @author Giel
  */
 public interface ParentControllerContext {
