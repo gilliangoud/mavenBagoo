@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -35,7 +36,7 @@ public class HoofdSchermSchadeAfhandelaarController implements Initializable {
     @FXML
     private Button knopClaim;
     @FXML
-    private Button knopClaim3;
+    private TextField textMail;
 
     /**
      * Initializes the controller class.
@@ -75,10 +76,14 @@ public class HoofdSchermSchadeAfhandelaarController implements Initializable {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("ramon.mocking@hva.nl"));//naar email
-            message.setSubject("you've got mail");//titel in email
+                    InternetAddress.parse(textMail.getText()));//naar email
+            message.setSubject("Gemelde mail");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
-            +"aandacht" + "<br/><br/>"
+            + "Beste, Schadeafhandelaar "
+            + "\n \n Hierbij ontvangt u een bevestiging om uw mail te verifiëren."
+            + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
+            + "\n \n Met Vriendelijke Groet, \n Het Corendon Serviceteam"
+            + "\n \n \n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
             + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
             
