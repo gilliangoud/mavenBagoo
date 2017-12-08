@@ -138,10 +138,11 @@ public class ClaimaanmakenController implements Initializable {
     stageVolgende.show();
     }
     
-     // Klanten is tijdelijk, dit is proof of concept
+    
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
-       
+     
+        
               
     }
 
