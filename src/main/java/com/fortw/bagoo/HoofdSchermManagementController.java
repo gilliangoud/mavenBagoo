@@ -169,7 +169,14 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     }
 
     @FXML
-    private void handleRapportenAction(ActionEvent event) {
+    private void handleRapportenAction(ActionEvent event)         throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("Rapporten.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stageVolgende = new Stage();
+        stageVolgende.setScene(new Scene (root1));
+        Stage stageHuidige = (Stage) hoofdSchermService.getScene().getWindow();
+        stageHuidige.close();
+        stageVolgende.show();
     }
 
     @FXML
