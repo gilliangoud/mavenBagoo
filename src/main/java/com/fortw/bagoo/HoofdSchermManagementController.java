@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -104,7 +105,6 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     /**
      * Initializes the controller class.
      */
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
         medewerkerList.add(new User("giel", "giel", 5));
         //medewerkerList.add(new User("giel", "giel","nooit", 5));
