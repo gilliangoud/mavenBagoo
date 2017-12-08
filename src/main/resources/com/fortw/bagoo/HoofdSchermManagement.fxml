@@ -29,12 +29,12 @@
             </Label>
          </top>
          <left>
-            <VBox prefHeight="751.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="708.0" prefWidth="142.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="knopHoofdmenu" mnemonicParsing="false" onAction="#handleHoofdMenuAction" prefHeight="50.0" prefWidth="200.0" text="Hoofdmenu" />
                   <Button fx:id="knopLogboek" mnemonicParsing="false" onAction="#handleLogboekAction" prefHeight="50.0" prefWidth="200.0" text="Laaste logboeken" />
                   <Button fx:id="knopMedewerkers" mnemonicParsing="false" onAction="#handleMedewerkersAction" prefHeight="50.0" prefWidth="200.0" text="Medewerkers" />
-                  <Button fx:id="knopBagage" mnemonicParsing="false" onAction="#handleBagageAction" prefHeight="50.0" prefWidth="200.0" text="Huidige verloren bagage" />
+                  <Button fx:id="knopBagage" mnemonicParsing="false" onAction="#handleBagageAction" prefHeight="50.0" prefWidth="200.0" text="Huidige vermissingen" />
                   <Button fx:id="knopRapporten" mnemonicParsing="false" onAction="#handleRapportenAction" prefHeight="50.0" prefWidth="200.0" text="Rapporten" />
                   <Button fx:id="knopKlanten" mnemonicParsing="false" onAction="#handleKlantenAction" prefHeight="50.0" prefWidth="200.0" text="Klanten" />
                   <VBox fx:id="vboxMedewerker" prefHeight="202.0" prefWidth="200.0" visible="false">
