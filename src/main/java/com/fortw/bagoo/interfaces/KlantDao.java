@@ -99,7 +99,7 @@ public interface KlantDao {
         try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM klant WHERE"
-                    + " " + field + "=" + query);
+                    + " " + field + " LIKE " + "\"%" + query + "%\"");
             List<Klant> klanten = new ArrayList<>();
             while(rs.next())
             {

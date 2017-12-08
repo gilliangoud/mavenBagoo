@@ -12,7 +12,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -88,13 +90,13 @@ public interface UserDao {
         if(connection == null) System.exit(1);
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE user SET"
-                    + " gebruikersnaam=?, wachtwoord=?, gemaakt-op=?, level=?,"
+                    + " gebruikersnaam=?, wachtwoord=?, level=?"
                     + " WHERE iduser=?");
             ps.setString(1, user.getGebruikersnaam());
             ps.setString(2, user.getWachtwoord());
-            ps.setString(3, user.getAangemaaktDatum());
-            ps.setInt(4, user.getLevel());
-            ps.setInt(5, user.getPersoneelNr());
+            //ps.setString(3, user.getAangemaaktDatum());
+            ps.setInt(3, user.getLevel());
+            ps.setInt(4, user.getPersoneelNr());
             int i = ps.executeUpdate();
           if(i == 1) {
         return true;
@@ -126,7 +128,8 @@ public interface UserDao {
                     + "user VALUES (NULL, ?, ?, ?, ?)");
             ps.setString(1, user.getGebruikersnaam());
             ps.setString(2, user.getWachtwoord());
-            ps.setString(3, user.getAangemaaktDatum());
+            String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+            ps.setString(3, date);
             ps.setInt(4, user.getLevel());
             int i = ps.executeUpdate();
           if(i == 1) {
