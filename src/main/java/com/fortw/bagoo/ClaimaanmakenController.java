@@ -5,6 +5,7 @@
  */
 package com.fortw.bagoo;
 
+import com.fortw.bagoo.interfaces.ClaimDao;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -32,6 +33,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import com.fortw.bagoo.interfaces.KlantDao;
+import com.fortw.bagoo.models.Claim;
 
 /**
  * FXML Controller class
@@ -59,7 +62,7 @@ public class ClaimaanmakenController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     private ObservableList <ClaimLijst> data;
-    //  FXCollections.observableArrayList(ClaimDao.getAlldata());
+     //FXCollections.observableArrayList(ClaimDao.getAllClaims());
     
     @FXML
     private TextField textDatum;
@@ -80,6 +83,7 @@ public class ClaimaanmakenController implements Initializable {
         SetCell();
         data =FXCollections.observableArrayList();
         LoadLogFromDataBase();
+        
     }
     
     private void SetCell(){
@@ -146,21 +150,22 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
-      String query = zoekVeld.getText();
-       List<ClaimLijst> queryList = null;
-       if(query != null && query.length() >1 ){
-       // queryList = KlantDao.getKlantenByField("voornaam",query);
-       }
-       // if(queryList != null){
-       //     ObservableList<data> tempList 
-       //     = FXCollections.observableArrayList(queryList);
-       //     //System.out.println("Updated");
-       //     klantenList = null;
-       //     klantenList = tempList;
-       //     klantTableView.setItems(klantenList);
+     
+        String query = zoekVeld.getText();
+        List<Claim> queryList = null;
+        if(query != null && query.length() >1 ){
+        queryList = ClaimDao.getClaimsByField("klantennummer",query);
+        }
+        if(queryList != null){
+            ObservableList<Claim> tempList 
+            = FXCollections.observableArrayList(queryList);
+            //System.out.println("Updated");
+            //ClaimsList = null;
+            //ClaimsList = tempList;
+            //claimTableView.setItems(claimsList);
        // } else {
-       //     refreshKlantTableView();
-        
+           // refreshClaimTableView();
+        }
               
     }
 
