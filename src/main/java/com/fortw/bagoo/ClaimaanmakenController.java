@@ -61,7 +61,8 @@ public class ClaimaanmakenController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
     private ObservableList <ClaimLijst> data;
-     //FXCollections.observableArrayList(ClaimDao.getAllClaims());
+    
+    // = FXCollections.observableArrayList(ClaimDao.getAllClaims());
     
     @FXML
     private TextField textDatum;
@@ -106,6 +107,19 @@ public class ClaimaanmakenController implements Initializable {
         }
         tableClaimAanmaken.setItems(data);
     }
+    private void refreshTableClaimAanmaken() {
+        ObservableList<Claim> tempList 
+            = FXCollections.observableArrayList(ClaimDao.getAllClaims());
+        //System.out.println("Updated");
+        data = null;
+        //data = tempList;
+        tableClaimAanmaken.setItems(data);
+    }
+    
+    @FXML
+    private void handleRefreshClaimAction(ActionEvent event) {
+        refreshTableClaimAanmaken();
+    }
     
     @FXML
     private void handleOpslaanAction(ActionEvent event) {
@@ -135,6 +149,7 @@ public class ClaimaanmakenController implements Initializable {
         }
     }
 
+
     @FXML
     private void handleAnnuleerAction(ActionEvent event) throws IOException {
               FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
@@ -156,21 +171,20 @@ public class ClaimaanmakenController implements Initializable {
         queryList = ClaimDao.getClaimsByField("klantennummer",query);
         }
         if(queryList != null){
-            ObservableList<Claim> tempList 
+            ObservableList<Claim> ClaimLijst 
             = FXCollections.observableArrayList(queryList);
             //System.out.println("Updated");
-            //ClaimsList = null;
-            //ClaimsList = tempList;
-            //claimTableView.setItems(claimsList);
-       // } else {
-           // refreshClaimTableView();
+           // data = null;
+            //data = tempList;
+            tableClaimAanmaken.setItems(data);
+       } else {
+           refreshTableClaimAanmaken();
         }
               
     }
 
-    @FXML
-    private void handleRefreshClaimAction(ActionEvent event) {
-    }
+    
 
+    
     
 }
