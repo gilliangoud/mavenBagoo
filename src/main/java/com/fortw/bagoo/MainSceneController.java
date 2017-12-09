@@ -97,7 +97,7 @@ public class MainSceneController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "HoofdSchermSchadeManagement.fxml";
+            case 5: doel = "HoofdSchermManagement.fxml";
             break;
             default: doel = "HoofdSchermService.fxml";         
         }

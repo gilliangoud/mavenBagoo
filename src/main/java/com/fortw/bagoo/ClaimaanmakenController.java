@@ -5,8 +5,6 @@
  */
 package com.fortw.bagoo;
 
-import com.fortw.bagoo.interfaces.KlantDao;
-import com.fortw.bagoo.models.Klant;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -65,6 +63,7 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private TextField textDatum;
+    @FXML
     private TextField textid;
     @FXML
     private TextField zoekVeld;
@@ -147,11 +146,11 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
-      //String query = veldZoeken.getText();
-       // List<data> queryList = null;
-       // if(query != null && query.length() >1 ){
+      String query = zoekVeld.getText();
+       List<ClaimLijst> queryList = null;
+       if(query != null && query.length() >1 ){
        // queryList = KlantDao.getKlantenByField("voornaam",query);
-       // }
+       }
        // if(queryList != null){
        //     ObservableList<data> tempList 
        //     = FXCollections.observableArrayList(queryList);
