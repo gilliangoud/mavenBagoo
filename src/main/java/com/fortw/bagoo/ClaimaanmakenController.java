@@ -33,7 +33,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import com.fortw.bagoo.interfaces.KlantDao;
 import com.fortw.bagoo.models.Claim;
 
 /**

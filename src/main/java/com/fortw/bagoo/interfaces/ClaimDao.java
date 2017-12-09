@@ -35,9 +35,9 @@ public interface ClaimDao {
      */
     static Claim extractClaimFromResultSet(ResultSet rs) throws SQLException {
         Claim claim = new Claim();
-        Claim.setklantennummer( rs.getInt("klantennummer") );
-        Claim.setdatum(rs.getString("datum"));
-        Claim.setreden(rs.getString("reden"));
+        claim.setKlantennummer( rs.getInt("klantennummer") );
+        claim.setDatum(rs.getString("datum"));
+        claim.setReden(rs.getString("reden"));
         
         
         return claim;
@@ -47,7 +47,7 @@ public interface ClaimDao {
         if(connection == null) System.exit(1);
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM klant");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM claim");
             List<Claim> claims = new ArrayList<>();
             while(rs.next())
             {
@@ -71,7 +71,7 @@ public interface ClaimDao {
         if(connection == null) System.exit(1);
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM klant WHERE"
+            ResultSet rs = stmt.executeQuery("SELECT * FROM claim WHERE"
                     + " klantennummer=" + klantennummer);
             if(rs.next())
             {

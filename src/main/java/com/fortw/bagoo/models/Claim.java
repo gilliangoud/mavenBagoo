@@ -11,17 +11,7 @@ package com.fortw.bagoo.models;
  */
 public class Claim {
 
-    public static void setklantennummer(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void setdatum(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void setreden(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
    private int klantennummer;
     private String datum;

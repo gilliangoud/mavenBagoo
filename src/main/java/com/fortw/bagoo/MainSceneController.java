@@ -97,9 +97,9 @@ public class MainSceneController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "HoofdSchermManagement.fxml";
+            case 5: doel = "HoofdSchermService.fxml";
             break;
-            default: doel = "HoofdSchermService.fxml";         
+            default: doel = "HoofdSchermManagement.fxml";         
         }
         try {
             FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel));
