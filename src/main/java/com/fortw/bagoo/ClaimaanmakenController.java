@@ -5,7 +5,6 @@
  */
 package com.fortw.bagoo;
 
-import com.fortw.bagoo.interfaces.ClaimDao;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -23,7 +22,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import java.sql.*;
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +31,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import com.fortw.bagoo.models.Claim;
 import java.util.function.Predicate;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -194,21 +191,7 @@ public class ClaimaanmakenController implements Initializable {
             tableClaimAanmaken.setItems(sortedData);
         });
         
-        //String query = zoekVeld.getText();
-        //List<Claim> queryList = null;
-        //if(query != null && query.length() >1 ){
-        //queryList = ClaimDao.getClaimsByField("klantennummer",query);
-        //}
-        //if(queryList != null){
-            //ObservableList<Claim> ClaimLijst 
-            //= FXCollections.observableArrayList(queryList);
-            //System.out.println("Updated");
-           // data = null;
-            //data = tempList;
-           // tableClaimAanmaken.setItems(data);
-       //} else {
-           //refreshTableClaimAanmaken();
-        //}
+       
               
     }
 
