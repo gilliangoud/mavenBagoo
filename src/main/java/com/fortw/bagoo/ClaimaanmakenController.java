@@ -167,6 +167,8 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
+        
+        // filtert data op basis van klantennummer en reden.
       FilteredList<ClaimLijst> filteredData = new FilteredList<>(data, e -> true);
         zoekVeld.setOnKeyTyped(e->{
             zoekVeld.textProperty().addListener((observableValue, oldValue, newValue) ->{
