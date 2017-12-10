@@ -34,6 +34,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.Claim;
+import java.util.function.Predicate;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 
 /**
  * FXML Controller class
@@ -60,9 +63,7 @@ public class ClaimaanmakenController implements Initializable {
     private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
-    private ObservableList <ClaimLijst> data;
-    
-    // = FXCollections.observableArrayList(ClaimDao.getAllClaims());
+    private ObservableList <ClaimLijst> data = FXCollections.observableArrayList();
     
     @FXML
     private TextField textDatum;
@@ -106,14 +107,19 @@ public class ClaimaanmakenController implements Initializable {
             Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         tableClaimAanmaken.setItems(data);
+    
+       
+            
+        
     }
+        
     private void refreshTableClaimAanmaken() {
-        ObservableList<Claim> tempList 
-            = FXCollections.observableArrayList(ClaimDao.getAllClaims());
+        //ObservableList<Claim> tempList 
+          //  = FXCollections.observableArrayList(ClaimDao.getAllClaims());
         //System.out.println("Updated");
-        data = null;
+        //data = null;
         //data = tempList;
-        tableClaimAanmaken.setItems(data);
+        //tableClaimAanmaken.setItems(data);
     }
     
     @FXML
@@ -164,22 +170,45 @@ public class ClaimaanmakenController implements Initializable {
     
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
-     
-        String query = zoekVeld.getText();
-        List<Claim> queryList = null;
-        if(query != null && query.length() >1 ){
-        queryList = ClaimDao.getClaimsByField("klantennummer",query);
-        }
-        if(queryList != null){
-            ObservableList<Claim> ClaimLijst 
-            = FXCollections.observableArrayList(queryList);
+      FilteredList<ClaimLijst> filteredData = new FilteredList<>(data, e -> true);
+        zoekVeld.setOnKeyTyped(e->{
+            zoekVeld.textProperty().addListener((observableValue, oldValue, newValue) ->{
+            filteredData.setPredicate((Predicate<? super ClaimLijst>) claimlijst->{
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (claimlijst.getKlantennummer().contains(newValue)) {
+                    return true;
+                } else if (claimlijst.getReden().toLowerCase().contains(lowerCaseFilter)) {
+                     return true;
+
+                }
+                return false;
+                    
+                });
+            });
+            // weergeeft gefilterde data in een gesorteede lijst
+            SortedList<ClaimLijst> sortedData = new SortedList<>(filteredData);
+            sortedData.comparatorProperty().bind(tableClaimAanmaken.comparatorProperty());
+            tableClaimAanmaken.setItems(sortedData);
+        });
+        
+        //String query = zoekVeld.getText();
+        //List<Claim> queryList = null;
+        //if(query != null && query.length() >1 ){
+        //queryList = ClaimDao.getClaimsByField("klantennummer",query);
+        //}
+        //if(queryList != null){
+            //ObservableList<Claim> ClaimLijst 
+            //= FXCollections.observableArrayList(queryList);
             //System.out.println("Updated");
            // data = null;
             //data = tempList;
-            tableClaimAanmaken.setItems(data);
-       } else {
-           refreshTableClaimAanmaken();
-        }
+           // tableClaimAanmaken.setItems(data);
+       //} else {
+           //refreshTableClaimAanmaken();
+        //}
               
     }
 
