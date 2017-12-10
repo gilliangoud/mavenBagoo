@@ -113,12 +113,20 @@ public class ClaimaanmakenController implements Initializable {
 // werkt nog niet zo dat het data daadwerkelijk verwijderd maargoed.        
     private void refreshTableClaimAanmaken() {
 
-        ObservableList<ClaimLijst> Claims
-           = FXCollections.observableArrayList();
-        System.out.println("Updated");
-        data = null;
-        data = Claims;
-        tableClaimAanmaken.setItems(data);
+        data.clear();
+         try {
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.claim");
+            rs= pst.executeQuery();
+            
+            while (rs.next()){
+            data.add(new ClaimLijst(rs.getString(1),rs.getString(2),rs.getString(3)));
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
         
     }
     
@@ -153,6 +161,7 @@ public class ClaimaanmakenController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        refreshTableClaimAanmaken();
     }
 
 
