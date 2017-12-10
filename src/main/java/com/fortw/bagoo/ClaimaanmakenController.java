@@ -109,14 +109,17 @@ public class ClaimaanmakenController implements Initializable {
             
         
     }
-        
+    
+// werkt nog niet zo dat het data daadwerkelijk verwijderd maargoed.        
     private void refreshTableClaimAanmaken() {
-        //ObservableList<Claim> tempList 
-          //  = FXCollections.observableArrayList(ClaimDao.getAllClaims());
-        //System.out.println("Updated");
-        //data = null;
-        //data = tempList;
-        //tableClaimAanmaken.setItems(data);
+
+        ObservableList<ClaimLijst> Claims
+           = FXCollections.observableArrayList();
+        System.out.println("Updated");
+        data = null;
+        data = Claims;
+        tableClaimAanmaken.setItems(data);
+        
     }
     
     @FXML
