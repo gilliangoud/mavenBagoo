@@ -20,6 +20,7 @@ import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -47,6 +48,8 @@ public class MedewerkerEditPaneController implements Initializable {
     
     private ParentControllerContext parentController;
     private User user;
+    @FXML
+    private ComboBox inputLevel;
 
     /**
      * Initializes the controller class.
@@ -54,6 +57,13 @@ public class MedewerkerEditPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        inputLevel.getItems().addAll(
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        );
     }    
     
     public void setParentContext(ParentControllerContext pC, User user){
@@ -68,6 +78,7 @@ public class MedewerkerEditPaneController implements Initializable {
         textGebruikersnaam.setText(user.getGebruikersnaam());
         textWachtwoord.setText(user.getWachtwoord());
         labelAangemaaktOp.setText(user.getAangemaaktDatum());
+        inputLevel.setValue(user.getLevel());
     }
     
     private void emptyFields(){
@@ -75,6 +86,7 @@ public class MedewerkerEditPaneController implements Initializable {
         textGebruikersnaam.setText("");
         textWachtwoord.setText("");
         labelAangemaaktOp.setText(user.getAangemaaktDatum());
+        inputLevel.setValue("1");
     }
 
     @FXML
@@ -109,7 +121,10 @@ public class MedewerkerEditPaneController implements Initializable {
     private void handleSaveAction(ActionEvent event) {
         user.setGebruikersnaam(textGebruikersnaam.getText());
         user.setWachtwoord(textWachtwoord.getText());
-        System.out.println(user.getWachtwoord() + "]]");
+        String getLevel = inputLevel.getSelectionModel().
+                getSelectedItem().toString();
+        user.setLevel(Integer.parseInt(getLevel));
+        //System.out.println(user.getWachtwoord() + "]]");
         
         
         Alert alert = new Alert(AlertType.CONFIRMATION);

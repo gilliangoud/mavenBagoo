@@ -51,6 +51,13 @@ public class MedewerkerPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        inputLevel.getItems().addAll(
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        );
     }    
 
     @FXML
@@ -63,7 +70,9 @@ public class MedewerkerPaneController implements Initializable {
     private void handleBevestigenAction(ActionEvent event) {
         String gebruikersnaam = inputGebruikersnaam.getText();
         String wachtwoord = inputWachtwoord.getText();
-        int level = 1;
+        String getLevel = inputLevel.getSelectionModel().
+                getSelectedItem().toString();
+        int level = Integer.parseInt(getLevel);
         User nieuweGebruiker = new User(gebruikersnaam, wachtwoord, level);
         if (UserDao.insertUser(nieuweGebruiker)){
             Alert alert = new Alert(AlertType.INFORMATION);

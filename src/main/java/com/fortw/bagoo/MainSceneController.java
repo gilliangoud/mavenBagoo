@@ -75,7 +75,7 @@ public class MainSceneController implements Initializable {
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
             // login was succesvol
-            
+            //System.out.println(user.getLevel());
             sendNextScene(user.getLevel());
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -83,13 +83,6 @@ public class MainSceneController implements Initializable {
             alert.setHeaderText("Oops!");
             alert.setContentText("De gebruikersnaam, wachtwoord of de "
                     + "combinatie er van is niet goed.");
-
-//    Volgende scherm
-
-    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
-//    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermManagement.fxml"));
-            //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermSchadeAfhandelaar.fxml"));
-
             alert.showAndWait();
         }
     }
@@ -97,9 +90,9 @@ public class MainSceneController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "HoofdSchermService.fxml";
+            case 5: doel = "HoofdSchermManagement.fxml";
             break;
-            default: doel = "HoofdSchermManagement.fxml";         
+            default: doel = "HoofdSchermService.fxml";         
         }
         try {
             FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel));
