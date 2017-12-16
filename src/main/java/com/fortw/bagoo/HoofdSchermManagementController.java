@@ -175,7 +175,7 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
 
     @FXML
     private void handleRapportenAction(ActionEvent event)          {
-         allPanesInvisible();
+        allPanesInvisible();
         Rapporten.setVisible(true);
     }
 

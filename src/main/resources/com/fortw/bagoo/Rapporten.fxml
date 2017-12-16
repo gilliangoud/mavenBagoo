@@ -1,53 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="schermRapporten" prefHeight="768.0" prefWidth="1042.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.RapportenController">
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.KlantPaneController">
    <children>
-      <BorderPane prefHeight="768.0" prefWidth="1024.0">
-         <bottom>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button layoutX="51.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
-                  <Label layoutX="525.0" layoutY="14.0" />
-               </children>
-            </Pane>
-         </bottom>
-         <right>
-            <Pane prefHeight="368.0" prefWidth="104.0" BorderPane.alignment="CENTER" />
-         </right>
-         <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-         </center>
-         <left>
-            <Pane prefHeight="368.0" prefWidth="194.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TextField fx:id="zoekVeld" layoutX="14.0" layoutY="-1.0" onKeyTyped="#handleZoekVeldAction" prefHeight="31.0" prefWidth="135.0" promptText="Zoeken" />
-               </children></Pane>
-         </left>
-         <top>
-            <Pane prefHeight="155.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="img/bagoo-logo.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="164.0" layoutY="72.0" prefHeight="21.0" prefWidth="167.0" text="Rapporten">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-               </children></Pane>
-         </top>
-      </BorderPane>
+      <BorderPane prefHeight="599.0" prefWidth="814.0" />
    </children>
 </AnchorPane>

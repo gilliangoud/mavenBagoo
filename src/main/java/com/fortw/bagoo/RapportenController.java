@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  */
 public class RapportenController implements Initializable {
 @FXML
-    private AnchorPane schermRapporten;
+    private AnchorPane Rapporten;
     /**
      * Initializes the controller class.
      */
@@ -32,15 +32,7 @@ public class RapportenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
-    @FXML
-    private void handleAnnuleerAction(ActionEvent event) throws IOException {
-              FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermManagement.fxml"));
-    Parent root1 = (Parent) fxmlLoader.load();
-    Stage stageVolgende = new Stage();
-    stageVolgende.setScene(new Scene (root1));
-    Stage stageHuidige = (Stage) schermRapporten.getScene().getWindow();
-    stageHuidige.close();
-    stageVolgende.show();
-    }
+  
+    
     
 }
