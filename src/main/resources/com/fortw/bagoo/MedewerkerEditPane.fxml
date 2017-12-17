@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -63,6 +64,8 @@
                   <Label fx:id="labelMedewerkerNr" prefHeight="17.0" prefWidth="386.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Aangemaakt op" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label fx:id="labelAangemaaktOp" prefHeight="17.0" prefWidth="386.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="inputLevel" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Huidig level" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
          </children>
