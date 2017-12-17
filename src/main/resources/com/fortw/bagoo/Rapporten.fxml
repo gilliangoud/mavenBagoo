@@ -25,8 +25,8 @@
                                     <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vermissingen per vliegveld  :" />
                                     <TableView fx:id="tableVermissingPerVliegveld" layoutX="2.0" layoutY="32.0" prefHeight="288.0" prefWidth="400.0">
                                       <columns>
-                                        <TableColumn prefWidth="184.0" text="vliegveld" />
-                                        <TableColumn prefWidth="215.0" text="aantal vermissingen" />
+                                        <TableColumn fx:id="tableColumnVliegveld" prefWidth="184.0" text="vliegveld" />
+                                        <TableColumn fx:id="tableColumnVliegveldVermissingen" prefWidth="215.0" text="aantal vermissingen" />
                                       </columns>
                                     </TableView>
                                  </children>
@@ -36,8 +36,8 @@
                                     <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vermissingen per vlucht  :" />
                                     <TableView fx:id="tableVermissingPerVlucht" layoutX="1.0" layoutY="30.0" prefHeight="288.0" prefWidth="400.0">
                                        <columns>
-                                          <TableColumn prefWidth="184.0" text="vlucht" />
-                                          <TableColumn prefWidth="215.0" text="aantal vermissingen" />
+                                          <TableColumn fx:id="tableColumnVlucht" prefWidth="184.0" text="vlucht" />
+                                          <TableColumn fx:id="tableColumnVluchtVermissingen" prefWidth="215.0" text="aantal vermissingen" />
                                        </columns>
                                     </TableView>
                                  </children>
