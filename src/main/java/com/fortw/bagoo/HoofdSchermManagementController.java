@@ -100,10 +100,12 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     private Label statusMessage;
     
     @FXML
+    private AnchorPane Rapporten;
+    
+    @FXML
     private AnchorPane klantPane;
     
-        @FXML
-    private AnchorPane Rapporten;
+        
     
     /**
      * Initializes the controller class.
@@ -174,9 +176,9 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     }
 
     @FXML
-    private void handleRapportenAction(ActionEvent event)          {
-        allPanesInvisible();
-        Rapporten.setVisible(true);
+   private void handleRapportenAction(ActionEvent event){
+       allPanesInvisible();
+       Rapporten.setVisible(true);
     }
 
     @FXML
