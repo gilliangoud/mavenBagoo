@@ -57,12 +57,16 @@ public class RapportenController implements Initializable {
     private TableColumn TableColumnVlucht;
     @FXML
     private TableColumn TableColumnVluchtVermissingen;
-    //private ObservableList <Vermissing> dataVermissingen = FXCollections.observableArrayList();
+  //  private ObservableList <Vermissing> data = FXCollections.observableArrayList();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.Connect();
-       
+       // SetCell();
+        
+       // data =FXCollections.observableArrayList();
+        //LoadLogFromDataBase();
+        
     }   
   
   @FXML
@@ -92,7 +96,38 @@ public class RapportenController implements Initializable {
     private void handleRefreshVorigJaarAction(ActionEvent event) {
     }
     
- 
+   // private void SetCell() { 
+    // hoofdpijn
+        
+      // TableColumnVliegveld.setCellValueFactory(new PropertyValueFactory<>("vluchthavens_iata"));
+      //  TableColumnVliegveldVermissingen.setCellValueFactory(new PropertyValueFactory<>("count(idvermissing)"));
+      //  tableVermissingPerVliegveld.setItems(data);
+        
+      //  TableColumnVlucht.setCellValueFactory(new PropertyValueFactory<>("vlucht_vluchtnr"));
+     // TableColumnVluchtVermissingen.setCellValueFactory(new PropertyValueFactory<>("count(idvermissing)"));
+     //  tableVermissingPerVlucht.setItems(data);
+  // }
+    
+    // methode om data van het database te laden.
+    //private void LoadLogFromDataBase() {
+    //      try {
+    //        pst = conn.prepareStatement("SELECT * FROM c2bagoo.vermissing");
+     //       rs= pst.executeQuery();
+            
+     //       while (rs.next()){
+    //        //data.add(new Vermissing(rs.getString(4),rs.getInt(?),rs.getString(10),rs.getString(?))));
+    //        }
+            
+            
+     //   } catch (SQLException ex) {
+     //       Logger.getLogger(RapportenController.class.getName()).log(Level.SEVERE, null, ex);
+     //   }
+     //   tableVermissingPerVliegveld.setItems(data);
+      //  tableVermissingPerVlucht.setItems(data);
+        
+   // }
+
+    
 
     
     
