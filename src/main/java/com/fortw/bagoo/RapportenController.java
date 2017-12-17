@@ -27,10 +27,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 /**
  * FXML Controller class
  *
- * @author jules
+ * @  author jules
  */
 public class RapportenController implements Initializable {
-     @FXML
+    @FXML
     private TextField textVermissingenNu;
     @FXML
     private TextField textVermissingenVorigJaar;
