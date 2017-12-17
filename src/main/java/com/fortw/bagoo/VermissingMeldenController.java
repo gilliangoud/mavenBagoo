@@ -84,10 +84,6 @@ public class VermissingMeldenController implements Initializable {
     private Text extMail1;
     @FXML
     private TextField textmail1;
-    @FXML
-    private Text vluchthavenITA;
-    @FXML
-    private ComboBox comboVluchthavenITA;
     // inhoud comboboxen
     ObservableList<String> bagageSoort = FXCollections.observableArrayList("Handbagage", "koffer");
     ObservableList<String> bagageKleur = FXCollections.observableArrayList("Rood", "Oranje", "Geel", "Groen", "Blauw", "Zwart", "bruin", "Wit", "Grijs");
