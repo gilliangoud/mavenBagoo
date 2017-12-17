@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -99,12 +100,16 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     private Label statusMessage;
     
     @FXML
+    private AnchorPane Rapporten;
+    
+    @FXML
     private AnchorPane klantPane;
-
+    
+        
+    
     /**
      * Initializes the controller class.
      */
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
         medewerkerList.add(new User("giel", "giel", 5));
         //medewerkerList.add(new User("giel", "giel","nooit", 5));
@@ -145,6 +150,8 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
         medewerkerTableView.setVisible(false);
         vboxMedewerker.setVisible(false);
         medewerkerEditPane.setVisible(false);
+        Rapporten.setVisible(false);
+        
     }
 
     @FXML
@@ -169,7 +176,9 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     }
 
     @FXML
-    private void handleRapportenAction(ActionEvent event) {
+   private void handleRapportenAction(ActionEvent event){
+       allPanesInvisible();
+       Rapporten.setVisible(true);
     }
 
     @FXML

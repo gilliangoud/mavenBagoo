@@ -26,7 +26,7 @@ public class Klant {
     public Klant(){
     }
     
-    public Klant(int klantNr, String voorNaam, String tussenVoegsel, String achterNaam, String woonplaats, String straat, String huisNummer, String postcode, String land, String telefoonNr, String email){
+    public Klant(Integer klantNr, String voorNaam, String tussenVoegsel, String achterNaam, String woonplaats, String straat, String huisNummer, String postcode, String land, String telefoonNr, String email){
         this.klantNr = klantNr;
         this.voorNaam = voorNaam;
         this.tussenVoegsel = tussenVoegsel;

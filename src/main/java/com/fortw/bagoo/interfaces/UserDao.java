@@ -18,10 +18,23 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
+ * User Data Acces Object.
+ * Voorziet de koppeling tussen de obejcten en de database tabellen.
+ * Vereist een User klasse overeenkomend met deze interface.
  * @author Giel
  */
 public interface UserDao {
+
+    /**
+     * extraheert de individuele attributen voor iedere resultaat uit de
+     * gemaakte sql query.
+     * 
+     * hoort eigenlijk private te zijn. dit is nog niet mogelijk.
+     * 
+     * @param rs  de "resultset uit de gemaakte SQL query"
+     * @return compleet user object met toegevoegde attributen.
+     * @throws SQLException
+     */
     static User extractUserFromResultSet(ResultSet rs) throws SQLException {
         User user = new User();
         user.setPersoneelNr( rs.getInt("iduser") );
@@ -32,6 +45,12 @@ public interface UserDao {
         return user;
     }
     
+    /**
+     *  Haalt 1 user uit de tabel users waarin de primary key "userid" matcht
+     * met de gegeven parameter.
+     * @param id Het userID van de user die je op wilt vragen.
+     * @return gevuld User object of null als er geen resultaat is.
+     */
     static public User getUser(int id) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
@@ -48,6 +67,11 @@ public interface UserDao {
         return null;
     }
     
+    /**
+     *  Geeft een lijst gevuld met User objecten van alle entries in de 
+     *  database.
+     * @return List vol met User objecten.
+     */
     public static List<User> getAllUsers() {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
@@ -66,6 +90,14 @@ public interface UserDao {
         return null;
     }
     
+    /**
+     * Zoekt een User in de database overeenkomend met de gegeven username &
+     * het gegeven wachtwoord.
+     *
+     * @param gebruikersnaam De Gebruikersnaam van de User.
+     * @param wachtwoord    Het wachtwoord van de User.
+     * @return De gevonden User of null bij geen resultaten.
+     */
     static public User getUserByUserNameAndPassword(String gebruikersnaam,
             String wachtwoord) {
         Connection connection = DbConnection.Connect();
@@ -85,6 +117,12 @@ public interface UserDao {
         return null;
     }
         
+    /**
+     * Om een veranderd User object naar de database te sturen.
+     * @param user Het object waar veranderingen aan toe zijn gebracht.
+     * @return True als de update gelukt is, False als er een of andere fout
+     * is opgetreden.
+     */
     static public boolean updateUser(User user) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
@@ -106,6 +144,11 @@ public interface UserDao {
         return false;
     }
     
+    /**
+     *  Verwijder een User uit de database via het ID van het object.
+     * @param id het gegeven ID of medewerkerNr.
+     * @return True bij succes, False als er een of andere fout is opgetreden. 
+     */
     static public boolean deleteUser(int id) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
@@ -120,6 +163,12 @@ public interface UserDao {
         return false;
     }
     
+    /**
+     *  Creëer een nieuwe user in de database.
+     * @param user Het user object met alle attributen die in de database moet
+     * komen.
+     * @return True bij succes, False als er een of andere fout is opgetreden.
+     */
     static public boolean insertUser(User user) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);

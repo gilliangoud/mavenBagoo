@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,8 +41,7 @@ public class MainSceneController implements Initializable {
     @FXML
     private PasswordField wachtwoord;
 
-    @FXML
-    private Label status;
+   
     @FXML
     private AnchorPane login;
 
@@ -75,7 +75,7 @@ public class MainSceneController implements Initializable {
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
             // login was succesvol
-            status.setText("goed");
+            //System.out.println(user.getLevel());
             sendNextScene(user.getLevel());
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -83,13 +83,6 @@ public class MainSceneController implements Initializable {
             alert.setHeaderText("Oops!");
             alert.setContentText("De gebruikersnaam, wachtwoord of de "
                     + "combinatie er van is niet goed.");
-
-//    Volgende scherm
-
-    FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("HoofdSchermService.fxml"));
-//    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermManagement.fxml"));
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HoofdSchermSchade.fxml"));
-
             alert.showAndWait();
         }
     }
@@ -98,6 +91,8 @@ public class MainSceneController implements Initializable {
         String doel;
         switch(userLevel){
             case 5: doel = "HoofdSchermManagement.fxml";
+            break;
+            case 2: doel = "HoofdSchermSchadeAfhandelaar.fxml";
             break;
             default: doel = "HoofdSchermService.fxml";         
         }
@@ -114,3 +109,4 @@ public class MainSceneController implements Initializable {
         }
     }
 }
+

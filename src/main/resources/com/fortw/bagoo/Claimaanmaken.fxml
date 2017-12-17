@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="schermClaim" prefHeight="768.0" prefWidth="1042.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.ClaimaanmakenController">
    <children>
@@ -18,14 +19,14 @@
          <bottom>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextArea fx:id="textRedenClaim" layoutX="682.0" layoutY="56.0" prefHeight="116.0" prefWidth="226.0" />
-                  <TextField fx:id="textDatum" layoutX="318.0" layoutY="102.0" />
-                  <TextField fx:id="textKlantennummer" layoutX="318.0" layoutY="56.0" />
-                  <Button layoutX="936.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="Opslaan" />
-                  <Button layoutX="47.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
-                  <Label layoutX="193.0" layoutY="60.0" text="Klantennummer: " />
-                  <Label layoutX="253.0" layoutY="104.0" text="Datum: " />
-                  <Label layoutX="549.0" layoutY="60.0" text="Reden voor claim: " />
+                  <TextArea fx:id="textRedenClaim" layoutX="682.0" layoutY="14.0" prefHeight="116.0" prefWidth="226.0" />
+                  <TextField fx:id="textDatum" layoutX="318.0" layoutY="60.0" promptText="DD/MM/JJJJ" />
+                  <TextField fx:id="textKlantennummer" layoutX="318.0" layoutY="14.0" />
+                  <Button layoutX="940.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="Opslaan" />
+                  <Button layoutX="51.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
+                  <Label layoutX="194.0" layoutY="14.0" text="Klantennummer: " />
+                  <Label layoutX="253.0" layoutY="62.0" text="Datum: " />
+                  <Label layoutX="525.0" layoutY="14.0" text="Reden voor claim: " />
                </children>
             </Pane>
          </bottom>
@@ -46,16 +47,25 @@
             </Pane>
          </center>
          <left>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="368.0" prefWidth="194.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="zoekVeld" layoutX="14.0" layoutY="-1.0" onKeyTyped="#handleZoekVeldAction" prefHeight="31.0" prefWidth="135.0" promptText="Zoeken" />
+                  <Button fx:id="RefreshClaim" layoutX="161.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRefreshClaimAction" prefHeight="25.0" prefWidth="75.0" text="Refresh" />
+               </children></Pane>
          </left>
          <top>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="155.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="img/bagoo-logo.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="164.0" layoutY="72.0" prefHeight="21.0" prefWidth="167.0" text="Schadeclaim aanmaken">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
                </children></Pane>
          </top>
       </BorderPane>
