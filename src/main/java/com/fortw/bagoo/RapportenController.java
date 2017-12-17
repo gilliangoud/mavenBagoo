@@ -13,14 +13,16 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javax.swing.JOptionPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -40,15 +42,27 @@ public class RapportenController implements Initializable {
     private Connection conn ;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
+    
     @FXML
     private TableView<Vermissing> tableVermissingPerVliegveld;
+    
+    @FXML
+    private TableColumn TableColumnVliegveld;
+    @FXML
+    private TableColumn TableColumnVliegveldVermissingen;
     @FXML
     private TableView<Vermissing> tableVermissingPerVlucht;
-
+    
+   @FXML
+    private TableColumn TableColumnVlucht;
+    @FXML
+    private TableColumn TableColumnVluchtVermissingen;
+    //private ObservableList <Vermissing> dataVermissingen = FXCollections.observableArrayList();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.Connect();
-        
+       
     }   
   
   @FXML
@@ -77,6 +91,8 @@ public class RapportenController implements Initializable {
     @FXML
     private void handleRefreshVorigJaarAction(ActionEvent event) {
     }
+    
+ 
 
     
     
