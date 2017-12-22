@@ -55,7 +55,7 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" visible="false">
+                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
                      <items>
                         <SplitPane dividerPositions="0.5006675567423231" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                           <items>
@@ -131,6 +131,7 @@
                   </TableView>
                   <fx:include fx:id="medewerkerEditPane" source="MedewerkerEditPane.fxml" visible="false" />
                   <fx:include fx:id="klantPane" source="KlantPane.fxml" visible="false" />
+                  <fx:include fx:id="Rapporten" source="Rapporten.fxml" />
                </children>
             </StackPane>
          </center>

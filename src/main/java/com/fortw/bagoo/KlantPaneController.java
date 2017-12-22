@@ -34,6 +34,13 @@ import javafx.scene.input.KeyEvent;
 public class KlantPaneController implements Initializable {
 
     @FXML
+    private TextField veldZoeken;
+    @FXML
+    private TableView klantTableView;
+    
+    private ObservableList<Klant> klantenList 
+            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+    @FXML
     private Button knopVervers;
     @FXML
     private Button knopNieuweKlant;
@@ -42,18 +49,11 @@ public class KlantPaneController implements Initializable {
     @FXML
     private Button knopVeranderKlant;
     @FXML
-    private TextField veldZoeken;
+    private TableColumn<?, ?> klantNr;
     @FXML
-    private TableView klantTableView;
+    private TableColumn<?, ?> voorNaam;
     @FXML
-    private TableColumn klantNr;
-    @FXML
-    private TableColumn voorNaam;
-    @FXML
-    private TableColumn achterNaam;
-    
-    private ObservableList<Klant> klantenList 
-            = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+    private TableColumn<?, ?> achterNaam;
 
     /**
      * Initializes the controller class.
@@ -89,9 +89,6 @@ public class KlantPaneController implements Initializable {
         refreshKlantTableView();
     }
 
-    @FXML
-    private void handleNieuweKlantAction(ActionEvent event) {
-    }
 
     @FXML
     private void handleVerwijderKlantAction(ActionEvent event) {
@@ -121,9 +118,6 @@ public class KlantPaneController implements Initializable {
         }
     }
 
-    @FXML
-    private void handleVeranderKlantAction(ActionEvent event) {
-    }
 
     @FXML
     private void handleSearchInput(KeyEvent event) {
@@ -142,6 +136,14 @@ public class KlantPaneController implements Initializable {
         } else {
             refreshKlantTableView();
         }
+    }
+
+    @FXML
+    private void handleNieuweKlantAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleVeranderKlantAction(ActionEvent event) {
     }
     
 }

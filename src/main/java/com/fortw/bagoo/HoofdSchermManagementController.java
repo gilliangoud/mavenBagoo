@@ -100,8 +100,13 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     private Label statusMessage;
     
     @FXML
+    private AnchorPane Rapporten;
+    
+    @FXML
     private AnchorPane klantPane;
-
+    
+        
+    
     /**
      * Initializes the controller class.
      */
@@ -145,6 +150,8 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
         medewerkerTableView.setVisible(false);
         vboxMedewerker.setVisible(false);
         medewerkerEditPane.setVisible(false);
+        Rapporten.setVisible(false);
+        
     }
 
     @FXML
@@ -169,7 +176,9 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     }
 
     @FXML
-    private void handleRapportenAction(ActionEvent event) {
+   private void handleRapportenAction(ActionEvent event){
+       allPanesInvisible();
+       Rapporten.setVisible(true);
     }
 
     @FXML

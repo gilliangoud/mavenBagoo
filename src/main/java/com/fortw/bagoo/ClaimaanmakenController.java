@@ -5,8 +5,6 @@
  */
 package com.fortw.bagoo;
 
-import com.fortw.bagoo.interfaces.KlantDao;
-import com.fortw.bagoo.models.Klant;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -33,6 +31,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import java.util.function.Predicate;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 
 /**
  * FXML Controller class
@@ -59,18 +60,19 @@ public class ClaimaanmakenController implements Initializable {
     private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
-    private ObservableList <ClaimLijst> data;
+    private ObservableList <ClaimLijst> data = FXCollections.observableArrayList();
     
     
     @FXML
     private TextField textDatum;
+    @FXML
     private TextField textid;
     @FXML
     private TextField zoekVeld;
     @FXML
     private Button RefreshClaim;
 
-    
+  
     /**
      * Initializes the controller class.
      */
@@ -80,8 +82,10 @@ public class ClaimaanmakenController implements Initializable {
         SetCell();
         data =FXCollections.observableArrayList();
         LoadLogFromDataBase();
+        
     }
     
+   
     private void SetCell(){
         columnDatum.setCellValueFactory(new PropertyValueFactory<>("Datum"));
         columnKlantennummer.setCellValueFactory(new PropertyValueFactory<>("Klantennummer"));
@@ -102,6 +106,35 @@ public class ClaimaanmakenController implements Initializable {
             Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         tableClaimAanmaken.setItems(data);
+    
+       
+            
+        
+    }
+    
+// refresh methode         
+    private void refreshTableClaimAanmaken() {
+
+        data.clear();
+         try {
+            pst = conn.prepareStatement("SELECT * FROM c2bagoo.claim");
+            rs= pst.executeQuery();
+            
+            while (rs.next()){
+            data.add(new ClaimLijst(rs.getString(1),rs.getString(2),rs.getString(3)));
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
+    }
+    
+    @FXML
+    private void handleRefreshClaimAction(ActionEvent event) {
+        refreshTableClaimAanmaken();
     }
     
     @FXML
@@ -130,7 +163,10 @@ public class ClaimaanmakenController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        refreshTableClaimAanmaken();
+        
     }
+ 
 
     @FXML
     private void handleAnnuleerAction(ActionEvent event) throws IOException {
@@ -143,16 +179,41 @@ public class ClaimaanmakenController implements Initializable {
     stageVolgende.show();
     }
     
-     // Klanten is tijdelijk, dit is proof of concept
+    
     @FXML
     private void handleZoekVeldAction(KeyEvent event) {
+        
+        // filtert data op basis van klantennummer en reden.
+      FilteredList<ClaimLijst> filteredData = new FilteredList<>(data, e -> true);
+        zoekVeld.setOnKeyTyped(e->{
+            zoekVeld.textProperty().addListener((observableValue, oldValue, newValue) ->{
+            filteredData.setPredicate((Predicate<? super ClaimLijst>) claimlijst->{
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (claimlijst.getKlantennummer().contains(newValue)) {
+                    return true;
+                } else if (claimlijst.getReden().toLowerCase().contains(lowerCaseFilter)) {
+                     return true;
+
+                }
+                return false;
+                    
+                });
+            });
+            // weergeeft gefilterde data in een gesorteede lijst
+            SortedList<ClaimLijst> sortedData = new SortedList<>(filteredData);
+            sortedData.comparatorProperty().bind(tableClaimAanmaken.comparatorProperty());
+            tableClaimAanmaken.setItems(sortedData);
+        });
+        
        
               
     }
 
-    @FXML
-    private void handleRefreshClaimAction(ActionEvent event) {
-    }
+    
 
+    
     
 }
