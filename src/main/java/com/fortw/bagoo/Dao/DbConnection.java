@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fortw.bagoo;
+package com.fortw.bagoo.Dao;
 
 import java.sql.*;
 import java.util.logging.Level;

@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fortw.bagoo.interfaces;
+package com.fortw.bagoo.Dao;
 
-import com.fortw.bagoo.DbConnection;
 import com.fortw.bagoo.models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

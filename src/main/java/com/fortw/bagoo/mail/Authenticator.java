@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fortw.bagoo;
+package com.fortw.bagoo.mail;
 
 import java.net.InetAddress;
 import java.net.PasswordAuthentication;

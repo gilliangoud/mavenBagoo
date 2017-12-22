@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fortw.bagoo;
+package com.fortw.bagoo.panes;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,7 +18,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.User;
-import com.fortw.bagoo.interfaces.UserDao;
+import com.fortw.bagoo.Dao.UserDao;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 /**
