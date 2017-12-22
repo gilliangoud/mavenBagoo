@@ -110,10 +110,7 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     /**
      * Initializes the controller class.
      */
-    public void initialize(URL url, ResourceBundle rb) {
-        medewerkerList.add(new User("giel", "giel", 5));
-        //medewerkerList.add(new User("giel", "giel","nooit", 5));
-        
+    public void initialize(URL url, ResourceBundle rb) { 
         // associate items with the tableview
         medewerkerTableView.setItems(this.medewerkerList);
         
