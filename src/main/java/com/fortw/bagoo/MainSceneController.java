@@ -92,6 +92,8 @@ public class MainSceneController implements Initializable {
         switch(userLevel){
             case 5: doel = "HoofdSchermManagement.fxml";
             break;
+            case 2: doel = "HoofdSchermSchadeAfhandelaar.fxml";
+            break;
             default: doel = "HoofdSchermService.fxml";         
         }
         try {

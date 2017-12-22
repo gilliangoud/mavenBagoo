@@ -62,6 +62,7 @@ public class ClaimaanmakenController implements Initializable {
     private ResultSet rs = null;
     private ObservableList <ClaimLijst> data = FXCollections.observableArrayList();
     
+    
     @FXML
     private TextField textDatum;
     @FXML
@@ -84,6 +85,7 @@ public class ClaimaanmakenController implements Initializable {
         
     }
     
+   
     private void SetCell(){
         columnDatum.setCellValueFactory(new PropertyValueFactory<>("Datum"));
         columnKlantennummer.setCellValueFactory(new PropertyValueFactory<>("Klantennummer"));
@@ -110,7 +112,7 @@ public class ClaimaanmakenController implements Initializable {
         
     }
     
-// werkt nog niet zo dat het data daadwerkelijk verwijderd maargoed.        
+// refresh methode         
     private void refreshTableClaimAanmaken() {
 
         data.clear();
@@ -162,8 +164,9 @@ public class ClaimaanmakenController implements Initializable {
             Logger.getLogger(ClaimaanmakenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         refreshTableClaimAanmaken();
+        
     }
-
+ 
 
     @FXML
     private void handleAnnuleerAction(ActionEvent event) throws IOException {
