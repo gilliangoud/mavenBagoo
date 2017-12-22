@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fortw.bagoo;
+package com.fortw.bagoo.service;
 
 import com.fortw.bagoo.Dao.VermissingDao;
 import com.fortw.bagoo.models.Vermissing;

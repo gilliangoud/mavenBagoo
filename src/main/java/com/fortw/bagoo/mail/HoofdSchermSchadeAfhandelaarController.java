@@ -1,4 +1,4 @@
-package com.fortw.bagoo;
+package com.fortw.bagoo.mail;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
