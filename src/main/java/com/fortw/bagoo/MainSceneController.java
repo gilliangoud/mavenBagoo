@@ -21,7 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.User;
-import com.fortw.bagoo.interfaces.UserDao;
+import com.fortw.bagoo.Dao.UserDao;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Alert;

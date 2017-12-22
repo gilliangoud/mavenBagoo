@@ -17,7 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
-import com.fortw.bagoo.interfaces.UserDao;
+import com.fortw.bagoo.Dao.UserDao;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -35,7 +35,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import com.fortw.bagoo.interfaces.ParentControllerContext;
+import com.fortw.bagoo.Dao.ParentControllerContext;
 import javafx.scene.control.Label;
 
 /**

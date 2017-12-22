@@ -5,7 +5,7 @@
  */
 package com.fortw.bagoo;
 
-import com.fortw.bagoo.interfaces.KlantDao;
+import com.fortw.bagoo.Dao.KlantDao;
 import com.fortw.bagoo.models.Klant;
 import java.net.URL;
 import java.util.List;

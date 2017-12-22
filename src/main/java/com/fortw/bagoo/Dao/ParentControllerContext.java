@@ -1,4 +1,4 @@
-package com.fortw.bagoo.interfaces;
+package com.fortw.bagoo.Dao;
 
 /**
  * ParentControllerContext Gekregen vanuit een voorbeeld op de VLO

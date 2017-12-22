@@ -25,8 +25,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.KlantOpzoeken;
-import com.fortw.bagoo.interfaces.BagageDao;
-import com.fortw.bagoo.interfaces.KlantOpzoekenDao;
+import com.fortw.bagoo.Dao.BagageDao;
+import com.fortw.bagoo.Dao.KlantOpzoekenDao;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 

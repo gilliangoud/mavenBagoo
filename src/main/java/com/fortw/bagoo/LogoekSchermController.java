@@ -75,7 +75,6 @@ public class LogoekSchermController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       conn = DbConnection.Connect();
         SetCell();
         data =FXCollections.observableArrayList();
         LoadLogFromDataBase();

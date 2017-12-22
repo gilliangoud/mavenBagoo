@@ -18,7 +18,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.User;
-import com.fortw.bagoo.interfaces.UserDao;
+import com.fortw.bagoo.Dao.UserDao;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 /**

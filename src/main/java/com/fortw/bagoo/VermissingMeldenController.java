@@ -97,7 +97,6 @@ public class VermissingMeldenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        conn = DbConnection.Connect();
         comboSoortBagage.setItems(bagageSoort);
         Combokleur.setItems(bagageKleur);
         comboMateriaal.setItems(bagageMateriaal);
