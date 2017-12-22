@@ -73,7 +73,10 @@ public class MedewerkerPaneController implements Initializable {
         String getLevel = inputLevel.getSelectionModel().
                 getSelectedItem().toString();
         int level = Integer.parseInt(getLevel);
-        User nieuweGebruiker = new User(gebruikersnaam, wachtwoord, level);
+        User nieuweGebruiker = new User();
+        nieuweGebruiker.setGebruikersnaam(gebruikersnaam);
+        nieuweGebruiker.setWachtwoord(wachtwoord);
+        nieuweGebruiker.setLevel(level);
         if (UserDao.insertUser(nieuweGebruiker)){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
