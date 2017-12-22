@@ -19,8 +19,8 @@ public class DbConnection {
         try {
             //Database url string
             String url = "jdbc:mysql://ginni.nl:3306/c2bagoo";
-            String user = "c2db";
-            String password = "3rwV6jSDqH#";
+            String user = "c2bagoo";
+            String password = "Pornhub69";
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);

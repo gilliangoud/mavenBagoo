@@ -92,7 +92,7 @@ public class VermissingMeldenController implements Initializable {
     ObservableList<String> bagageSoort = FXCollections.observableArrayList("Handbagage", "koffer");
     ObservableList<String> bagageKleur = FXCollections.observableArrayList("Rood", "Oranje", "Geel", "Groen", "Blauw", "Zwart", "bruin", "Wit", "Grijs");
     ObservableList<String> bagageMateriaal = FXCollections.observableArrayList("Leer", "Plastic", "Kunststof", "Metaal", "Gestofeerd");
-    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling","Overig");
+    ObservableList<String> bagageMerk = FXCollections.observableArrayList("Samsonite", "American Tourister", "Delsey", "Titan", "Rimowa", "Tumi", "Carryon", "Eastpack", "Carlton", "SuitSuit", "Enrico Benetti", "Princess", "b-hppy", "Kipling", "Overig");
     @FXML
     private TextField textGewicht;
 
@@ -160,10 +160,10 @@ public class VermissingMeldenController implements Initializable {
 
         String queryBagage = "INSERT INTO bagage(type,merk,kleur,gewicht)Values(?,?,?,?)";
 
-        String type =   comboSoortBagage.getId();
-        String merk =   comboMerk.getId();
-        String kleur =   Combokleur.getId();
-        String gewicht =  textGewicht.getText();
+        String type = comboSoortBagage.getId();
+        String merk = comboMerk.getId();
+        String kleur = Combokleur.getId();
+        String gewicht = textGewicht.getText();
 
         try {
             pst = conn.prepareStatement(queryBagage);
@@ -171,91 +171,102 @@ public class VermissingMeldenController implements Initializable {
             pst.setString(2, merk);
             pst.setString(3, kleur);
             pst.setString(4, gewicht);
-            
+
             int i = pst.executeUpdate();
-            if (i == 1) 
+            if (i == 1) {
                 System.out.println("Data in database");
-            
+            }
+
         } catch (SQLException ex) {
-             Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VermissingMeldenController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-         String queryVerissing = "INSERT INTO vermissing(klant_idklant,bagage_idbagage) Values (?,?)";
-         
-         
-         
-         try {
-            
+
+        String queryVerissing = "INSERT INTO vermissing(klant_idklant,bagage_idbagage) Values (?,?)";
+
+        try {
+
         } catch (Exception e) {
         }
-         
-         
 
-         //start van de email code
+        //start van de email code
         final String username = "4TWbagoo@gmail.com";
         final String password = "Gieljansen";
-        
+
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");//smtp server adres
         props.put("mail.smtp.port", "587");//port voor smtp server
-        
+
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
-                    
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);//om je email te verifieren
-                    }
-                            
-                });
-        
+
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);//om je email te verifieren
+            }
+
+        });
+
         try {
-            
+
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("4TWbagoo@gmail.com"));//van email adres
             message.setRecipients(Message.RecipientType.TO,
-                                  InternetAddress.parse(textmail.getText()));//naar email
+                    InternetAddress.parse(textmail.getText()));//naar email
             message.setSubject("Bevestiging vermissing");//titel in email
             message.setContent("<h:body style=background-color:white;font-family:verdana;color:#000000>"
-            + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
-            + "%n "
-            + "%n Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
-            + "%n %n Dit zijn uw persoonlijke gegevens: "
-            + "%n Naam: " + textVoornaam.getText() + " " + textTussenvoegsel.getText()
-            + " " + textAchternaam.getText()
-            + "%n Adres: " + textAdres.getText() + " " + texthuisnummer.getText()
-            + ", " + textPostcode.getText() + " " + textPlaats.getText()
-            + "%n Telefoonnummer: " + textTelefoon.getText()
-            + "%n %n Dit zijn uw bagage gegevens"
-            + "%n Bagage id: " + textmail1.getText()
-            + "%n Soort bagage: " + comboSoortBagage.getId()
-            + "%n Soort merk: " + comboMerk.getId()
-            + "%n Kleur: " + Combokleur.getId()
-            + "%n Materiaal: " + comboMateriaal.getId()
-            + "%n Gewicht: " + textGewicht.getText()
-            + "%n Klopt een van de bovenstaande gegevens niet, mail dan naar lostandfound@corendon.nl"        
-            + "%n Wij hopen u hiermee voldoende geïnformeerd te hebben."
-            + "%n"
-            + "%n Met Vriendelijke Groet,"
-            + "%n Het Corendon Serviceteam"
-            + "%n"
-            + "%n"
-            + "%n P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
-            + "</body>", "text/html; charset=utf-8");//set de content in de email
+                    + "Beste, Meneer en/of Mevrouw " + textAchternaam.getText()
+                    + System.lineSeparator()
+                    + "Hierbij ontvangt u een bevestiging van uw gemelde vermissing."
+                    + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "Dit zijn uw persoonlijke gegevens: "
+                    + System.lineSeparator()
+                    + "Naam: " + textVoornaam.getText() + " " + textTussenvoegsel.getText()
+                    + " " + textAchternaam.getText()
+                    + System.lineSeparator()
+                    + "Adres: " + textAdres.getText() + " " + texthuisnummer.getText()
+                    + ", " + textPostcode.getText() + " " + textPlaats.getText()
+                    + System.lineSeparator()
+                    + "Telefoonnummer: " + textTelefoon.getText()
+                    + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "Dit zijn uw bagage gegevens"
+                    + System.lineSeparator()
+                    + "Bagage id: " + textmail1.getText()
+                    + System.lineSeparator()
+                    + "Soort bagage: " + comboSoortBagage.getId()
+                    + System.lineSeparator()
+                    + "Soort merk: " + comboMerk.getId()
+                    + System.lineSeparator()
+                    + "Kleur: " + Combokleur.getId()
+                    + System.lineSeparator()
+                    + "Materiaal: " + comboMateriaal.getId()
+                    + System.lineSeparator()
+                    + "Gewicht: " + textGewicht.getText()
+                    + System.lineSeparator()
+                    + "Klopt een van de bovenstaande gegevens niet, mail dan naar lostandfound@corendon.nl"
+                    + System.lineSeparator()
+                    + "Wij hopen u hiermee voldoende geïnformeerd te hebben."
+                    + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "Met Vriendelijke Groet,"
+                    + System.lineSeparator()
+                    + "Het Corendon Serviceteam"
+                    + System.lineSeparator()
+                    + System.lineSeparator()
+                    + System.lineSeparator()
+                    + "P.S. Dit is een automatisch gegenereerde e-mail. Reageren op deze e-mail is daarom niet mogelijk." + "<br/><br/>"
+                    + "</body>", "text/html; charset=utf-8");//set de content in de email
             Transport.send(message);//verzend alles
-            
+
             System.out.println("was the email send: Done");//verifieerd het
-            
+
         } catch (MessagingException e) {
             throw new RuntimeException(e);//als het email niet bestaat
         }
         //einde van de email code
-        
+
     }
-    
-    
-    
-    
 
 }
