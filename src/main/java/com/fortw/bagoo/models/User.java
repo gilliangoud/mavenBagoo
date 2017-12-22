@@ -21,39 +21,6 @@ public class User {
      */
     public User(){
     }
-    
-    /**
-     *
-     * @param personeelNr
-     * @param gebruikersnaam
-     * @param wachtwoord
-     * @param aangemaaktDatum
-     * @param level
-     */
-    public User(int personeelNr, String gebruikersnaam, String wachtwoord,
-            int level){
-        this.personeelNr = personeelNr;
-        this.gebruikersnaam = gebruikersnaam;
-        this.wachtwoord = wachtwoord;
-        this.aangemaaktDatum = "vandaag";
-        this.level = level;
-    }
-    
-    /**
-     *
-     * @param gebruikersnaam
-     * @param wachtwoord
-     * @param level
-     */
-    public User(String gebruikersnaam, String wachtwoord, int level){
-        //this.personeelNr =
-        //this.personeelNr = personeelNr;
-        this.gebruikersnaam = gebruikersnaam;
-        this.wachtwoord = wachtwoord;
-        //this.aangemaaktDatum = 
-        this.aangemaaktDatum = "vandaag";
-        this.level = level;
-    }
 
     /**
      * @return the personeelNr
