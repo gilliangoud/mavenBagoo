@@ -102,8 +102,9 @@ public class MedewerkerPaneController implements Initializable {
         String wachtwoord1 = inputWachtwoordHerhaal.getText();
         String wachtwoord2 = inputWachtwoord.getText();
         //System.out.println("test");
-        if(wachtwoord1.length() > 2 && wachtwoord2.length() > 2){
-            if (wachtwoord1 != wachtwoord2){
+        if(wachtwoord1.length() > 2 && wachtwoord2.length() > 2 ){
+            if (!wachtwoord1.equals(wachtwoord2)){
+                /*wachtwoord1 != wachtwoord2*/
                 labelWachtwoord.setText("Wachtwoorden Matchen!");
                 //System.out.println("test2");
             } else {
