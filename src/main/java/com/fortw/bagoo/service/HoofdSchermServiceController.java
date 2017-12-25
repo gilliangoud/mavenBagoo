@@ -46,28 +46,6 @@ public class HoofdSchermServiceController implements Initializable {
     private Button knopClaim;
     @FXML
     private Button knopLoguit;
-    @FXML
-    private TableView VermissingTable;
-    @FXML
-    private TableColumn vermissingNr;
-    @FXML
-    private TableColumn datumGevonden;
-    @FXML
-    private TableColumn tijdGevonden;
-    @FXML
-    private TableColumn vluchthaven;
-    @FXML
-    private TableColumn klantNr;
-    @FXML
-    private TableColumn bagageNr;
-    @FXML
-    private TableColumn aangemaakt;
-    @FXML
-    private TableColumn laatsteUpdate;
-    @FXML
-    private TableColumn vluchtNr;
-    @FXML
-    private TableColumn bagageLabel;
 
     private ObservableList<Vermissing> vermissingList
             = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
@@ -77,19 +55,19 @@ public class HoofdSchermServiceController implements Initializable {
      */
     public void initialize(URL url, ResourceBundle rb) {
 
-        VermissingTable.setItems(this.vermissingList);
+        //VermissingTable.setItems(this.vermissingList);
 
-        for (int cnr = 0; cnr < VermissingTable.getColumns().size(); cnr++) {
-            TableColumn tc = (TableColumn) VermissingTable.getColumns().get(cnr);
-            String propertyName = tc.getId();
-            if (propertyName != null && !propertyName.isEmpty()) {
-                // this assumes that the class has getters and setters that match
-                // propertyname in the fx:id of the table column in the fxml view
-                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
-                System.out.println("attached column '" + propertyName + "'");
-                //System.out.println("attached column '" + propertyName + "'");
-            }
-        }
+//        for (int cnr = 0; cnr < VermissingTable.getColumns().size(); cnr++) {
+//            TableColumn tc = (TableColumn) VermissingTable.getColumns().get(cnr);
+//            String propertyName = tc.getId();
+//            if (propertyName != null && !propertyName.isEmpty()) {
+//                // this assumes that the class has getters and setters that match
+//                // propertyname in the fx:id of the table column in the fxml view
+//                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+//                System.out.println("attached column '" + propertyName + "'");
+//                //System.out.println("attached column '" + propertyName + "'");
+//            }
+//        }
     }
 
     @FXML

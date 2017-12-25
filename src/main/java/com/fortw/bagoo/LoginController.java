@@ -28,6 +28,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import com.fortw.bagoo.service.*;
 
 /**
  * FXML Controller class
@@ -41,9 +42,8 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField wachtwoord;
 
-   
     @FXML
-    private AnchorPane login;
+    private AnchorPane ap;
 
     /**
      * Initializes the controller class.
@@ -57,6 +57,7 @@ public class LoginController implements Initializable {
 //        } else {
 //            status.setText("not connected");
 //        }
+        //sendNextScene(1);
     }
 
     @FXML
@@ -74,8 +75,6 @@ public class LoginController implements Initializable {
     private void login(){
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
-            // login was succesvol
-            //System.out.println(user.getLevel());
             sendNextScene(user.getLevel());
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -90,18 +89,16 @@ public class LoginController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "HoofdSchermManagement.fxml";
+            case 5: doel = "/com/fortw/bagoo/manager/HoofdSchermManagement.fxml";
             break;
-            case 2: doel = "HoofdSchermSchadeAfhandelaar.fxml";
-            break;
-            default: doel = "HoofdSchermService.fxml";         
+            default: doel = "/com/fortw/bagoo/service/HoofdSchermService.fxml";         
         }
         try {
             FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stageVolgende = new Stage();
             stageVolgende.setScene(new Scene(root1));
-            Stage stageHuidige = (Stage) login.getScene().getWindow();
+            Stage stageHuidige = (Stage) ap.getScene().getWindow();
             stageHuidige.close();
             stageVolgende.show();
         } catch (IOException ex) {
