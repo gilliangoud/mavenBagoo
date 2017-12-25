@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.VermissingPaneController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.VermissingPaneController">
    <children>
-      <BorderPane prefHeight="800.0" prefWidth="1000.0">
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <center>
-            <TableView fx:id="vermissingTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="vermissingTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="vluchthavenAITA" prefWidth="111.0" text="Vluchthaven" />
                 <TableColumn fx:id="klantID" prefWidth="98.0" text="Klant" />
@@ -21,12 +20,12 @@
             </TableView>
          </center>
          <left>
-            <VBox prefHeight="800.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+            <VBox BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="knopVervers" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="222.0" text="Ververs" />
-                  <Button fx:id="knopVervers1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="222.0" text="Bewerk vermissing" />
-                  <Button fx:id="knopVervers2" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="222.0" text="Verwijder vermissing" />
-                  <Button fx:id="knopVervers3" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="222.0" text="Nieuwe vermissing" />
+                  <Button fx:id="knopVervers" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Ververs" />
+                  <Button fx:id="knopVervers1" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Bewerk vermissing" />
+                  <Button fx:id="knopVervers2" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Verwijder vermissing" />
+                  <Button fx:id="knopVervers3" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Nieuwe vermissing" />
                </children>
             </VBox>
          </left>

@@ -101,6 +101,7 @@ public class LoginController implements Initializable {
             Stage stageHuidige = (Stage) ap.getScene().getWindow();
             stageHuidige.close();
             stageVolgende.show();
+            stageVolgende.setMaximized(true);
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
