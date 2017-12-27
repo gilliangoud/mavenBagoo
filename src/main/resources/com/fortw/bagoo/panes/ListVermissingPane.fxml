@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="listPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.ListVermissingPaneController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <center>
+            <TableView fx:id="theTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+              <columns>
+                  <TableColumn fx:id="vermissingNr" prefWidth="111.0" text="Vermissing nr." />
+                  <TableColumn fx:id="datumGevonden" prefWidth="111.0" text="Gevonden op" />
+                <TableColumn fx:id="vluchthavenAITA" prefWidth="111.0" text="Vluchthaven" />
+                <TableColumn fx:id="klantNr" prefWidth="98.0" text="Klant" />
+                  <TableColumn fx:id="bagageNr" prefWidth="91.0" text="Bagage" />
+                  <TableColumn fx:id="vluchtNr" prefWidth="91.0" text="Vlucht nr." />
+                  <TableColumn fx:id="userAangemaakt" prefWidth="91.0" text="Aangemaakt door" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
