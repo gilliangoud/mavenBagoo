@@ -20,13 +20,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.Dao.Auth;
+import com.fortw.bagoo.interfaces.ParentControllerContext;
 
 /**
  * FXML Controller class
  *
  * @author Anouar
  */
-public class HoofdSchermServiceController implements Initializable {
+public class HoofdSchermServiceController implements Initializable, ParentControllerContext {
 
     @FXML
     private AnchorPane hoofdSchermService;
@@ -47,6 +48,11 @@ public class HoofdSchermServiceController implements Initializable {
      * Initializes the controller class.
      */
     public void initialize(URL url, ResourceBundle rb) {
+    }
+    
+    private void hideAllPanes() {
+//        medewerkerTableView.setVisible(false);
+//        vboxMedewerker.setVisible(false);
     }
 
     @FXML
@@ -74,6 +80,21 @@ public class HoofdSchermServiceController implements Initializable {
 
     @FXML
     private void handleClaimAction(ActionEvent event) {
+    }
+
+    @Override
+    public void notifyCloseChild() {
+        hideAllPanes();
+    }
+
+    @Override
+    public void notifyChildHasUpdated() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void displayStatusMessage(String message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

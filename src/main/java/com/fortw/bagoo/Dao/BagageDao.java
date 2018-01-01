@@ -32,6 +32,7 @@ public interface BagageDao {
         bagage.setDiepte( rs.getString("diepte") );
         bagage.setLocatieNr( rs.getInt("Locaties_idLocaties") );
         bagage.setVluchtNr( rs.getInt("vlucht_vluchtnr") );
+        bagage.setLabelNr( rs.getInt("labelNr") );
         
         return bagage;
     }
@@ -88,13 +89,32 @@ public interface BagageDao {
         }
         return null;
     }
+    
+    public static List<Bagage> getBagageByLabel(int labelNr) {
+        Connection connection = DbConnection.Connect();
+        if(connection == null) System.exit(1);
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM bagage WHERE"
+                    + " labelnr=" + labelNr);
+            List<Bagage> bagagestukken = new ArrayList<>();
+            while(rs.next())
+            {
+                Bagage bagage = extractKlantFromResultSet(rs);
+                bagagestukken.add(bagage);
+            }
+            return bagagestukken;
+        } catch (SQLException ex) {
+        }
+        return null;
+    }
      
     static public boolean updateBagage(Bagage bagage) {
         Connection connection = DbConnection.Connect();
         if(connection == null) System.exit(1);
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE bagage SET"
-                    + " type=?, merk=?, kleur=?, kleur2=?, gewicht=?, opmerking=?, breedte=?, hoogte=?, diepte=?"
+                    + " type=?, merk=?, kleur=?, kleur2=?, gewicht=?, opmerking=?, breedte=?, hoogte=?, diepte=?, labelnr=?"
                     + " WHERE idbagage=?");
             ps.setString(1, bagage.getType());
             ps.setString(2, bagage.getMerk());
@@ -105,6 +125,8 @@ public interface BagageDao {
             ps.setString(7, bagage.getBreedte());
             ps.setString(8, bagage.getHoogte());
             ps.setString(9, bagage.getDiepte());
+            ps.setInt(10, bagage.getLabelNr());
+            ps.setInt(9, bagage.getBagageNr());
             int i = ps.executeUpdate();
           if(i == 1) {
         return true;
@@ -133,7 +155,7 @@ public interface BagageDao {
         if(connection == null) System.exit(1);
         try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO "
-                    + "bagage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    + "bagage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, bagage.getType());
             ps.setString(2, bagage.getMerk());
             ps.setString(3, bagage.getKleur());
@@ -143,6 +165,7 @@ public interface BagageDao {
             ps.setString(7, bagage.getBreedte());
             ps.setString(8, bagage.getHoogte());
             ps.setString(9, bagage.getDiepte());
+            ps.setInt(10, bagage.getLabelNr());
             int i = ps.executeUpdate();
           if(i == 1) {
             return true;

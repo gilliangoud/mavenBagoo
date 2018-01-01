@@ -91,4 +91,16 @@ public class User {
     public void setAangemaaktDatum(String aangemaaktDatum) {
         this.aangemaaktDatum = aangemaaktDatum;
     }
+    
+//personeelNr;
+//gebruikersnaam;
+//wachtwoord;
+//aangemaaktDatum;
+//level;
+    
+    @Override
+    public String toString(){
+        String s = gebruikersnaam;
+        return s; 
+    }
 }

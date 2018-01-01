@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="nieuweAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.NieuwVermissingPaneController">
+<AnchorPane fx:id="nieuweAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.BewerkVermissingPaneController">
    <children>
       <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <center>
@@ -99,11 +99,12 @@
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="Reiziger" GridPane.rowIndex="5" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bagage label" GridPane.rowIndex="13" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bagage" GridPane.rowIndex="17" />
-                        <Label prefHeight="35.0" prefWidth="318.0" text="Nieuwe vermissing" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
+                        <Label prefHeight="35.0" prefWidth="318.0" text="Bewerk vermissing" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
+                        <Label fx:id="labelTitle" text="Label" GridPane.columnIndex="2" />
                      </children>
                   </GridPane>
                </children>

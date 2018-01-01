@@ -13,10 +13,10 @@
               <columns>
                   <TableColumn fx:id="vermissingNr" prefWidth="111.0" text="Vermissing nr." />
                   <TableColumn fx:id="datumGevonden" prefWidth="111.0" text="Gevonden op" />
-                <TableColumn fx:id="vluchthavenAITA" prefWidth="111.0" text="Vluchthaven" />
-                <TableColumn fx:id="klantNr" prefWidth="98.0" text="Klant" />
-                  <TableColumn fx:id="bagageNr" prefWidth="91.0" text="Bagage" />
-                  <TableColumn fx:id="vluchtNr" prefWidth="91.0" text="Vlucht nr." />
+                <TableColumn fx:id="vluchthaven" prefWidth="111.0" text="Vluchthaven" />
+                <TableColumn fx:id="klant" prefWidth="98.0" text="Klant" />
+                  <TableColumn fx:id="bagage" prefWidth="91.0" text="Bagage" />
+                  <TableColumn fx:id="vlucht" prefWidth="91.0" text="Vlucht nr." />
                   <TableColumn fx:id="userAangemaakt" prefWidth="91.0" text="Aangemaakt door" />
               </columns>
             </TableView>

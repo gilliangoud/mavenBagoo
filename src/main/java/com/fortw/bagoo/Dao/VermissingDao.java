@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import com.fortw.bagoo.models.Vermissing;
+import com.fortw.bagoo.models.User;
 
 /**
  *
@@ -25,15 +26,15 @@ public interface VermissingDao {
         vermissing.setVermissingNr(rs.getInt("idvermissing"));
         vermissing.setDatumGevonden(rs.getString("datum-gevonden"));
         vermissing.setTijdGevonden(rs.getString("tijd-gevonden"));
-        vermissing.setVluchthaven(rs.getString("vluchthavens_iata"));
-        vermissing.setKlantNr(rs.getInt("klant_idklant"));
-        vermissing.setBagageNr(rs.getInt("bagage_idbagage"));
+        vermissing.setVluchthaven(VluchthavenDao.getVluchthaven(rs.getString("vluchthavens_iata")));
+        vermissing.setKlant(KlantDao.getKlant(rs.getInt("klant_idklant")));
+        vermissing.setBagage(BagageDao.getBagage(rs.getInt("bagage_idbagage")));
         vermissing.setAangemaakt(rs.getString("aangemaakt"));
         vermissing.setLaatsteUpdate(rs.getString("laatste-update"));
         vermissing.setBagageLabel(rs.getString("bagagelabel"));
-        vermissing.setVluchtNr(rs.getInt("vlucht_vluchtnr"));
-        vermissing.setUserAangemaakt(rs.getString("user_iduser_aangemaakt"));
-        vermissing.setUserBewerkt(rs.getString("user_iduser_bewerkt"));
+        vermissing.setVlucht(VluchtDao.getVlucht(rs.getString("vlucht_vluchtnr")));
+        vermissing.setUserAangemaakt(UserDao.getUser(rs.getInt("user_iduser_aangemaakt")));
+        vermissing.setUserBewerkt(UserDao.getUser(rs.getInt("user_iduser_bewerkt")));
 
         return vermissing;
     }
@@ -108,9 +109,9 @@ public interface VermissingDao {
             ps.setString(4, vermissing.getAangemaakt());
             ps.setString(5, vermissing.getLaatsteUpdate());
             ps.setString(6, vermissing.getBagageLabel());
-            ps.setInt(7, vermissing.getVluchtNr());
-            ps.setString(8, vermissing.getUserAangemaakt());
-            ps.setString(9, vermissing.getUserBewerkt());
+            //ps.setInt(7, vermissing.getVlucht());
+            //ps.setString(8, vermissing.getUserAangemaakt());
+            //ps.setString(9, vermissing.getUserBewerkt());
             int i = ps.executeUpdate();
             if (i == 1) {
                 return true;
@@ -149,9 +150,10 @@ public interface VermissingDao {
             ps.setString(4, vermissing.getAangemaakt());
             ps.setString(5, vermissing.getLaatsteUpdate());
             ps.setString(6, vermissing.getBagageLabel());
-            ps.setInt(7, vermissing.getVluchtNr());
-            ps.setString(8, vermissing.getUserAangemaakt());
-            ps.setString(9, vermissing.getUserBewerkt());
+            //ps.setInt(7, vermissing.getVlucht());
+            User user = vermissing.getUserAangemaakt();
+            ps.setInt(8, user.getPersoneelNr());
+            ps.setInt(9, user.getPersoneelNr());
 
             int i = ps.executeUpdate();
             if (i == 1) {

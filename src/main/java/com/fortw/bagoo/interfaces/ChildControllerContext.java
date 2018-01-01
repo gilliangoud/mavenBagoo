@@ -1,5 +1,7 @@
 package com.fortw.bagoo.interfaces;
 
+import com.fortw.bagoo.models.Vermissing;
+
 /**
  * De code voorziet een communicatielaag tussen controllers waarbij deze 
  * geimplementeerd word. Dit maakt het mogelijk om delen van de applicatie beter
@@ -27,5 +29,7 @@ public interface ChildControllerContext {
      * @param message
      */
     public void displayStatusMessage(String message);
+
+    public Vermissing getSelectedItem();
     
 }
