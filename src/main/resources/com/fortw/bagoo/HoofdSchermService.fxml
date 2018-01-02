@@ -15,7 +15,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="212.0">
                     <children>
                         <Button fx:id="klantzoeken" layoutX="25.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleOpenKlantZoeken" prefHeight="31.0" prefWidth="164.0" text="Klant opzoeken" />
-                        <Button fx:id="knopVermissingMelden" layoutX="25.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleVermissingAction" prefHeight="31.0" prefWidth="164.0" text="vermissing melden" />
+                        <Button fx:id="knopVermissingMelden" layoutX="23.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleVermissingAction" prefHeight="31.0" prefWidth="164.0" text="Vermissing melden" />
                         <Button fx:id="knnopOpenLogboek" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleOpenlogBoekAction" prefHeight="31.0" prefWidth="164.0" text="Logboek" />
                         <Button fx:id="knopClaim" layoutX="25.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleClaimAction" prefHeight="31.0" prefWidth="164.0" text="Claim" />
                         <Button fx:id="knopLoguit" layoutX="21.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="31.0" prefWidth="164.0" text="Log uit" />
@@ -23,7 +23,8 @@
                             <image>
                         <Image url="img/bagoo-logo.png" />
                             </image>
-                        </ImageView>    
+                        </ImageView>
+                  <Button layoutX="25.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleExcelAction" prefHeight="31.0" prefWidth="164.0" text="Excel importeren" />    
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="753.0">

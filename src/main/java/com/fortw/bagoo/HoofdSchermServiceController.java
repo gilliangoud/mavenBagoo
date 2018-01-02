@@ -149,4 +149,8 @@ public class HoofdSchermServiceController implements Initializable {
         stageVolgende.show();
     }
 
+    @FXML
+    private void handleExcelAction(ActionEvent event) {
+    }
+
 }
