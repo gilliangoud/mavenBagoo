@@ -15,49 +15,21 @@ public class Vermissing {
     private Integer vermissingNr;
     private String datumGevonden;
     private String tijdGevonden;
-    private String vluchthaven;
-    private Integer klantNr;
-    private Integer bagageNr;
+    
+    private Vluchthaven vluchthaven;
+    private Klant klant;
+    private Bagage bagage;
+    
     private String aangemaakt;
     private String laatsteUpdate;
     private String bagageLabel;
-    private Integer vluchtNr;
-    private String userAangemaakt;
-    private String userBewerkt;
+    
+    private Vlucht vlucht;
+    private User userAangemaakt;
+    private User userBewerkt;
 
     // Lege Constructor
-    public Vermissing() {
-    }
-
-    // Constructor alle attributen
-    public Vermissing(Integer vermissingNr, String datumGevonden, String tijdGevonden, String vluchthaven, Integer klantNr, Integer bagageNr, String aangemaakt, String laatsteUpdate, String bagageLabel, Integer vluchtNr, String userAangemaakt, String userBewerkt) {
-        this.vermissingNr = vermissingNr;
-        this.datumGevonden = datumGevonden;
-        this.tijdGevonden = tijdGevonden;
-        this.vluchthaven = vluchthaven;
-        this.klantNr = klantNr;
-        this.bagageNr = bagageNr;
-        this.aangemaakt = aangemaakt;
-        this.laatsteUpdate = laatsteUpdate;
-        this.bagageLabel = bagageLabel;
-        this.vluchtNr = vluchtNr;
-        this.userAangemaakt = userAangemaakt;
-        this.userBewerkt = userBewerkt;
-    }
-
-    public Vermissing(String datumGevonden, String tijdGevonden, String vluchthaven, Integer klantNr, Integer bagageNr, String aangemaakt, String laatsteUpdate, String bagageLabel, Integer vluchtNr, String userAangemaakt, String userBewerkt) {
-        this.datumGevonden = datumGevonden;
-        this.tijdGevonden = tijdGevonden;
-        this.vluchthaven = vluchthaven;
-        this.klantNr = klantNr;
-        this.bagageNr = bagageNr;
-        this.aangemaakt = aangemaakt;
-        this.laatsteUpdate = laatsteUpdate;
-        this.bagageLabel = bagageLabel;
-        this.vluchtNr = vluchtNr;
-        this.userAangemaakt = userAangemaakt;
-        this.userBewerkt = userBewerkt;
-    }
+    public Vermissing() {}
 
     /**
      * @return the vermissingNr
@@ -99,48 +71,6 @@ public class Vermissing {
      */
     public void setTijdGevonden(String tijdGevonden) {
         this.tijdGevonden = tijdGevonden;
-    }
-
-    /**
-     * @return the vluchthaven
-     */
-    public String getVluchthaven() {
-        return vluchthaven;
-    }
-
-    /**
-     * @param vluchthaven the vluchthaven to set
-     */
-    public void setVluchthaven(String vluchthaven) {
-        this.vluchthaven = vluchthaven;
-    }
-
-    /**
-     * @return the klantNr
-     */
-    public Integer getKlantNr() {
-        return klantNr;
-    }
-
-    /**
-     * @param klantNr the klantNr to set
-     */
-    public void setKlantNr(Integer klantNr) {
-        this.klantNr = klantNr;
-    }
-
-    /**
-     * @return the bagageNr
-     */
-    public Integer getBagageNr() {
-        return bagageNr;
-    }
-
-    /**
-     * @param bagageNr the bagageNr to set
-     */
-    public void setBagageNr(Integer bagageNr) {
-        this.bagageNr = bagageNr;
     }
 
     /**
@@ -186,45 +116,87 @@ public class Vermissing {
     }
 
     /**
-     * @return the vluchtNr
-     */
-    public Integer getVluchtNr() {
-        return vluchtNr;
-    }
-
-    /**
-     * @param vluchtNr the vluchtNr to set
-     */
-    public void setVluchtNr(Integer vluchtNr) {
-        this.vluchtNr = vluchtNr;
-    }
-
-    /**
      * @return the userAangemaakt
      */
-    public String getUserAangemaakt() {
+    public User getUserAangemaakt() {
         return userAangemaakt;
-    }
-
-    /**
-     * @param userAangemaakt the userAangemaakt to set
-     */
-    public void setUserAangemaakt(String userAangemaakt) {
-        this.userAangemaakt = userAangemaakt;
     }
 
     /**
      * @return the userBewerkt
      */
-    public String getUserBewerkt() {
+    public User getUserBewerkt() {
         return userBewerkt;
+    }
+
+    /**
+     * @return the klant
+     */
+    public Klant getKlant() {
+        return klant;
+    }
+
+    /**
+     * @param klant the klant to set
+     */
+    public void setKlant(Klant klant) {
+        this.klant = klant;
+    }
+
+    /**
+     * @return the bagage
+     */
+    public Bagage getBagage() {
+        return bagage;
+    }
+
+    /**
+     * @param bagage the bagage to set
+     */
+    public void setBagage(Bagage bagage) {
+        this.bagage = bagage;
+    }
+
+    /**
+     * @param userAangemaakt the userAangemaakt to set
+     */
+    public void setUserAangemaakt(User userAangemaakt) {
+        this.userAangemaakt = userAangemaakt;
     }
 
     /**
      * @param userBewerkt the userBewerkt to set
      */
-    public void setUserBewerkt(String userBewerkt) {
+    public void setUserBewerkt(User userBewerkt) {
         this.userBewerkt = userBewerkt;
+    }
+
+    /**
+     * @return the vluchthaven
+     */
+    public Vluchthaven getVluchthaven() {
+        return vluchthaven;
+    }
+
+    /**
+     * @param vluchthaven the vluchthaven to set
+     */
+    public void setVluchthaven(Vluchthaven vluchthaven) {
+        this.vluchthaven = vluchthaven;
+    }
+
+    /**
+     * @return the vlucht
+     */
+    public Vlucht getVlucht() {
+        return vlucht;
+    }
+
+    /**
+     * @param vlucht the vlucht to set
+     */
+    public void setVlucht(Vlucht vlucht) {
+        this.vlucht = vlucht;
     }
 
 }

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="hoofdSchermService" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.manager.HoofdSchermManagementController">
+   <children>
+      <BorderPane prefHeight="768.0" prefWidth="1024.0">
+         <top>
+            <Label text="Hoofdmenu" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <left>
+            <VBox prefHeight="708.0" prefWidth="142.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="knopHoofdmenu" mnemonicParsing="false" onAction="#handleHoofdMenuAction" prefHeight="50.0" prefWidth="200.0" text="Hoofdmenu" />
+                  <Button fx:id="knopLogboek" mnemonicParsing="false" onAction="#handleLogboekAction" prefHeight="50.0" prefWidth="200.0" text="Laaste logboeken" />
+                  <Button fx:id="knopMedewerkers" mnemonicParsing="false" onAction="#handleMedewerkersAction" prefHeight="50.0" prefWidth="200.0" text="Medewerkers" />
+                  <Button fx:id="knopBagage" mnemonicParsing="false" onAction="#handleBagageAction" prefHeight="50.0" prefWidth="200.0" text="Huidige vermissingen" />
+                  <Button fx:id="knopRapporten" mnemonicParsing="false" onAction="#handleRapportenAction" prefHeight="50.0" prefWidth="200.0" text="Rapporten" />
+                  <Button fx:id="knopKlanten" mnemonicParsing="false" onAction="#handleKlantenAction" prefHeight="50.0" prefWidth="200.0" text="Klanten" />
+                  <VBox fx:id="vboxMedewerker" prefHeight="202.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Button fx:id="knopRefreshMedewerker" mnemonicParsing="false" onAction="#handleRefreshMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Refresh" />
+                        <Button fx:id="knopNieuweMedewerker" mnemonicParsing="false" onAction="#handleNieuweMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Nieuwe medewerker" />
+                        <Button fx:id="knopVerwijderMedewerker" mnemonicParsing="false" onAction="#handleVerwijderMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Verwijder geselecteerde" />
+                        <Button fx:id="knopVeranderMedewerker" mnemonicParsing="false" onAction="#handleVerandersMedewerkerAction" prefHeight="50.0" prefWidth="200.0" text="Verander geselecteerde" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane fx:id="kpiPane" dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+                     <items>
+                        <SplitPane dividerPositions="0.5006675567423231" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="408.0">
+                                 <children>
+                                    <LineChart prefHeight="351.0" prefWidth="409.0" title="linechart">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <StackedAreaChart prefHeight="351.0" prefWidth="408.0" title="stackedArea">
+                                      <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </StackedAreaChart>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <StackedBarChart prefHeight="351.0" prefWidth="410.0" title="Barchart">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </StackedBarChart>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <BubbleChart prefHeight="350.0" prefWidth="407.0" title="Bubbles">
+                                      <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BubbleChart>
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </items>
+                  </SplitPane>
+                  <TableView fx:id="medewerkerTableView" prefHeight="200.0" prefWidth="200.0" visible="false">
+                    <columns>
+                      <TableColumn fx:id="personeelNr" prefWidth="167.0" text="Personeels nummer" />
+                      <TableColumn fx:id="gebruikersnaam" minWidth="7.0" prefWidth="159.0" text="Gebruikersnaam" />
+                        <TableColumn fx:id="aangemaaktDatum" minWidth="0.0" prefWidth="114.0" text="Aangemaakt op" />
+                        <TableColumn fx:id="level" prefWidth="60.0" text="Level" />
+                        <TableColumn fx:id="wachtwoord" prefWidth="131.0" text="Wachtwoord" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="klantTableView" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <columns>
+                        <TableColumn fx:id="klantNr" prefWidth="130.0" text="Klant nummer" />
+                        <TableColumn fx:id="voorNaam" minWidth="7.0" prefWidth="188.0" text="Naam" />
+                        <TableColumn fx:id="email" minWidth="0.0" prefWidth="122.0" text="E-mail" />
+                        <TableColumn fx:id="land" prefWidth="136.0" text="Land" />
+                        <TableColumn fx:id="telefoon" prefWidth="145.0" text="Telefoon" />
+                     </columns>
+                  </TableView>
+                  <fx:include fx:id="medewerkerEditPane" source="/com/fortw/bagoo/temp/MedewerkerEditPane.fxml" visible="false" />
+                  <fx:include fx:id="klantPane" source="KlantPane.fxml" visible="false" />
+                  <fx:include fx:id="Rapporten" source="Rapporten.fxml" />
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <HBox prefHeight="5.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="knopLoguit" alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="200.0" text="Log uit" />
+                  <Label fx:id="statusMessage" prefHeight="59.0" prefWidth="825.0" text="Label">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

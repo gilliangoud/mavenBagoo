@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.VermissingPaneController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <left>
+            <VBox maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="knopVervers" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Ververs" />
+                  <Button fx:id="knopBewerk" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBewerkAction" prefHeight="50.0" prefWidth="160.0" text="Bewerk vermissing" />
+                  <Button fx:id="knopVerwijder" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderAction" prefHeight="50.0" prefWidth="160.0" text="Verwijder vermissing" />
+                  <Button fx:id="knopNieuw" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuwAction" prefHeight="50.0" prefWidth="160.0" text="Nieuwe vermissing" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                  <fx:include fx:id="nieuweAnchorPane" source="NieuweVermissingPane.fxml" visible="false" />
+                  <fx:include fx:id="bewerkAnchorPane" source="BewerkVermissingPane.fxml" visible="false" />
+                  <fx:include fx:id="listPane" source="ListVermissingPane.fxml" visible="false" />
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <Label fx:id="labelStatus" text="Status" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

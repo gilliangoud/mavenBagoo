@@ -24,6 +24,7 @@ public class Bagage {
     private String diepte;
     private Integer locatieNr;
     private Integer vluchtNr;
+    private Integer labelNr;
     
     
     // Lege Constructor
@@ -229,7 +230,36 @@ public class Bagage {
         this.vluchtNr = vluchtNr;
     }
     
+//bagageNr;
+//type;
+//merk;
+//kleur;
+//kleur2;
+//gewicht;
+//opmerking;
+//breedte;
+//hoogte;
+//diepte;
+//locatieNr;
+//vluchtNr;
     
-    
-    
+    @Override
+    public String toString(){
+        String s = Integer.toString(getBagageNr());
+        return s; 
+    }        
+
+    /**
+     * @return the labelNr
+     */
+    public Integer getLabelNr() {
+        return labelNr;
+    }
+
+    /**
+     * @param labelNr the labelNr to set
+     */
+    public void setLabelNr(Integer labelNr) {
+        this.labelNr = labelNr;
+    }
 }

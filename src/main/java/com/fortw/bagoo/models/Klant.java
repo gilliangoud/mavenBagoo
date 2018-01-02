@@ -73,20 +73,13 @@ public class Klant {
      */
     public String getNaam() {
         String volledigeNaam;
-        if(this.tussenVoegsel.length() > 1) {        
-            volledigeNaam = this.voorNaam + " " + this.tussenVoegsel + " " + this.achterNaam;
+        if(this.getTussenVoegsel().length() > 1) {        
+            volledigeNaam = this.getVoorNaam() + " " + this.getTussenVoegsel() + " " + this.getAchterNaam();
         } else {
-            volledigeNaam = this.voorNaam + " " + this.achterNaam;
+            volledigeNaam = this.getVoorNaam() + " " + this.getAchterNaam();
         }
         return volledigeNaam;
     }
-
-//    /**
-//     * @param naam the naam to set
-//     */
-//    public void setNaam(String naam) {
-//        this.naam = naam;
-//    }
 
     /**
      * @return the woonplaats
@@ -101,20 +94,6 @@ public class Klant {
     public void setWoonplaats(String woonplaats) {
         this.woonplaats = woonplaats;
     }
-
-    /**
-     * @return the adres
-     */
-//    public String getAdres() {
-//        return adres;
-//    }
-//
-//    /**
-//     * @param adres the adres to set
-//     */
-//    public void setAdres(String adres) {
-//        this.adres = adres;
-//    }
 
     /**
      * @return the postcode
@@ -240,6 +219,24 @@ public class Klant {
      */
     public void setHuisNummer(String huisNummer) {
         this.huisNummer = huisNummer;
+    }
+    
+//klantNr;
+//voorNaam;
+//tussenVoegsel;
+//achterNaam;
+//woonplaats;
+//straat;
+//huisNummer;
+//postcode;
+//land;
+//telefoonNr;
+//email;
+    
+    @Override
+    public String toString(){
+        String s = klantNr + ": " + voorNaam + " " + achterNaam;
+        return s; 
     }
 
 }
