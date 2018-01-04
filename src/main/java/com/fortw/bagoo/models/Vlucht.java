@@ -78,8 +78,7 @@ public class Vlucht {
     
     @Override
     public String toString(){
-        String s = vluchtNr + ": " + van + " " + naar;
-        return s; 
+        return getVluchtNr(); 
     }
 
 }

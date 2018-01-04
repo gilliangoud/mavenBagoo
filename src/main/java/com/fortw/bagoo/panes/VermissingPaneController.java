@@ -43,13 +43,18 @@ public class VermissingPaneController implements Initializable, ParentController
     @FXML
     private AnchorPane nieuweAnchorPane;
     @FXML
-    private AnchorPane bewerkAnchorPane;
+    private AnchorPane bewerkVermissingPane;
     @FXML
     private AnchorPane listPane;
     
     private static ChildControllerContext listController;
     @FXML
     private Label labelStatus;
+    // Hieronder hoort dit te staan, dankzij scenebuilder kan dit misschien verwijderd worden.
+    //    @FXML
+    //    private MedewerkerEditPaneController medewerkerEditPaneController;
+    @FXML
+    private BewerkVermissingPaneController bewerkVermissingPaneController;
     
 
     /**
@@ -68,7 +73,13 @@ public class VermissingPaneController implements Initializable, ParentController
     private void hideAllPanes() {
         listPane.setVisible(false);
         nieuweAnchorPane.setVisible(false);
-        bewerkAnchorPane.setVisible(false);
+        bewerkVermissingPane.setVisible(false);
+        
+        // Enable all buttons
+        knopVervers.setDisable(false);
+        knopBewerk.setDisable(false);
+        knopVerwijder.setDisable(false);
+        knopNieuw.setDisable(false);
     }
 
     @FXML
@@ -80,12 +91,17 @@ public class VermissingPaneController implements Initializable, ParentController
     private void handleBewerkAction(ActionEvent event) {
         Vermissing selectedItem = listController.getSelectedItem();
         
+        knopVervers.setDisable(true);
+        knopBewerk.setDisable(false);
+        knopVerwijder.setDisable(true);
+        knopNieuw.setDisable(true);
+        
         if (selectedItem == null) {
             //niks geselecteerd
         } else {
-            BewerkVermissingPaneController.setParentContext(this, selectedItem);
+            bewerkVermissingPaneController.setParentContext(this, selectedItem);
             hideAllPanes();
-            bewerkAnchorPane.setVisible(true);
+            bewerkVermissingPane.setVisible(true);
         }
     }
 
@@ -95,6 +111,10 @@ public class VermissingPaneController implements Initializable, ParentController
         hideAllPanes();
         nieuweAnchorPane.setVisible(true);
         NieuwVermissingPaneController.setParentContext(this);
+        knopVervers.setDisable(true);
+        knopBewerk.setDisable(true);
+        knopVerwijder.setDisable(true);
+        knopNieuw.setDisable(false);
     }
 
     @FXML

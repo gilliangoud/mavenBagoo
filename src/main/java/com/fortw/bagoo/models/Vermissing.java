@@ -13,7 +13,9 @@ public class Vermissing {
 
     // Attributen
     private Integer vermissingNr;
+    // eigenlijk datum verloren
     private String datumGevonden;
+    // eigenlijk tijd verloren
     private String tijdGevonden;
     
     private Vluchthaven vluchthaven;
@@ -29,7 +31,14 @@ public class Vermissing {
     private User userBewerkt;
 
     // Lege Constructor
-    public Vermissing() {}
+    public Vermissing() {
+        this.vluchthaven = new Vluchthaven();
+        this.klant = new Klant();
+        this.bagage = new Bagage();
+        this.vlucht = new Vlucht();
+        this.userAangemaakt = new User();
+        this.userBewerkt = new User();
+    }
 
     /**
      * @return the vermissingNr

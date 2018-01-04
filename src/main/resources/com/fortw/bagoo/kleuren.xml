@@ -1,0 +1,30 @@
+<kleuren>
+    <kleur>
+        <RAL>1003</RAL>
+        <engels>Yellow</engels>
+        <nederlands>Geel</nederlands>
+        <spaans>Amarillo</spaans>
+        <turks>Sarı</turks>
+    </kleur>
+    <kleur>
+        <RAL>1024</RAL>
+        <engels>Olive</engels>
+        <nederlands>Olijf</nederlands>
+        <spaans>Verde oliva</spaans>
+        <turks>Zeytin yeşili</turks>
+    </kleur>
+    <kleur>
+        <RAL>2004</RAL>
+        <engels>Orange</engels>
+        <nederlands>Oranje</nederlands>
+        <spaans>Naranja</spaans>
+        <turks>Turuncu</turks>
+    </kleur>
+<!--    <kleur>
+        <RAL></RAL>
+        <engels></engels>
+        <nederlands></nederlands>
+        <spaans></spaans>
+        <turks></turks>
+    </kleur>-->
+</kleuren>
