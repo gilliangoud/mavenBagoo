@@ -56,13 +56,16 @@
             <center>
                 <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
-<!--                        <Tab text="Vermissingen">
+                        <Tab text="Vermissingen">
                             <content>
                                 <fx:include fx:id="VermissingPane" source="/com/fortw/bagoo/panes/VermissingPane.fxml" visible="true"/>
                             </content>
-                        </Tab>-->
-                        <Tab text="Klanten" />
-                        <fx:include fx:id="klantenPane" source="/com/fortw/bagoo/panes/KlantenPane.fxml" visible="true"/>
+                        </Tab>
+                        <Tab text="Klanten">
+                            <content>
+                                <fx:include fx:id="klantenPane" source="/com/fortw/bagoo/panes/KlantenPane.fxml" visible="true"/>
+                            </content>
+                        </Tab>
                     </tabs>
                 </TabPane>
             </center>
