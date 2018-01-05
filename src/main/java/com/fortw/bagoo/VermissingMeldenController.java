@@ -5,6 +5,7 @@
  */
 package com.fortw.bagoo;
 
+import com.fortw.bagoo.Dao.DbConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -34,8 +35,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * FXML Controller class

@@ -25,7 +25,7 @@
                <children>
                   <fx:include fx:id="nieuweAnchorPane" source="NieuweVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="bewerkVermissingPane" source="BewerkVermissingPane.fxml" visible="false" />
-                  <fx:include fx:id="listPane" source="ListVermissingPane.fxml" visible="false" />
+                  <fx:include fx:id="listPane" source="ListVermissingPane.fxml" visible="true" />
                </children>
             </StackPane>
          </center>

@@ -32,29 +32,29 @@ public class VermissingPaneController implements Initializable, ParentController
 
     @FXML
     private StackPane stackPane;
-    @FXML
     private Button knopVervers;
-    @FXML
     private Button knopBewerk;
-    @FXML
     private Button knopVerwijder;
-    @FXML
     private Button knopNieuw;
-    @FXML
     private AnchorPane nieuweAnchorPane;
-    @FXML
     private AnchorPane bewerkVermissingPane;
-    @FXML
     private AnchorPane listPane;
-    
     private static ChildControllerContext listController;
-    @FXML
     private Label labelStatus;
     // Hieronder hoort dit te staan, dankzij scenebuilder kan dit misschien verwijderd worden.
     //    @FXML
     //    private MedewerkerEditPaneController medewerkerEditPaneController;
-    @FXML
     private BewerkVermissingPaneController bewerkVermissingPaneController;
+    @FXML
+    private AnchorPane klantenPane;
+    @FXML
+    private Button knopVerversKlant;
+    @FXML
+    private Button knopBewerkKlant;
+    @FXML
+    private Button knopVerwijderKlant;
+    @FXML
+    private Button knopNieuweKlant;
     
 
     /**
@@ -63,7 +63,7 @@ public class VermissingPaneController implements Initializable, ParentController
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
         // show the main data, main screen
-        listPane.setVisible(true);
+//        listPane.setVisible(true);
     } 
     
     public static void setChildContext(ChildControllerContext cC){

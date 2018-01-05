@@ -33,53 +33,51 @@ public class BewerkVermissingPaneController implements Initializable {
 
     private static ParentControllerContext parentController;
     @FXML
-    private AnchorPane nieuweAnchorPane;
-    @FXML
     private StackPane stackPane;
     @FXML
     private GridPane nieuwPane;
-    @FXML
     private TextField fieldDatum;
-    @FXML
     private TextField fieldTijd;
     @FXML
     private Button knopBevestigen;
     @FXML
     private Button knopAnnuleren;
-    @FXML
     private TextField fieldLuchthaven;
-    @FXML
     private TextField fieldNaam;
-    @FXML
     private TextField fieldAdres;
-    @FXML
     private TextField fieldWoonplaats;
-    @FXML
     private TextField fieldPostcode;
-    @FXML
     private TextField fieldLand;
-    @FXML
     private TextField fieldTelefoon;
-    @FXML
     private TextField fieldEmail;
-    @FXML
     private TextField fieldLabelNr;
-    @FXML
     private TextField fieldVluchtNr;
-    @FXML
     private TextField fieldBestemming;
-    @FXML
     private TextField fieldBagageType;
-    @FXML
     private TextField fieldBagageMerk;
-    @FXML
     private TextField fieldBagageKleur;
-    @FXML
     private TextField fieldBagageKenmerken;
-    @FXML
     private Label labelTitle;
     
     private static Vermissing vermissing;
+    @FXML
+    private AnchorPane anchorPaneNKlant;
+    @FXML
+    private TextField fieldNaamNKlant;
+    @FXML
+    private TextField fieldAdresNKlant;
+    @FXML
+    private TextField fieldWoonplaatsNKlant;
+    @FXML
+    private TextField fieldPostcodeNKlant;
+    @FXML
+    private TextField fieldLandNKlant;
+    @FXML
+    private TextField fieldTelefoonNKlant;
+    @FXML
+    private TextField fieldEmailNKlant;
+    @FXML
+    private TextField fieldCheckInDatumNKlant;
     /**
      * Initializes the controller class.
      */

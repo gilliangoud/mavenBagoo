@@ -6,7 +6,7 @@
  */
 package com.fortw.bagoo;
 
-import com.fortw.bagoo.interfaces.VermissingDao;
+import com.fortw.bagoo.Dao.VermissingDao;
 import com.fortw.bagoo.models.Vermissing;
 import java.io.IOException;
 import java.net.URL;
