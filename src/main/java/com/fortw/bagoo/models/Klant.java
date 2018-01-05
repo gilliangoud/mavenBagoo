@@ -21,6 +21,7 @@ public class Klant {
     private String land;
     private String telefoonNr;
     private String email;
+    private String checkInDatum;
     
 
     public Klant(){
@@ -235,8 +236,22 @@ public class Klant {
     
     @Override
     public String toString(){
-        String s = klantNr + ": " + voorNaam + " " + achterNaam;
+        String s = getKlantNr() + ": " + getVoorNaam() + " " + getAchterNaam();
         return s; 
+    }
+
+    /**
+     * @return the checkInDatum
+     */
+    public String getCheckInDatum() {
+        return checkInDatum;
+    }
+
+    /**
+     * @param checkInDatum the checkInDatum to set
+     */
+    public void setCheckInDatum(String checkInDatum) {
+        this.checkInDatum = checkInDatum;
     }
 
 }

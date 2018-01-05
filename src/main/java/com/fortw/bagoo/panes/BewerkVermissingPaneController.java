@@ -103,9 +103,9 @@ public class BewerkVermissingPaneController implements Initializable {
         fieldLabelNr.setText(vermissing.getBagage().getLabelNr().toString());
         fieldVluchtNr.setText(vermissing.getVlucht().getVluchtNr());
         fieldBestemming.setText(vermissing.getVlucht().getNaar());
-        fieldBagageType.setText(vermissing.getBagage().getType());
+        //fieldBagageType.setText(vermissing.getBagage().getType());
         fieldBagageMerk.setText(vermissing.getBagage().getMerk());
-        fieldBagageKleur.setText(vermissing.getBagage().getKleur());
+        //fieldBagageKleur.setText(vermissing.getBagage().getKleur());
         fieldBagageKenmerken.setText(vermissing.getBagage().getOpmerking());
     }
 
@@ -125,9 +125,9 @@ public class BewerkVermissingPaneController implements Initializable {
         //vermissing.getBagage().setLabelNr(fieldLabelNr.getText());
         vermissing.getVlucht().setVluchtNr(fieldVluchtNr.getText());
         vermissing.getVlucht().setNaar(fieldBestemming.getText());
-        vermissing.getBagage().setType(fieldBagageType.getText());
+        //vermissing.getBagage().setType(fieldBagageType.getText());
         vermissing.getBagage().setMerk(fieldBagageMerk.getText());
-        vermissing.getBagage().setKleur(fieldBagageKleur.getText());
+        //vermissing.getBagage().setKleur(fieldBagageKleur.getText());
         vermissing.getBagage().setOpmerking(fieldBagageKenmerken.getText());       
         
         

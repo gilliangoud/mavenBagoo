@@ -23,14 +23,20 @@
                   <GridPane fx:id="nieuwPane">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="3.0" prefWidth="95.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="664.0" minWidth="10.0" prefWidth="390.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="432.0" minWidth="10.0" prefWidth="376.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="664.0" minWidth="10.0" prefWidth="150.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="464.0" minWidth="10.0" prefWidth="250.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="579.0" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="858.0" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="724.0" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -64,49 +70,62 @@
                               <DatePicker fx:id="fieldDatum" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
                            </children>
                         </VBox>
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Tijd" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="fieldTijd" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Luchthaven" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Naam" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Adres" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Woonplaats" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Postcode" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Telefoon" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Luchthaven" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Voornaam" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Adres" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Woonplaats" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Postcode" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Land" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Telefoon" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Label nummer" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Vlucht nummer" GridPane.columnIndex="1" GridPane.rowIndex="15" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bestemming" GridPane.columnIndex="1" GridPane.rowIndex="16" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Type" GridPane.columnIndex="1" GridPane.rowIndex="18" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Merk" GridPane.columnIndex="1" GridPane.rowIndex="19" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Kleur" GridPane.columnIndex="1" GridPane.rowIndex="20" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bijzondere kenmerken" GridPane.columnIndex="1" GridPane.rowIndex="21" />
-                        <Button fx:id="knopBevestigen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBevestigenAction" text="Bevestigen" GridPane.columnIndex="2" GridPane.rowIndex="23" />
-                        <Button fx:id="knopAnnuleren" cancelButton="true" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAnnulerenAction" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="23" />
-                        <TextField fx:id="fieldNaam" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                        <TextField fx:id="fieldAdres" maxWidth="-Infinity" prefHeight="25.0" prefWidth="275.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                        <TextField fx:id="fieldWoonplaats" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                        <TextField fx:id="fieldPostcode" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                        <TextField fx:id="fieldLand" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                        <TextField fx:id="fieldTelefoon" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-                        <TextField fx:id="fieldEmail" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bijzondere kenmerken" GridPane.columnIndex="1" GridPane.rowIndex="24" />
+                        <Button fx:id="knopBevestigen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBevestigenAction" text="Bevestigen" GridPane.columnIndex="4" GridPane.rowIndex="27" />
+                        <Button fx:id="knopAnnuleren" cancelButton="true" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAnnulerenAction" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="27" />
+                        <TextField fx:id="fieldNaam" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="fieldAdres" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="275.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <TextField fx:id="fieldWoonplaats" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <TextField fx:id="fieldPostcode" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <TextField fx:id="fieldLand" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                        <TextField fx:id="fieldTelefoon" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                        <TextField fx:id="fieldEmail" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                         <TextField fx:id="fieldLabelNr" GridPane.columnIndex="2" GridPane.rowIndex="14" />
                         <TextField fx:id="fieldBestemming" GridPane.columnIndex="2" GridPane.rowIndex="16" />
                         <TextField fx:id="fieldBagageMerk" GridPane.columnIndex="2" GridPane.rowIndex="19" />
-                        <TextField fx:id="fieldBagageKenmerken" GridPane.columnIndex="2" GridPane.rowIndex="21" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="Reiziger" GridPane.rowIndex="5" />
+                        <TextField fx:id="fieldBagageKenmerken" maxHeight="1.7976931348623157E308" prefHeight="48.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="24" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="Reiziger" GridPane.rowIndex="4" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bagage label" GridPane.rowIndex="13" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Bagage" GridPane.rowIndex="17" />
-                        <Label prefHeight="35.0" prefWidth="318.0" text="Nieuwe vermissing" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
+                        <Label prefHeight="35.0" prefWidth="318.0" text="Nieuwe vermissing" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1" GridPane.columnSpan="2">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="fieldLuchthaven" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="fieldLuchthaven" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                         <ComboBox fx:id="fieldVluchtNr" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="15" />
                         <ComboBox fx:id="fieldBagageType" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="18" />
                         <ComboBox fx:id="fieldBagageKleur" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="20" />
-                        <TextField fx:id="fieldAdresHuisnummer" alignment="CENTER_RIGHT" layoutX="495.0" layoutY="223.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="73.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" />
+                        <TextField fx:id="fieldAdresHuisnummer" layoutX="495.0" layoutY="223.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="73.0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Huisnummer" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" text="Achternaam" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <TextField fx:id="fieldAchternaam" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Check-in datum" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <DatePicker fx:id="fieldCheckInDatum" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <ComboBox fx:id="fieldBagageKleur2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.rowIndex="20" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Secundaire kleur" GridPane.columnIndex="3" GridPane.rowIndex="20" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Gewicht" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+                        <TextField fx:id="fieldBagageGewicht" GridPane.columnIndex="4" GridPane.rowIndex="19" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Breedte" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Hoogte" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Diepte" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+                        <TextField fx:id="fieldBagageBreedte" GridPane.columnIndex="2" GridPane.rowIndex="21" />
+                        <TextField fx:id="fieldBagageHoogte" GridPane.columnIndex="2" GridPane.rowIndex="22" />
+                        <TextField fx:id="fieldBagageDiepte" GridPane.columnIndex="2" GridPane.rowIndex="23" />
                      </children>
                   </GridPane>
                </children>
