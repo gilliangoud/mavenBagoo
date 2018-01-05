@@ -10,7 +10,7 @@ package com.fortw.bagoo.models;
  * @author Giel
  */
 public class BagageType {
-    private Integer typeId;
+    private int typeId;
     private String engels;
     private String nederlands;
     private String spaans;
@@ -82,14 +82,14 @@ public class BagageType {
     /**
      * @return the typeId
      */
-    public Integer getTypeId() {
+    public int getTypeId() {
         return typeId;
     }
 
     /**
      * @param typeId the typeId to set
      */
-    public void setTypeId(Integer typeId) {
+    public void setTypeId(int typeId) {
         this.typeId = typeId;
     }
     

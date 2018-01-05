@@ -5,14 +5,20 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.BagageDao;
+import com.fortw.bagoo.Dao.KlantDao;
+import com.fortw.bagoo.Dao.UserDao;
 import com.fortw.bagoo.Dao.VermissingDao;
 import com.fortw.bagoo.Dao.VluchtDao;
 import com.fortw.bagoo.Dao.VluchthavenDao;
 import com.fortw.bagoo.helpers.AutoCompleteComboBoxListener;
 import com.fortw.bagoo.helpers.XmlLoader;
 import com.fortw.bagoo.interfaces.ParentControllerContext;
+import com.fortw.bagoo.models.Bagage;
 import com.fortw.bagoo.models.BagageType;
+import com.fortw.bagoo.models.Klant;
 import com.fortw.bagoo.models.Kleur;
+import com.fortw.bagoo.models.User;
 import com.fortw.bagoo.models.Vermissing;
 import com.fortw.bagoo.models.Vlucht;
 import com.fortw.bagoo.models.Vluchthaven;
@@ -40,7 +46,7 @@ import javafx.scene.layout.StackPane;
  * @author gilli
  */
 public class NieuwVermissingPaneController implements Initializable {
-    
+
     private static ParentControllerContext parentController;
 
     @FXML
@@ -51,8 +57,6 @@ public class NieuwVermissingPaneController implements Initializable {
     private AnchorPane nieuweAnchorPane;
     @FXML
     private DatePicker fieldDatum;
-    @FXML
-    private TextField fieldTijd;
     @FXML
     private Button knopBevestigen;
     @FXML
@@ -87,18 +91,35 @@ public class NieuwVermissingPaneController implements Initializable {
     private ComboBox<Kleur> fieldBagageKleur;
     @FXML
     private TextField fieldBagageKenmerken;
-    
+
     private ObservableList<Vluchthaven> vluchthavens
-            = FXCollections.observableArrayList(VluchthavenDao.getAllVluchthavens());
-    
+            = FXCollections.observableArrayList(VluchthavenDao.
+                    getAllVluchthavens());
+
     private ObservableList<Vlucht> vluchten
             = FXCollections.observableArrayList(VluchtDao.getAllVluchten());
-    
+
     private ObservableList<Kleur> kleuren
             = FXCollections.observableArrayList(XmlLoader.loadKleurData());
-    
+
     private ObservableList<BagageType> types
             = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+    @FXML
+    private TextField fieldAdresHuisnummer;
+    @FXML
+    private TextField fieldAchternaam;
+    @FXML
+    private DatePicker fieldCheckInDatum;
+    @FXML
+    private ComboBox<Kleur> fieldBagageKleur2;
+    @FXML
+    private TextField fieldBagageGewicht;
+    @FXML
+    private TextField fieldBagageBreedte;
+    @FXML
+    private TextField fieldBagageHoogte;
+    @FXML
+    private TextField fieldBagageDiepte;
 
     /**
      * Initializes the controller class.
@@ -106,96 +127,100 @@ public class NieuwVermissingPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fieldLuchthaven.setItems(vluchthavens);
-        new AutoCompleteComboBoxListener(fieldLuchthaven);
+        //new AutoCompleteComboBoxListener(fieldLuchthaven);
         fieldVluchtNr.setItems(vluchten);
-        new AutoCompleteComboBoxListener(fieldVluchtNr);
+        //new AutoCompleteComboBoxListener(fieldVluchtNr);
         fieldBagageKleur.setItems(kleuren);
-        new AutoCompleteComboBoxListener(fieldBagageKleur);
+        fieldBagageKleur2.setItems(kleuren);
+        //new AutoCompleteComboBoxListener(fieldBagageKleur);
+        //new AutoCompleteComboBoxListener(fieldBagageKleur2);
         fieldBagageType.setItems(types);
-        new AutoCompleteComboBoxListener(fieldBagageType);
-    }    
-    
-    public static void setParentContext(ParentControllerContext pC){
+        //new AutoCompleteComboBoxListener(fieldBagageType);
+    }
+
+    public static void setParentContext(ParentControllerContext pC) {
         parentController = pC;
         pC.displayStatusMessage("status message 404");
     }
 
     @FXML
     private void handleBevestigenAction(ActionEvent event) {
-        // maak een nieuwe klant aan en vul deze
-        // sla de klant op en vraag het klantnr ervan
-        // maak een nieuw bagagestuk aan en vul deze
-        // sla het bagagestuk op en vraag het bagagenr er van
-        
-        // maak een nieuwe vermissing en vul deze
-        // voeg de bovenstaande nr's toe
-        // voeg vlucht, gebruiker en vluchthaven toe
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        Vermissing vermissing = new Vermissing();
-        
-        vermissing.setDatumGevonden(fieldDatum.getValue().toString());
-        vermissing.setTijdGevonden(fieldTijd.getText());
-        vermissing.getVluchthaven().setIata(fieldLuchthaven.getSelectionModel().
-                getSelectedItem().toString());
-        vermissing.getKlant().setVoorNaam(fieldNaam.getText());
-        vermissing.getKlant().setStraat(fieldAdres.getText());
-        //vermissing.getKlant().setHuisNummer();
-        vermissing.getKlant().setWoonplaats(fieldWoonplaats.getText());
-        vermissing.getKlant().setPostcode(fieldPostcode.getText());
-        vermissing.getKlant().setLand(fieldLand.getText());
-        vermissing.getKlant().setTelefoonNr(fieldTelefoon.getText());
-        vermissing.getKlant().setEmail(fieldEmail.getText());
-        //vermissing.getBagage().setLabelNr(fieldLabelNr.getText());
-        vermissing.getVlucht().setVluchtNr(fieldVluchtNr.getSelectionModel().
-                getSelectedItem().toString());
-        vermissing.getVlucht().setNaar(fieldBestemming.getText());
-        vermissing.getBagage().setType(fieldBagageType.getSelectionModel().
-                getSelectedItem().toString());
-        vermissing.getBagage().setMerk(fieldBagageMerk.getText());
-        vermissing.getBagage().setKleur(fieldBagageKleur.getSelectionModel().
-                getSelectedItem().toString());
-        vermissing.getBagage().setOpmerking(fieldBagageKenmerken.getText());       
-        
-        
-        
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Opslaan");
-            alert.setHeaderText("");
-            alert.setContentText("Wee je zeker dat je helemaal klaar bent?");
+        alert.setTitle("Opslaan");
+        alert.setHeaderText("");
+        alert.setContentText("Wee je zeker dat je helemaal klaar bent?");
 
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                this.parentController.displayStatusMessage("Saving");
-                if(VermissingDao.insertVermissing(vermissing)){
-                    this.parentController.notifyChildHasUpdated();
-                    this.parentController.notifyCloseChild();
-                } else {
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error Dialog");
-                    alert.setHeaderText("Look, an Error Dialog");
-                    alert.setContentText("Ooops, couldnt be saved!");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            // maak een nieuwe klant aan en vul deze
+            Klant klant = new Klant();
+            klant.setVoorNaam(fieldNaam.getText());
+            klant.setAchterNaam(fieldAchternaam.getText());
+            klant.setWoonplaats(fieldWoonplaats.getText());
+            klant.setStraat(fieldAdres.getText());
+            klant.setHuisNummer(fieldAdresHuisnummer.getText());
+            klant.setPostcode(fieldPostcode.getText());
+            klant.setLand(fieldLand.getText());
+            klant.setTelefoonNr(fieldTelefoon.getText());
+            klant.setEmail(fieldEmail.getText());
+            klant.setCheckInDatum(fieldCheckInDatum.getValue().toString());
 
-                    alert.showAndWait();
-                }
+            // maak een nieuw bagagestuk aan en vul deze
+            Bagage bagage = new Bagage();
+            //String zin = fieldBagageType.getSelectionModel().getSelectedItem().toString();
+            BagageType type = fieldBagageType.getSelectionModel().getSelectedItem();
+            bagage.setType(type.getTypeId());
+            bagage.setMerk(fieldBagageMerk.getText());
+            bagage.setKleur(fieldBagageKleur.getSelectionModel().getSelectedItem().getRAL());
+            bagage.setKleur2(fieldBagageKleur2.getSelectionModel().getSelectedItem().getRAL());
+            bagage.setGewicht(fieldBagageGewicht.getText());
+            bagage.setOpmerking(fieldBagageKenmerken.getText());
+            bagage.setBreedte(fieldBagageBreedte.getText());
+            bagage.setHoogte(fieldBagageHoogte.getText());
+            bagage.setDiepte(fieldBagageDiepte.getText());
+            bagage.setVluchtNr(fieldVluchtNr.getSelectionModel().getSelectedItem().getVluchtNr());
+            bagage.setLabelNr(fieldLabelNr.getText());
+            
+            int klantId = KlantDao.insertAndReturnId(klant);
+            System.out.println("klantID:" + klantId);
+            
+            int bagageId = BagageDao.insertAndReturnId(bagage);
+            System.out.println("bagageID:" + bagageId);
+
+            this.parentController.displayStatusMessage("Saving");
+
+            // maak een nieuwe vermissing en vul deze
+            Vermissing vermissing = new Vermissing();
+            vermissing.setAangemaakt(fieldDatum.getValue().toString());
+            vermissing.setVluchthaven(fieldLuchthaven.getSelectionModel().
+                    getSelectedItem());
+            vermissing.setBagageLabel(fieldLabelNr.getText());
+            vermissing.setVlucht(fieldVluchtNr.getSelectionModel().
+                    getSelectedItem());
+            vermissing.setKlant(KlantDao.getKlant(klantId));
+            vermissing.setBagage(BagageDao.getBagage(bagageId));
+            User currentUser = UserDao.getUser(2);
+            vermissing.setUserAangemaakt(currentUser);
+            
+            if (VermissingDao.insertVermissing(vermissing)) {
+                this.parentController.notifyChildHasUpdated();
+                this.parentController.notifyCloseChild();
             } else {
-                // ... user chose CANCEL or closed the dialog
+                Alert alert2 = new Alert(Alert.AlertType.ERROR);
+                alert2.setTitle("Error Dialog");
+                alert2.setHeaderText("Look, an Error Dialog");
+                alert2.setContentText("Ooops, couldnt be saved!");
+
+                alert2.showAndWait();
             }
+        } else {
+            // ... user chose CANCEL or closed the dialog
+        }
     }
 
     @FXML
     private void handleAnnulerenAction(ActionEvent event) {
         parentController.notifyCloseChild();
     }
-    
+
 }
