@@ -5,8 +5,10 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.KlantDao;
 import com.fortw.bagoo.Dao.VermissingDao;
 import com.fortw.bagoo.interfaces.ChildControllerContext;
+import com.fortw.bagoo.models.Klant;
 import com.fortw.bagoo.models.Vermissing;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,8 +37,7 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     @FXML
     private TableColumn userAangemaakt;
 
-    private ObservableList<Vermissing> tableList
-            = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
+    private ObservableList<Vermissing> tableList = FXCollections.observableArrayList();
     @FXML
     private AnchorPane listPane;
     @FXML
@@ -55,6 +56,7 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     public void initialize(URL url, ResourceBundle rb) {
         VermissingPaneController.setChildContext(this);
         theTableView.setItems(this.tableList);
+        
 
         // associate every tableview collum with its data
         for (int cnr = 0; cnr < theTableView.getColumns().size(); cnr++) {
@@ -67,10 +69,10 @@ public class ListVermissingPaneController implements Initializable, ChildControl
             }
         }
     }
-    
+
     private void refreshTable() {
-        tableList
-                = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
+        tableList = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
+        //tableList.addAll(VermissingDao.getAllVermissingen());
         theTableView.setItems(this.tableList);
     }
 

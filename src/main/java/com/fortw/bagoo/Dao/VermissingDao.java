@@ -29,13 +29,13 @@ public interface VermissingDao {
         vermissing.setVluchthaven(VluchthavenDao.getVluchthaven(rs.getString("vluchthavens_iata")));
         vermissing.setKlant(KlantDao.getKlant(rs.getInt("klant_idklant")));
         vermissing.setBagage(BagageDao.getBagage(rs.getInt("bagage_idbagage")));
-        vermissing.setAangemaakt(rs.getString("aangemaakt"));
+        vermissing.setAangemaakt(rs.getDate("aangemaakt"));
         vermissing.setLaatsteUpdate(rs.getString("laatsteupdate"));
-        vermissing.setBagageLabel(rs.getString("bagagelabel"));
+        vermissing.setBagageLabel(rs.getInt("bagagelabel"));
         vermissing.setVlucht(VluchtDao.getVlucht(rs.getString("vlucht_vluchtnr")));
         vermissing.setUserAangemaakt(UserDao.getUser(rs.getInt("user_iduser_aangemaakt")));
         vermissing.setUserBewerkt(UserDao.getUser(rs.getInt("user_iduser_bewerkt")));
-
+        
         return vermissing;
     }
 
@@ -106,9 +106,9 @@ public interface VermissingDao {
                     + " WHERE idvermissing=?");
             ps.setString(1, vermissing.getDatumGevonden());
             ps.setString(2, vermissing.getTijdGevonden());
-            ps.setString(3, vermissing.getAangemaakt());
+            ps.setDate(3, vermissing.getAangemaakt());
             ps.setString(4, vermissing.getLaatsteUpdate());
-            ps.setString(5, vermissing.getBagageLabel());
+            ps.setInt(5, vermissing.getBagageLabel());
             ps.setString(6, vermissing.getVlucht().getVluchtNr());
             ps.setInt(7, vermissing.getUserAangemaakt().getPersoneelNr());
             ps.setInt(8, vermissing.getUserBewerkt().getPersoneelNr());
@@ -152,9 +152,9 @@ public interface VermissingDao {
             ps.setString(3, vermissing.getVluchthaven().getIata());
             ps.setInt(4, vermissing.getKlant().getKlantNr());
             ps.setInt(5, vermissing.getBagage().getBagageNr());
-            ps.setString(6, vermissing.getAangemaakt());
+            ps.setDate(6, vermissing.getAangemaakt());
             ps.setString(7, vermissing.getLaatsteUpdate());
-            ps.setString(8, vermissing.getBagageLabel());
+            ps.setInt(8, vermissing.getBagageLabel());
             User user = vermissing.getUserAangemaakt();
             ps.setInt(9, user.getPersoneelNr());
             ps.setInt(10, user.getPersoneelNr());

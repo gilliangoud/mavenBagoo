@@ -24,23 +24,23 @@ public class Bagage {
     private String diepte;
     private Integer locatieNr;
     private String vluchtNr;
-    private String labelNr;
+    private int labelNr;
 
     // Lege Constructor
     public Bagage() {
         this.bagageNr = null;
         this.type = 0;
-        this.merk = "";
+        this.merk = null;
         this.kleur = 0;
         this.kleur2 = 0;
-        this.gewicht = "";
-        this.opmerking = "";
-        this.breedte = "";
-        this.hoogte = "";
-        this.diepte = "";
+        this.gewicht = null;
+        this.opmerking = null;
+        this.breedte = null;
+        this.hoogte = null;
+        this.diepte = null;
         this.locatieNr = 0;
-        this.vluchtNr = "";
-        this.labelNr = "";
+        this.vluchtNr = null;
+        this.labelNr = 1;
     }
 
     /**
@@ -232,14 +232,14 @@ public class Bagage {
     /**
      * @return the labelNr
      */
-    public String getLabelNr() {
+    public int getLabelNr() {
         return labelNr;
     }
 
     /**
      * @param labelNr the labelNr to set
      */
-    public void setLabelNr(String labelNr) {
+    public void setLabelNr(int labelNr) {
         this.labelNr = labelNr;
     }
 }

@@ -10,13 +10,14 @@ package com.fortw.bagoo.models;
  * @author Giel
  */
 public class Kleur {
+    private int kleurId;
     private int RAL;
     private String engels;
     private String nederlands;
     private String spaans;
     private String turks;
     
-    Kleur(){}
+    public Kleur(){}
 
     /**
      * @return the RAL
@@ -91,6 +92,20 @@ public class Kleur {
     @Override
     public String toString(){
         return this.getNederlands();
+    }
+
+    /**
+     * @return the kleurId
+     */
+    public int getKleurId() {
+        return kleurId;
+    }
+
+    /**
+     * @param kleurId the kleurId to set
+     */
+    public void setKleurId(int kleurId) {
+        this.kleurId = kleurId;
     }
     
 }

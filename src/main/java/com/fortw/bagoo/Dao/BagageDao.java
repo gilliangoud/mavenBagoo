@@ -32,7 +32,7 @@ public interface BagageDao {
         bagage.setDiepte( rs.getString("diepte") );
         bagage.setLocatieNr( rs.getInt("Locaties_idLocaties") );
         bagage.setVluchtNr( rs.getString("vlucht_vluchtnr") );
-        bagage.setLabelNr( rs.getString("labelNr") );
+        bagage.setLabelNr( rs.getInt("labelnr") );
         
         return bagage;
     }
@@ -125,8 +125,8 @@ public interface BagageDao {
             ps.setString(7, bagage.getBreedte());
             ps.setString(8, bagage.getHoogte());
             ps.setString(9, bagage.getDiepte());
-            ps.setString(10, bagage.getLabelNr());
-            ps.setInt(9, bagage.getBagageNr());
+            ps.setInt(10, bagage.getLabelNr());
+            ps.setInt(11, bagage.getBagageNr());
             int i = ps.executeUpdate();
           if(i == 1) {
         return true;
@@ -167,7 +167,7 @@ public interface BagageDao {
             ps.setString(9, bagage.getDiepte());
             ps.setInt(10, bagage.getLocatieNr());
             ps.setString(11, bagage.getVluchtNr());
-            ps.setString(12, bagage.getLabelNr());
+            ps.setInt(12, bagage.getLabelNr());
             int i = ps.executeUpdate();
           if(i == 1) {
             return true;
@@ -195,7 +195,7 @@ public interface BagageDao {
             ps.setString(9, bagage.getDiepte());
             ps.setInt(10, bagage.getLocatieNr());
             ps.setString(11, bagage.getVluchtNr());
-            ps.setString(12, bagage.getLabelNr());
+            ps.setInt(12, bagage.getLabelNr());
             int i = ps.executeUpdate();
           if(i == 1) {
             ResultSet rs = ps.getGeneratedKeys();

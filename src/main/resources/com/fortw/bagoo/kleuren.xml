@@ -1,5 +1,14 @@
 <kleuren>
     <kleur>
+        <kleurId>0</kleurId>
+        <RAL>0</RAL>
+        <engels>0</engels>
+        <nederlands>0</nederlands>
+        <spaans>0</spaans>
+        <turks>0</turks>
+    </kleur>
+    <kleur>
+        <kleurId>1</kleurId>
         <RAL>1003</RAL>
         <engels>Yellow</engels>
         <nederlands>Geel</nederlands>
@@ -7,6 +16,7 @@
         <turks>Sarı</turks>
     </kleur>
     <kleur>
+        <kleurId>2</kleurId>
         <RAL>1024</RAL>
         <engels>Olive</engels>
         <nederlands>Olijf</nederlands>
@@ -14,6 +24,7 @@
         <turks>Zeytin yeşili</turks>
     </kleur>
     <kleur>
+        <kleurId>3</kleurId>
         <RAL>2004</RAL>
         <engels>Orange</engels>
         <nederlands>Oranje</nederlands>
@@ -21,6 +32,7 @@
         <turks>Turuncu</turks>
     </kleur>
 <!--    <kleur>
+        <kleurId>4</kleurId>
         <RAL></RAL>
         <engels></engels>
         <nederlands></nederlands>

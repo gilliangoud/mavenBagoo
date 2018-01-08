@@ -17,6 +17,7 @@
                   <Button fx:id="knopBewerk" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBewerkAction" prefHeight="50.0" prefWidth="160.0" text="Bewerk vermissing" />
                   <Button fx:id="knopVerwijder" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderAction" prefHeight="50.0" prefWidth="160.0" text="Verwijder vermissing" />
                   <Button fx:id="knopNieuw" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuwAction" prefHeight="50.0" prefWidth="160.0" text="Nieuwe vermissing" />
+                  <Button fx:id="knopSingle" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSingleAction" prefHeight="50.0" prefWidth="160.0" text="Bekijk vermissing" />
                </children>
             </VBox>
          </left>
@@ -26,6 +27,7 @@
                   <fx:include fx:id="nieuweAnchorPane" source="NieuweVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="bewerkVermissingPane" source="BewerkVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="listPane" source="ListVermissingPane.fxml" visible="true" />
+                  <fx:include fx:id="singleVermissingPane" source="SingleVermissingPane.fxml" visible="false" />
                </children>
             </StackPane>
          </center>

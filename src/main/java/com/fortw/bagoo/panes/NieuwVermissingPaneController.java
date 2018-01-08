@@ -23,6 +23,7 @@ import com.fortw.bagoo.models.Vermissing;
 import com.fortw.bagoo.models.Vlucht;
 import com.fortw.bagoo.models.Vluchthaven;
 import java.net.URL;
+import java.sql.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -127,15 +128,15 @@ public class NieuwVermissingPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fieldLuchthaven.setItems(vluchthavens);
-        //new AutoCompleteComboBoxListener(fieldLuchthaven);
+        new AutoCompleteComboBoxListener(fieldLuchthaven);
         fieldVluchtNr.setItems(vluchten);
-        //new AutoCompleteComboBoxListener(fieldVluchtNr);
+        new AutoCompleteComboBoxListener(fieldVluchtNr);
         fieldBagageKleur.setItems(kleuren);
         fieldBagageKleur2.setItems(kleuren);
-        //new AutoCompleteComboBoxListener(fieldBagageKleur);
-        //new AutoCompleteComboBoxListener(fieldBagageKleur2);
+        new AutoCompleteComboBoxListener(fieldBagageKleur);
+        new AutoCompleteComboBoxListener(fieldBagageKleur2);
         fieldBagageType.setItems(types);
-        //new AutoCompleteComboBoxListener(fieldBagageType);
+        new AutoCompleteComboBoxListener(fieldBagageType);
     }
 
     public static void setParentContext(ParentControllerContext pC) {
@@ -163,7 +164,7 @@ public class NieuwVermissingPaneController implements Initializable {
             klant.setLand(fieldLand.getText());
             klant.setTelefoonNr(fieldTelefoon.getText());
             klant.setEmail(fieldEmail.getText());
-            klant.setCheckInDatum(fieldCheckInDatum.getValue().toString());
+            klant.setCheckInDatum(Date.valueOf(fieldCheckInDatum.getValue()));
 
             // maak een nieuw bagagestuk aan en vul deze
             Bagage bagage = new Bagage();
@@ -179,7 +180,7 @@ public class NieuwVermissingPaneController implements Initializable {
             bagage.setHoogte(fieldBagageHoogte.getText());
             bagage.setDiepte(fieldBagageDiepte.getText());
             bagage.setVluchtNr(fieldVluchtNr.getSelectionModel().getSelectedItem().getVluchtNr());
-            bagage.setLabelNr(fieldLabelNr.getText());
+            bagage.setLabelNr(Integer.valueOf(fieldLabelNr.getText()));
             
             int klantId = KlantDao.insertAndReturnId(klant);
             System.out.println("klantID:" + klantId);
@@ -191,10 +192,10 @@ public class NieuwVermissingPaneController implements Initializable {
 
             // maak een nieuwe vermissing en vul deze
             Vermissing vermissing = new Vermissing();
-            vermissing.setAangemaakt(fieldDatum.getValue().toString());
+            vermissing.setAangemaakt(Date.valueOf(fieldDatum.getValue()));
             vermissing.setVluchthaven(fieldLuchthaven.getSelectionModel().
                     getSelectedItem());
-            vermissing.setBagageLabel(fieldLabelNr.getText());
+            vermissing.setBagageLabel(Integer.valueOf(fieldLabelNr.getText()));
             vermissing.setVlucht(fieldVluchtNr.getSelectionModel().
                     getSelectedItem());
             vermissing.setKlant(KlantDao.getKlant(klantId));

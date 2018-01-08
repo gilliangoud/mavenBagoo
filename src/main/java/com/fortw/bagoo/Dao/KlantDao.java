@@ -39,13 +39,13 @@ public interface KlantDao {
         klant.setTussenVoegsel(rs.getString("tussenvoegsel"));
         klant.setAchterNaam(rs.getString("achternaam"));
         klant.setWoonplaats(rs.getString("woonplaats"));
-        klant.setStraat(rs.getString("huisnummer"));
+        klant.setHuisNummer(rs.getString("huisnummer"));
         klant.setStraat(rs.getString("straat"));
         klant.setPostcode(rs.getString("postcode"));
         klant.setLand(rs.getString("land"));
         klant.setTelefoonNr(rs.getString("telefoon"));
         klant.setEmail(rs.getString("email"));
-        klant.setCheckInDatum(rs.getString("checkindatum"));
+        klant.setCheckInDatum(rs.getDate("checkindatum"));
 
         return klant;
     }
@@ -180,7 +180,8 @@ public interface KlantDao {
             ps.setString(8, klant.getLand());
             ps.setString(9, klant.getTelefoonNr());
             ps.setString(10, klant.getEmail());
-            ps.setString(11, klant.getCheckInDatum());
+            ps.setDate(11, klant.getCheckInDatum());
+            ps.setInt(12, klant.getKlantNr());
             int i = ps.executeUpdate();
             if (i == 1) {
                 return true;
@@ -237,7 +238,7 @@ public interface KlantDao {
             ps.setString(8, klant.getLand());
             ps.setString(9, klant.getTelefoonNr());
             ps.setString(10, klant.getEmail());
-            ps.setString(11, klant.getCheckInDatum());
+            ps.setDate(11, klant.getCheckInDatum());
             int i = ps.executeUpdate();
             if (i == 1) {
                 return true;
@@ -266,7 +267,7 @@ public interface KlantDao {
             ps.setString(8, klant.getLand());
             ps.setString(9, klant.getTelefoonNr());
             ps.setString(10, klant.getEmail());
-            ps.setString(11, klant.getCheckInDatum());
+            ps.setDate(11, klant.getCheckInDatum());
             int i = ps.executeUpdate();
 
             if (i == 1) {

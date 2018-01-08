@@ -1,5 +1,12 @@
 <types>
     <type>
+        <typeId>0</typeId>
+        <engels>Other</engels>
+        <nederlands>Anders</nederlands>
+        <spaans>Otro</spaans>
+        <turks>Diğer</turks>
+    </type>
+    <type>
         <typeId>1</typeId>
         <engels>Suitcase</engels>
         <nederlands>Koffer</nederlands>
@@ -47,12 +54,5 @@
         <nederlands>Kist</nederlands>
         <spaans>Pecho</spaans>
         <turks>Göğüs</turks>
-    </type>
-    <type>
-        <typeId>8</typeId>
-        <engels>Other</engels>
-        <nederlands>Anders</nederlands>
-        <spaans>Otro</spaans>
-        <turks>Diğer</turks>
     </type>
 </types>
