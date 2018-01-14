@@ -63,7 +63,7 @@
                         </Tab>
                         <Tab text="Klanten">
                             <content>
-                                <fx:include fx:id="klantenPane" source="/com/fortw/bagoo/panes/KlantenPane.fxml" visible="true"/>
+                                <fx:include fx:id="klantPane" source="/com/fortw/bagoo/temp/KlantPane.fxml" visible="true"/>
                             </content>
                         </Tab>
                     </tabs>

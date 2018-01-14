@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="anchorPaneListKlant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.ListKlantPaneController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <center>
+            <TableView fx:id="tableViewListKlant" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="columnKlantNr" prefWidth="73.0" text="Klant Nr" />
+                  <TableColumn fx:id="columnVoornaam" prefWidth="111.0" text="Voornaam" />
+                  <TableColumn fx:id="columnTussenvoegsel" prefWidth="87.0" text="Tussenvoegsel" />
+                  <TableColumn fx:id="columnAchternaam" prefWidth="115.0" text="Achternaam" />
+                  <TableColumn fx:id="columnPostcode" prefWidth="100.0" text="Postcode" />
+                  <TableColumn fx:id="columnHuisNr" prefWidth="95.0" text="Huis Nr" />
+                  <TableColumn fx:id="columnTelefoon" prefWidth="158.0" text="Telefoon" />
+                  <TableColumn fx:id="columnEmail" prefWidth="150.0" text="E-mail" />
+                  <TableColumn fx:id="columnCheckin" prefWidth="136.0" text="Check In" />
+               </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

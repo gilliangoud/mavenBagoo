@@ -7,32 +7,41 @@ package com.fortw.bagoo.panes;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 
 /**
  * FXML Controller class
  *
  * @author Rayman
  */
-public class KlantPaneController implements Initializable {
+public class ListKlantPaneController implements Initializable {
 
     @FXML
-    private Button knopVervers;
+    private AnchorPane anchorPaneListKlant;
     @FXML
-    private Button knopNieuweKlant;
+    private TableColumn<?, ?> columnKlantNr;
     @FXML
-    private Button knopVerwijderKlant;
+    private TableColumn<?, ?> columnVoornaam;
     @FXML
-    private AnchorPane anchorPaneKlantPane;
+    private TableColumn<?, ?> columnTussenvoegsel;  
     @FXML
-    private StackPane stackPaneKlantPane;
+    private TableColumn<?, ?> columnAchternaam;
+    @FXML
+    private TableColumn<?, ?> columnPostcode;
+    @FXML
+    private TableColumn<?, ?> columnHuisNr;
+    @FXML
+    private TableColumn<?, ?> columnTelefoon;
+    @FXML
+    private TableColumn<?, ?> columnEmail;
+    @FXML
+    private TableColumn<?, ?> columnCheckin;
+    @FXML
+    private TableView<?> tableViewListKlant;
 
     /**
      * Initializes the controller class.
@@ -41,17 +50,5 @@ public class KlantPaneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void handleRefreshAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleNieuweKlantAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleVerwijderKlantAction(ActionEvent event) {
-    }
     
 }

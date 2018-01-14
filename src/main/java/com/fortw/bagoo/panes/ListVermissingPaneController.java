@@ -33,21 +33,21 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     @FXML
     private TableColumn vermissingNr;
     @FXML
-    private TableColumn datumGevonden;
-    @FXML
     private TableColumn userAangemaakt;
 
     private ObservableList<Vermissing> tableList = FXCollections.observableArrayList();
     @FXML
-    private AnchorPane listPane;
-    @FXML
     private TableColumn<?, ?> klant;
-    @FXML
-    private TableColumn<?, ?> bagage;
     @FXML
     private TableColumn<?, ?> vluchthaven;
     @FXML
     private TableColumn<?, ?> vlucht;
+    @FXML
+    private AnchorPane anchorPaneListKlant;
+    @FXML
+    private TableColumn<?, ?> aangemaakt;
+    @FXML
+    private TableColumn<?, ?> bagageLabel;
 
     /**
      * Initializes the controller class.

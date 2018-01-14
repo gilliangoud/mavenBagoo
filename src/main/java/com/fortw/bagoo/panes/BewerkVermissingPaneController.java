@@ -52,66 +52,37 @@ public class BewerkVermissingPaneController implements Initializable {
 
     private static ParentControllerContext parentController;
     @FXML
-    private StackPane stackPane;
-    @FXML
     private GridPane nieuwPane;
-    @FXML
     private DatePicker fieldDatum;
     @FXML
     private Button knopBevestigen;
     @FXML
     private Button knopAnnuleren;
-    @FXML
     private ComboBox<Vluchthaven> fieldLuchthaven;
-    @FXML
     private TextField fieldNaam;
-    @FXML
     private TextField fieldAdres;
-    @FXML
     private TextField fieldWoonplaats;
-    @FXML
     private TextField fieldPostcode;
-    @FXML
     private TextField fieldLand;
-    @FXML
     private TextField fieldTelefoon;
-    @FXML
     private TextField fieldEmail;
-    @FXML
     private TextField fieldLabelNr;
-    @FXML
     private ComboBox<Vlucht> fieldVluchtNr;
-    @FXML
     private TextField fieldBestemming;
-    @FXML
     private ComboBox<BagageType> fieldBagageType;
-    @FXML
     private TextField fieldBagageMerk;
-    @FXML
     private ComboBox<Kleur> fieldBagageKleur;
-    @FXML
     private TextField fieldBagageKenmerken;
-    @FXML
     private Label labelTitle;
 
     private static Vermissing vermissing;
-    @FXML
-    private AnchorPane nieuweAnchorPane;
-    @FXML
     private TextField fieldAdresHuisnummer;
-    @FXML
     private TextField fieldAchternaam;
-    @FXML
     private DatePicker fieldCheckInDatum;
-    @FXML
     private ComboBox<Kleur> fieldBagageKleur2;
-    @FXML
     private TextField fieldBagageGewicht;
-    @FXML
     private TextField fieldBagageBreedte;
-    @FXML
     private TextField fieldBagageHoogte;
-    @FXML
     private TextField fieldBagageDiepte;
 
     private final ObservableList<Vluchthaven> vluchthavens
@@ -125,6 +96,32 @@ public class BewerkVermissingPaneController implements Initializable {
 
     private final ObservableList<BagageType> types
             = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+    @FXML
+    private AnchorPane anchorPaneNKlant;
+    @FXML
+    private StackPane stackPaneNKlant;
+    @FXML
+    private TextField fieldNaamNKlant;
+    @FXML
+    private TextField fieldStraatNKlant;
+    @FXML
+    private TextField fieldWoonplaatsNKlant;
+    @FXML
+    private TextField fieldPostcodeNKlant;
+    @FXML
+    private TextField fieldLandNKlant;
+    @FXML
+    private TextField fieldTelefoonNKlant;
+    @FXML
+    private TextField fieldEmailNKlant;
+    @FXML
+    private TextField fieldCheckInDatumNKlant;
+    @FXML
+    private TextField fieldHuisnummerNKlant;
+    @FXML
+    private TextField fieldTussenvoegselNKlant;
+    @FXML
+    private TextField fieldAchternaamNKlant;
 
     /**
      * Initializes the controller class.
