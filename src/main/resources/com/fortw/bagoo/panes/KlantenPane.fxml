@@ -20,9 +20,12 @@
             </VBox>
          </left>
          <center>
-            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER" />
-            <fx:include fx:id="anchorPaneBKlant" source="BewerkKlantPane.fxml" visible="false" />
-            <fx:include fx:id="anchorPaneNKlant" source="NieuweKlantPane.fxml" visible="false" />
+            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                    <fx:include fx:id="anchorPaneBKlant" source="BewerkKlantPane.fxml" visible="true" />
+                    <fx:include fx:id="anchorPaneNKlant" source="NieuweKlantPane.fxml" visible="false" />
+               </children>
+            </StackPane>
          </center>
       </BorderPane>
    </children>
