@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -70,13 +71,13 @@
                            </font>
                         </Label>
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Check in datum" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                        <TextField fx:id="fieldCheckInDatumNKlant" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Tussenvoegsel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Achternaam" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Huisnummer" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <TextField fx:id="fieldHuisnummerNKlant" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                         <TextField fx:id="fieldTussenvoegselNKlant" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <TextField fx:id="fieldAchternaamNKlant" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="fieldCheckInDatumNKlant" prefHeight="25.0" prefWidth="382.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                      </children>
                   </GridPane>
                </children>

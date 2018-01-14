@@ -5,12 +5,19 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.KlantDao;
+import com.fortw.bagoo.models.Klant;
 import java.net.URL;
+import java.sql.Date;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -48,7 +55,7 @@ public class NieuweKlantPaneController implements Initializable {
     @FXML
     private TextField fieldEmailNKlant;
     @FXML
-    private TextField fieldCheckInDatumNKlant;
+    private DatePicker fieldCheckInDatumNKlant;
     @FXML
     private TextField fieldHuisnummerNKlant;
     @FXML
@@ -62,14 +69,39 @@ public class NieuweKlantPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void handleBevestigenAction(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Opslaan");
+        alert.setHeaderText("");
+        alert.setContentText("Weet je zeker dat je helemaal klaar bent?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            // maak een nieuwe klant aan en vul deze
+            Klant klant = new Klant();
+            klant.setVoorNaam(fieldNaamNKlant.getText());
+            klant.setTussenVoegsel(fieldTussenvoegselNKlant.getText());
+            klant.setAchterNaam(fieldAchternaamNKlant.getText());
+            klant.setWoonplaats(fieldWoonplaatsNKlant.getText());
+            klant.setStraat(fieldStraatNKlant.getText());
+            klant.setHuisNummer(fieldHuisnummerNKlant.getText());
+            klant.setPostcode(fieldPostcodeNKlant.getText());
+            klant.setLand(fieldLandNKlant.getText());
+            klant.setTelefoonNr(fieldTelefoonNKlant.getText());
+            klant.setEmail(fieldEmailNKlant.getText());
+            klant.setCheckInDatum(Date.valueOf(fieldCheckInDatumNKlant.getValue()));
+            
+            KlantDao.insertKlant(klant);
+        }
     }
 
     @FXML
     private void handleAnnulerenAction(ActionEvent event) {
+        anchorPaneListKlant.setVisible(true);
+        anchorPaneNKlant.setVisible(false);
     }
-    
+
 }

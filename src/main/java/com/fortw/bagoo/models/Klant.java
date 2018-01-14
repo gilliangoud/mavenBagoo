@@ -28,7 +28,7 @@ public class Klant {
 
     public Klant(){
     }
-
+    
     /**
      * @return the klantNr
      */

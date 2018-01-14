@@ -1,6 +1,7 @@
 package com.fortw.bagoo.interfaces;
 
 import com.fortw.bagoo.models.Vermissing;
+import com.fortw.bagoo.models.Klant;
 
 /**
  * De code voorziet een communicatielaag tussen controllers waarbij deze 

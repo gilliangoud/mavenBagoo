@@ -11,14 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 /**
@@ -45,7 +38,12 @@ public class KlantPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+
+    private void hideAllPanes() {
+        anchorPaneListKlant.setVisible(false);
+        anchorPaneNKlant.setVisible(false);
+    }
 
     @FXML
     private void handleRefreshAction(ActionEvent event) {
@@ -53,11 +51,12 @@ public class KlantPaneController implements Initializable {
 
     @FXML
     private void handleNieuweKlantAction(ActionEvent event) {
+        hideAllPanes();
+        anchorPaneNKlant.setVisible(true);
     }
 
     @FXML
     private void handleVerwijderKlantAction(ActionEvent event) {
     }
 
-    
 }
