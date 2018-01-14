@@ -43,11 +43,11 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     @FXML
     private TableColumn<?, ?> vlucht;
     @FXML
-    private AnchorPane anchorPaneListKlant;
-    @FXML
     private TableColumn<?, ?> aangemaakt;
     @FXML
     private TableColumn<?, ?> bagageLabel;
+    @FXML
+    private AnchorPane listPane;
 
     /**
      * Initializes the controller class.
