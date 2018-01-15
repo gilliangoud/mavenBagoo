@@ -116,11 +116,11 @@ public class BewerkVermissingPaneController implements Initializable {
     private ObservableList<Vlucht> vluchten
             = FXCollections.observableArrayList();
 
-    private final ObservableList<Kleur> kleuren
-            = FXCollections.observableArrayList(XmlLoader.loadKleurData());
+    private ObservableList<Kleur> kleuren
+            = FXCollections.observableArrayList();
 
-    private final ObservableList<BagageType> types
-            = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+    private ObservableList<BagageType> types
+            = FXCollections.observableArrayList();
     @FXML
     private AnchorPane bewerkAnchorPane;
     @FXML
@@ -262,6 +262,8 @@ public class BewerkVermissingPaneController implements Initializable {
     }
 
     private void initPane() {
+        kleuren = FXCollections.observableArrayList(XmlLoader.loadKleurData());
+        types = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
         vluchthavens = FXCollections.observableArrayList(VluchthavenDao.getAllVluchthavens());
         vluchten = FXCollections.observableArrayList(VluchtDao.getAllVluchten());        
         fieldLuchthaven.setItems(vluchthavens);
