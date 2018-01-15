@@ -6,24 +6,23 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane fx:id="bagageAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.BagagePaneController">
    <children>
       <BorderPane prefHeight="599.0" prefWidth="814.0">
          <left>
             <VBox prefHeight="599.0" prefWidth="136.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonVerversBagage" mnemonicParsing="false" text="Ververs" />
-                  <Button fx:id="buttonNieuweBagage" mnemonicParsing="false" text="Nieuwe Bagage" />
-                  <Button fx:id="buttonVerwijderBagage" mnemonicParsing="false" text="Verwijder Bagage" />
+                  <Button fx:id="buttonVerversBagage" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="40.0" prefWidth="136.0" text="Ververs" />
+                  <Button fx:id="buttonNieuweBagage" mnemonicParsing="false" onAction="#handleNieuweBagageAction" prefHeight="40.0" prefWidth="136.0" text="Nieuwe Bagage" />
+                  <Button fx:id="buttonVerwijderBagage" mnemonicParsing="false" onAction="#handleVerwijderBagageAction" prefHeight="40.0" prefWidth="136.0" text="Verwijder Bagage" />
                </children>
             </VBox>
          </left>
          <center>
-            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" >
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                 <children> 
-                    <fx:include fx:id = "listBagagePane" source = "ListBagagePane.fxml" visible = "true"/>
-                    <fx:include fx:id = "nieuwBagagePane" source = "NieuwBagagePane.fxml" visible = "false"/>
+                    <fx:include fx:id="listBagagePane" source="ListBagagePane.fxml" visible="true" />
+                    <fx:include fx:id="nieuwBagagePane" source="NieuwBagagePane.fxml" visible="false" />
                 </children>
             </StackPane>
          </center>

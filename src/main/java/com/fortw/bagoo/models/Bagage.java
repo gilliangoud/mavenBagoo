@@ -24,7 +24,7 @@ public class Bagage {
     private String diepte;
     private Integer locatieNr;
     private String vluchtNr;
-    private int labelNr;
+    private Integer labelNr;
 
     // Lege Constructor
     public Bagage() {

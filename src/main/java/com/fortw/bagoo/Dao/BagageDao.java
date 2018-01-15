@@ -28,7 +28,8 @@ public interface BagageDao {
         bagage.setKleur2( rs.getInt("kleur2") );
         bagage.setGewicht( rs.getString("gewicht") );
         bagage.setOpmerking( rs.getString("opmerking") );
-        bagage.setBreedte( rs.getString("breedte") );
+        bagage.setHoogte( rs.getString("hoogte"));
+        bagage.setBreedte( rs.getString("breedte") ); 
         bagage.setDiepte( rs.getString("diepte") );
         bagage.setLocatieNr( rs.getInt("Locaties_idLocaties") );
         bagage.setVluchtNr( rs.getString("vlucht_vluchtnr") );

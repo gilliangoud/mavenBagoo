@@ -66,6 +66,11 @@
                                 <fx:include fx:id="klantPane" source="/com/fortw/bagoo/panes/KlantPane.fxml" visible="true"/>
                             </content>
                         </Tab>
+                        <Tab text="Bagage">
+                            <content>
+                                <fx:include fx:id="BagagePane" source="/com/fortw/bagoo/panes/BagagePane.fxml" visible="true"/>
+                            </content>    
+                        </Tab>
                         <Tab fx:id="medewerkerTab" text="Medewerkers">
                             <content>
                                 <fx:include fx:id="UserPane" source="/com/fortw/bagoo/panes/UserPane.fxml" visible="true"/>

@@ -5,6 +5,8 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.BagageDao;
+import com.fortw.bagoo.Dao.KlantDao;
 import com.fortw.bagoo.interfaces.ChildControllerContext;
 import com.fortw.bagoo.models.Bagage;
 import java.net.URL;
@@ -23,7 +25,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Anouar
  */
-public class ListBagagePaneController implements Initializable,ChildControllerContext {
+public class ListBagagePaneController implements Initializable, ChildControllerContext {
 
     private ObservableList<Bagage> bagagelist = FXCollections.observableArrayList();
     @FXML
@@ -66,9 +68,14 @@ public class ListBagagePaneController implements Initializable,ChildControllerCo
         }
     }
 
+        private void refreshTable() {
+        bagagelist = FXCollections.observableArrayList(BagageDao.getAllBagage());
+        listBagageTableview.setItems(this.bagagelist);
+    }
+    
     @Override
     public void notifyRefresh() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        refreshTable();
     }
 
     @Override
@@ -78,7 +85,8 @@ public class ListBagagePaneController implements Initializable,ChildControllerCo
 
     @Override
     public Object getSelectedItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Bagage selectedItem = (Bagage) listBagageTableview.getSelectionModel().getSelectedItem();
+        return selectedItem;
     }
 
 }
