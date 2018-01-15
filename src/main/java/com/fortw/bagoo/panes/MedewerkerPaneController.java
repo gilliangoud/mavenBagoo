@@ -64,6 +64,7 @@ public class MedewerkerPaneController implements Initializable {
         String gebruikersnaam = inputGebruikersnaam.getText();
         String wachtwoord = inputWachtwoord.getText();
 <<<<<<< HEAD:src/main/java/com/fortw/bagoo/panes/MedewerkerPaneController.java
+<<<<<<< HEAD:src/main/java/com/fortw/bagoo/panes/MedewerkerPaneController.java
         String getLevel = inputLevel.getSelectionModel().
                 getSelectedItem().toString();
         int level = Integer.parseInt(getLevel);
@@ -72,6 +73,8 @@ public class MedewerkerPaneController implements Initializable {
         nieuweGebruiker.setWachtwoord(wachtwoord);
         nieuweGebruiker.setLevel(level);
 =======
+=======
+>>>>>>> parent of d030aea... done fixed it:src/main/java/com/fortw/bagoo/MedewerkerPaneController.java
         int level = 1;
         User nieuweGebruiker = new User(gebruikersnaam, wachtwoord, level);
 >>>>>>> parent of d030aea... done fixed it:src/main/java/com/fortw/bagoo/MedewerkerPaneController.java
