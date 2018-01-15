@@ -41,13 +41,18 @@ public class HoofdSchermServiceController implements Initializable, ParentContro
     private Boolean dragging = false;
     @FXML
     private Tab medewerkerTab;
+    @FXML
+    private Tab rapportenTab;
 
     /**
      * Initializes the controller class.
      */
     public void initialize(URL url, ResourceBundle rb) {
         User currentUser = Auth.getUser();
-        if(currentUser.getLevel() == 1){medewerkerTab.setDisable(true);}
+        if(currentUser.getLevel() == 1){
+            medewerkerTab.setDisable(true);
+            rapportenTab.setDisable(true);
+        }
     }
 
     private void hideAllPanes() {

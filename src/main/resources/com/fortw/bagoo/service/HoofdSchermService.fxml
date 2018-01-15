@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="hoofdSchermService" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.service.HoofdSchermServiceController">
+<AnchorPane fx:id="hoofdSchermService" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.service.HoofdSchermServiceController">
     <children>
-        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+        <BorderPane maxWidth="1.7976931348623157E308">
             <bottom>
                 <HBox fillHeight="false" maxWidth="1.7976931348623157E308" BorderPane.alignment="BOTTOM_LEFT">
                     <children>
@@ -54,7 +54,7 @@
                 </HBox>
             </top>
             <center>
-                <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                <TabPane maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
                         <Tab text="Vermissingen">
                             <content>
@@ -69,6 +69,11 @@
                         <Tab fx:id="medewerkerTab" text="Medewerkers">
                             <content>
                                 <fx:include fx:id="UserPane" source="/com/fortw/bagoo/panes/UserPane.fxml" visible="true"/>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="rapportenTab" text="Rapporten">
+                            <content>
+                                <fx:include fx:id="rapporten" source="/com/fortw/bagoo/panes/Rapporten.fxml" visible="true"/>
                             </content>
                         </Tab>
                     </tabs>
