@@ -110,7 +110,7 @@ public class VermissingPaneController implements Initializable, ParentController
 
     @FXML
     private void handleBewerkAction(ActionEvent event) {
-        Vermissing selectedItem = listController.getSelectedItem();
+        Vermissing selectedItem = (Vermissing) listController.getSelectedItem();
 
         if (selectedItem == null) {
             Alert alert = new Alert(AlertType.ERROR);
@@ -145,7 +145,7 @@ public class VermissingPaneController implements Initializable, ParentController
 
     @FXML
     private void handleVerwijderAction(ActionEvent event) {
-        Vermissing selectedItem = listController.getSelectedItem();
+        Vermissing selectedItem = (Vermissing) listController.getSelectedItem();
         if (selectedItem == null) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Dialog");
@@ -189,7 +189,7 @@ public class VermissingPaneController implements Initializable, ParentController
 
     @FXML
     private void handleSingleAction(ActionEvent event) {
-        Vermissing selectedItem = listController.getSelectedItem();
+        Vermissing selectedItem = (Vermissing) listController.getSelectedItem();
 
         if (selectedItem == null) {
             Alert alert = new Alert(AlertType.ERROR);

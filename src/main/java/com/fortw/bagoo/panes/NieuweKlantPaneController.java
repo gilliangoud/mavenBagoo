@@ -6,6 +6,7 @@
 package com.fortw.bagoo.panes;
 
 import com.fortw.bagoo.Dao.KlantDao;
+import com.fortw.bagoo.interfaces.ParentControllerContext;
 import com.fortw.bagoo.models.Klant;
 import java.net.URL;
 import java.sql.Date;
@@ -30,6 +31,8 @@ import javafx.scene.layout.StackPane;
  */
 public class NieuweKlantPaneController implements Initializable {
 
+    private static ParentControllerContext parentController;
+    
     @FXML
     private AnchorPane anchorPaneNKlant;
     @FXML
@@ -95,15 +98,20 @@ public class NieuweKlantPaneController implements Initializable {
             klant.setTelefoonNr(fieldTelefoonNKlant.getText());
             klant.setEmail(fieldEmailNKlant.getText());
             klant.setCheckInDatum(Date.valueOf(fieldCheckInDatumNKlant.getValue()));
-            
+
             KlantDao.insertKlant(klant);
+            
+            parentController.notifyCloseChild();
         }
     }
 
     @FXML
     private void handleAnnulerenAction(ActionEvent event) {
-        anchorPaneListKlant.setVisible(true);
-        anchorPaneNKlant.setVisible(false);
+        parentController.notifyCloseChild();
+    }
+
+    public void setParentContext(ParentControllerContext pC) {
+        parentController = pC;
     }
 
 }

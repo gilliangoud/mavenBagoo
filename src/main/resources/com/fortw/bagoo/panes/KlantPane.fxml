@@ -23,8 +23,8 @@
             <center>
                 <StackPane fx:id="stackPaneKlantPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <children>
-                    <fx:include fx:id="anchorPaneListKlant" source="ListKlantPane.fxml" visible="true" />
-                    <fx:include fx:id="anchorPaneNKlant" source="NieuweKlantPane.fxml" visible="false" />    
+                    <fx:include fx:id="listKlantPane" source="ListKlantPane.fxml" visible="true" />
+                    <fx:include fx:id="nieuweKlantPane" source="NieuweKlantPane.fxml" visible="false" />    
                     </children>
                 </StackPane>
             </center>
