@@ -116,7 +116,7 @@ public class VermissingPaneController implements Initializable, ParentController
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText("Look, an Error Dialog");
-            alert.setContentText("Ooops, you didn't select anything!");
+            alert.setContentText("Oops, you didn't select anything!");
 
             alert.showAndWait();
         } else {
@@ -198,7 +198,7 @@ public class VermissingPaneController implements Initializable, ParentController
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText("Look, an Error Dialog");
-            alert.setContentText("Ooops, you didn't select anything!");
+            alert.setContentText("Oops, you didn't select anything!");
 
             alert.showAndWait();
         } else {
