@@ -31,6 +31,6 @@ public interface ChildControllerContext {
      */
     public void displayStatusMessage(String message);
 
-    public Vermissing getSelectedItem();
+    public Object getSelectedItem();
     
 }

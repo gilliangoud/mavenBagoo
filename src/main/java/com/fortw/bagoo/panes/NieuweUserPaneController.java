@@ -5,11 +5,15 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.UserDao;
+import com.fortw.bagoo.interfaces.ParentControllerContext;
+import com.fortw.bagoo.models.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -17,16 +21,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import com.fortw.bagoo.models.User;
-import com.fortw.bagoo.Dao.UserDao;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+
 /**
  * FXML Controller class
  *
  * @author Giel
  */
-public class MedewerkerPaneController implements Initializable {
+public class NieuweUserPaneController implements Initializable {
 
     @FXML
     private Button knopAnnuleren;
@@ -44,6 +45,8 @@ public class MedewerkerPaneController implements Initializable {
     private Label labelWachtwoord;
     @FXML
     private ComboBox inputLevel;
+    
+    private ParentControllerContext parentController;
 
     /**
      * Initializes the controller class.
@@ -58,12 +61,16 @@ public class MedewerkerPaneController implements Initializable {
             "4",
             "5"
         );
-    }    
+    }  
+    
+    public void setParentContext(ParentControllerContext pC) {
+        parentController = pC;
+        //pC.displayStatusMessage("status message 404");
+    }
 
     @FXML
     private void handleAnnulerenAction(ActionEvent event) {
-        Stage stageHuidige = (Stage) medewerkerPane.getScene().getWindow();
-        stageHuidige.close();
+        parentController.notifyCloseChild();
     }
 
     @FXML
@@ -78,16 +85,16 @@ public class MedewerkerPaneController implements Initializable {
         nieuweGebruiker.setWachtwoord(wachtwoord);
         nieuweGebruiker.setLevel(level);
         if (UserDao.insertUser(nieuweGebruiker)){
-            Alert alert = new Alert(AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
             alert.setContentText("Je nieuwe gebruiker is opgeslagen.");
 
             alert.showAndWait();
-            Stage stageHuidige = (Stage) medewerkerPane.getScene().getWindow();
-            stageHuidige.close();
+            parentController.notifyChildHasUpdated();
+            parentController.notifyCloseChild();
         }else{
-            Alert alert = new Alert(AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog");
             alert.setHeaderText("Look, an Error Dialog");
             alert.setContentText("Ooops, its not saving! /n do you have "
