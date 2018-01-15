@@ -31,6 +31,10 @@ public class KlantPaneController implements Initializable {
     private AnchorPane anchorPaneKlantPane;
     @FXML
     private StackPane stackPaneKlantPane;
+    @FXML
+    private AnchorPane anchorPaneNKlant;
+    @FXML
+    private AnchorPane anchorPaneListKlant;
 
     /**
      * Initializes the controller class.
