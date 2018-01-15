@@ -140,6 +140,7 @@ public class SingleVermissingPaneController implements Initializable {
     public void setParentContext(ParentControllerContext pC, Vermissing v) {
         this.vermissing = v;
         this.parentController = pC;
+        this.initPane();
         this.isNieuwe = false;
         this.logboeken = FXCollections.observableArrayList(LogboekDao.getAllByVermissing(vermissing.getVermissingNr()));
         pC.displayStatusMessage("status message 404");
@@ -161,7 +162,6 @@ public class SingleVermissingPaneController implements Initializable {
             fieldLogboekOpmerking.setDisable(false);
             fieldLogboekOpmerking.setEditable(true);
         }
-        this.initPane();
     }
 
     private void initPane() {
