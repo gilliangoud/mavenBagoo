@@ -36,7 +36,7 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     private TableColumn userAangemaakt;
 
     private ObservableList<Vermissing> tableList
-            = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
+            = FXCollections.observableArrayList();
     @FXML
     private AnchorPane listPane;
     @FXML
