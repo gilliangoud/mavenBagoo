@@ -184,7 +184,7 @@ public class BewerkVermissingPaneController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Opslaan");
         alert.setHeaderText("");
-        alert.setContentText("Wee je zeker dat je helemaal klaar bent?");
+        alert.setContentText("Weet je zeker dat je helemaal klaar bent?");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {

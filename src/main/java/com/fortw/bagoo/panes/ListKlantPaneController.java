@@ -5,7 +5,10 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.Dao.KlantDao;
+import com.fortw.bagoo.interfaces.ChildControllerContext;
 import com.fortw.bagoo.models.Klant;
+import com.fortw.bagoo.models.Vermissing;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -22,13 +25,14 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Rayman
  */
-public class ListKlantPaneController implements Initializable {
+public class ListKlantPaneController implements Initializable, ChildControllerContext {
 
     @FXML
     private AnchorPane anchorPaneListKlant;
     @FXML
     private TableView<Klant> tableViewListKlant;
-    private final ObservableList<Klant> tableKlantenList
+    
+    private ObservableList<Klant> tableKlantenList
             = FXCollections.observableArrayList();
     @FXML
     private TableColumn klantNr;
@@ -51,20 +55,14 @@ public class ListKlantPaneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        // voeg een dummy initiaal klant item toe om de toegankelijkheid van de 
-        // list te testen
-        tableKlantenList.add(new Klant());
-
-        // associeer de data collectie met de tableview
+        KlantPaneController.setChildContext(this);
         tableViewListKlant.setItems(this.tableKlantenList);
 
         // associeer elke kolom met het juiste atribuut uit de "Klant" class
         for (int cnr = 0; cnr < tableViewListKlant.getColumns().size(); cnr++) {
             TableColumn tc = (TableColumn) tableViewListKlant.getColumns().get(cnr);
             String propertyName = tc.getId();
-            if (propertyName != null && !propertyName.isEmpty())
-            {
+            if (propertyName != null && !propertyName.isEmpty()) {
                 // dit gaat ervan uit dat de class getters en setters heeft 
                 // die in naam matchen met de naam van het atribuut in de 
                 //fx:id van de kolom
@@ -72,6 +70,27 @@ public class ListKlantPaneController implements Initializable {
                 System.out.println("Attached column" + propertyName + "in tableview to matching attribute");
             }
         }
+    }
+
+    private void refreshTable() {
+        tableKlantenList = FXCollections.observableArrayList(KlantDao.getAllKlanten());
+        tableViewListKlant.setItems(this.tableKlantenList);
+    }
+    
+    @Override
+    public void notifyRefresh() {
+        refreshTable();
+    }
+
+    @Override
+    public void displayStatusMessage(String message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Klant getSelectedItem() {
+        Klant selectedItem = (Klant) tableViewListKlant.getSelectionModel().getSelectedItem();
+        return selectedItem;
     }
 
 }
