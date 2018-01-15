@@ -129,9 +129,9 @@
                         <TableColumn fx:id="telefoon" prefWidth="145.0" text="Telefoon" />
                      </columns>
                   </TableView>
-                  <fx:include fx:id="medewerkerEditPane" source="/com/fortw/bagoo/temp/MedewerkerEditPane.fxml" visible="false" />
+<!--                  <fx:include fx:id="medewerkerEditPane" source="/com/fortw/bagoo/temp/MedewerkerEditPane.fxml" visible="false" />
                   <fx:include fx:id="klantPane" source="KlantPane.fxml" visible="false" />
-                  <fx:include fx:id="Rapporten" source="Rapporten.fxml" />
+                  <fx:include fx:id="Rapporten" source="Rapporten.fxml" />-->
                </children>
             </StackPane>
          </center>

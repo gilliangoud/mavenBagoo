@@ -256,9 +256,9 @@ public class BewerkVermissingPaneController implements Initializable {
     public void setParentContext(ParentControllerContext pC, Vermissing v) {
         this.vermissing = v;
         this.parentController = pC;
+        this.initPane();
         pC.displayStatusMessage("status message 404");
         this.initFields(vermissing);
-        this.initPane();
     }
 
     private void initPane() {

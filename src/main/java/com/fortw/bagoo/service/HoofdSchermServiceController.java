@@ -6,6 +6,7 @@
  */
 package com.fortw.bagoo.service;
 
+import com.fortw.bagoo.Dao.Auth;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.interfaces.ParentControllerContext;
+import com.fortw.bagoo.models.User;
+import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Window;
 
@@ -36,11 +39,20 @@ public class HoofdSchermServiceController implements Initializable, ParentContro
 
     private double startMoveX = -1, startMoveY = -1, startX = -1, startY = -1;
     private Boolean dragging = false;
+    @FXML
+    private Tab medewerkerTab;
+    @FXML
+    private Tab rapportenTab;
 
     /**
      * Initializes the controller class.
      */
     public void initialize(URL url, ResourceBundle rb) {
+        User currentUser = Auth.getUser();
+        if(currentUser.getLevel() == 1){
+            medewerkerTab.setDisable(true);
+            rapportenTab.setDisable(true);
+        }
     }
 
     private void hideAllPanes() {
