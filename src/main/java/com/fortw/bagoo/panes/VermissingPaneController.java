@@ -56,7 +56,9 @@ public class VermissingPaneController implements Initializable, ParentController
     // Hieronder hoort dit te staan, dankzij scenebuilder kan dit misschien verwijderd worden.
     //    @FXML
     //    private MedewerkerEditPaneController medewerkerEditPaneController;
+    @FXML
     private BewerkVermissingPaneController bewerkVermissingPaneController;
+    @FXML
     private SingleVermissingPaneController singleVermissingPaneController;
     @FXML
     private Button knopSingle;

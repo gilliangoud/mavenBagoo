@@ -110,11 +110,11 @@ public class BewerkVermissingPaneController implements Initializable {
     @FXML
     private TextField fieldBagageDiepte;
 
-    private final ObservableList<Vluchthaven> vluchthavens
-            = FXCollections.observableArrayList(VluchthavenDao.getAllVluchthavens());
+    private ObservableList<Vluchthaven> vluchthavens
+            = FXCollections.observableArrayList();
 
-    private final ObservableList<Vlucht> vluchten
-            = FXCollections.observableArrayList(VluchtDao.getAllVluchten());
+    private ObservableList<Vlucht> vluchten
+            = FXCollections.observableArrayList();
 
     private final ObservableList<Kleur> kleuren
             = FXCollections.observableArrayList(XmlLoader.loadKleurData());
@@ -262,6 +262,8 @@ public class BewerkVermissingPaneController implements Initializable {
     }
 
     private void initPane() {
+        vluchthavens = FXCollections.observableArrayList(VluchthavenDao.getAllVluchthavens());
+        vluchten = FXCollections.observableArrayList(VluchtDao.getAllVluchten());        
         fieldLuchthaven.setItems(vluchthavens);
         new AutoCompleteComboBoxListener(fieldLuchthaven);
         fieldVluchtNr.setItems(vluchten);
