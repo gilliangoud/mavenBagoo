@@ -68,7 +68,7 @@ public class ListKlantPaneController implements Initializable {
                 // dit gaat ervan uit dat de class getters en setters heeft 
                 // die in naam matchen met de naam van het atribuut in de 
                 //fx:id van de kolom
-                tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
+                tc.setCellFactory(new PropertyValueFactory<>(propertyName));
                 System.out.println("Attached column" + propertyName + "in tableview to matching attribute");
             }
         }
