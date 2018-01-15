@@ -13,53 +13,34 @@ public class Bagage {
 
     // Attributen
     private Integer bagageNr;
-    private String type;
+    private Integer type;
     private String merk;
-    private String kleur;
-    private String kleur2;
+    private Integer kleur;
+    private Integer kleur2;
     private String gewicht;
     private String opmerking;
     private String breedte;
     private String hoogte;
     private String diepte;
     private Integer locatieNr;
-    private Integer vluchtNr;
-    private Integer labelNr;
-    
-    
+    private String vluchtNr;
+    private int labelNr;
+
     // Lege Constructor
-    public Bagage(){
-    }
-    
-    // Constructor alle attributen
-    public Bagage (int bagageNr, String type, String merk, String kleur, String kleur2, String gewicht, String opmerking, String breedte, String hoogte, String diepte, int locatieNr, int vluchtNr){
-        this.bagageNr = bagageNr;
-        this.type = type;
-        this.merk = merk;
-        this.kleur = kleur;
-        this.kleur2 = kleur2;
-        this.gewicht = gewicht;
-        this.opmerking = opmerking;
-        this.breedte = breedte;
-        this.hoogte = hoogte;
-        this.diepte = diepte;
-        this.locatieNr = locatieNr;      
-        this.vluchtNr = vluchtNr;
-    }
-    
-    // Constructor zonder bagageID
-        public Bagage (String type, String merk, String kleur, String kleur2, String gewicht, String opmerking, String breedte, String hoogte, String diepte, int locatieNr, int vluchtNr){
-        this.type = type;
-        this.merk = merk;
-        this.kleur = kleur;
-        this.kleur2 = kleur2;
-        this.gewicht = gewicht;
-        this.opmerking = opmerking;
-        this.breedte = breedte;
-        this.hoogte = hoogte;
-        this.diepte = diepte;
-        this.locatieNr = locatieNr;      
-        this.vluchtNr = vluchtNr;
+    public Bagage() {
+        this.bagageNr = null;
+        this.type = 0;
+        this.merk = null;
+        this.kleur = 0;
+        this.kleur2 = 0;
+        this.gewicht = null;
+        this.opmerking = null;
+        this.breedte = null;
+        this.hoogte = null;
+        this.diepte = null;
+        this.locatieNr = 0;
+        this.vluchtNr = null;
+        this.labelNr = 1;
     }
 
     /**
@@ -79,14 +60,14 @@ public class Bagage {
     /**
      * @return the type
      */
-    public String getType() {
+    public Integer getType() {
         return type;
     }
 
     /**
      * @param type the type to set
      */
-    public void setType(String type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
@@ -107,28 +88,28 @@ public class Bagage {
     /**
      * @return the kleur
      */
-    public String getKleur() {
+    public Integer getKleur() {
         return kleur;
     }
 
     /**
      * @param kleur the kleur to set
      */
-    public void setKleur(String kleur) {
+    public void setKleur(Integer kleur) {
         this.kleur = kleur;
     }
 
     /**
      * @return the kleur2
      */
-    public String getKleur2() {
+    public Integer getKleur2() {
         return kleur2;
     }
 
     /**
      * @param kleur2 the kleur2 to set
      */
-    public void setKleur2(String kleur2) {
+    public void setKleur2(Integer kleur2) {
         this.kleur2 = kleur2;
     }
 
@@ -219,17 +200,17 @@ public class Bagage {
     /**
      * @return the vluchtNr
      */
-    public Integer getVluchtNr() {
+    public String getVluchtNr() {
         return vluchtNr;
     }
 
     /**
      * @param vluchtNr the vluchtNr to set
      */
-    public void setVluchtNr(Integer vluchtNr) {
+    public void setVluchtNr(String vluchtNr) {
         this.vluchtNr = vluchtNr;
     }
-    
+
 //bagageNr;
 //type;
 //merk;
@@ -242,24 +223,23 @@ public class Bagage {
 //diepte;
 //locatieNr;
 //vluchtNr;
-    
     @Override
-    public String toString(){
+    public String toString() {
         String s = Integer.toString(getBagageNr());
-        return s; 
-    }        
+        return s;
+    }
 
     /**
      * @return the labelNr
      */
-    public Integer getLabelNr() {
+    public int getLabelNr() {
         return labelNr;
     }
 
     /**
      * @param labelNr the labelNr to set
      */
-    public void setLabelNr(Integer labelNr) {
+    public void setLabelNr(int labelNr) {
         this.labelNr = labelNr;
     }
 }

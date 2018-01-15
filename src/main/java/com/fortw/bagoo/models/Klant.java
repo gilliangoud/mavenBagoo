@@ -5,6 +5,8 @@
  */
 package com.fortw.bagoo.models;
 
+import java.sql.Date;
+
 /**
  *
  * @author Giel
@@ -21,39 +23,12 @@ public class Klant {
     private String land;
     private String telefoonNr;
     private String email;
+    private Date checkInDatum;
     
 
     public Klant(){
     }
     
-    public Klant(Integer klantNr, String voorNaam, String tussenVoegsel, String achterNaam, String woonplaats, String straat, String huisNummer, String postcode, String land, String telefoonNr, String email){
-        this.klantNr = klantNr;
-        this.voorNaam = voorNaam;
-        this.tussenVoegsel = tussenVoegsel;
-        this.achterNaam = achterNaam;
-        this.woonplaats = woonplaats;
-        this.straat = straat;
-        this.huisNummer = huisNummer;
-        this.postcode = postcode;
-        this.land = land;
-        this.telefoonNr = telefoonNr;
-        this.email = email;        
-    }
-    
-
-    public Klant(String voorNaam, String tussenVoegsel, String achterNaam, String woonplaats, String straat, String huisNummer, String postcode, String land, String telefoonNr, String email){
-        this.voorNaam = voorNaam;
-        this.tussenVoegsel = tussenVoegsel;
-        this.achterNaam = achterNaam;
-        this.woonplaats = woonplaats;
-        this.straat = straat;
-        this.huisNummer = huisNummer;
-        this.postcode = postcode;
-        this.land = land;
-        this.telefoonNr = telefoonNr;
-        this.email = email;        
-    }
-
     /**
      * @return the klantNr
      */
@@ -73,7 +48,7 @@ public class Klant {
      */
     public String getNaam() {
         String volledigeNaam;
-        if(this.getTussenVoegsel().length() > 1) {        
+        if(tussenVoegsel.length() > 1) {        
             volledigeNaam = this.getVoorNaam() + " " + this.getTussenVoegsel() + " " + this.getAchterNaam();
         } else {
             volledigeNaam = this.getVoorNaam() + " " + this.getAchterNaam();
@@ -235,8 +210,22 @@ public class Klant {
     
     @Override
     public String toString(){
-        String s = klantNr + ": " + voorNaam + " " + achterNaam;
+        String s = getKlantNr() + ": " + getVoorNaam() + " " + getAchterNaam();
         return s; 
+    }
+
+    /**
+     * @return the checkInDatum
+     */
+    public Date getCheckInDatum() {
+        return checkInDatum;
+    }
+
+    /**
+     * @param checkInDatum the checkInDatum to set
+     */
+    public void setCheckInDatum(Date checkInDatum) {
+        this.checkInDatum = checkInDatum;
     }
 
 }

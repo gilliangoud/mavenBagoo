@@ -5,6 +5,8 @@
  */
 package com.fortw.bagoo.models;
 
+import java.sql.Date;
+
 /**
  *
  * @author Rayman
@@ -20,16 +22,23 @@ public class Vermissing {
     private Klant klant;
     private Bagage bagage;
     
-    private String aangemaakt;
+    private Date aangemaakt;
     private String laatsteUpdate;
-    private String bagageLabel;
+    private int bagageLabel;
     
     private Vlucht vlucht;
     private User userAangemaakt;
     private User userBewerkt;
 
     // Lege Constructor
-    public Vermissing() {}
+    public Vermissing() {
+        this.vluchthaven = new Vluchthaven();
+        this.klant = new Klant();
+        this.bagage = new Bagage();
+        this.vlucht = new Vlucht();
+        this.userAangemaakt = new User();
+        this.userBewerkt = new User();
+    }
 
     /**
      * @return the vermissingNr
@@ -76,14 +85,14 @@ public class Vermissing {
     /**
      * @return the aangemaakt
      */
-    public String getAangemaakt() {
+    public Date getAangemaakt() {
         return aangemaakt;
     }
 
     /**
      * @param aangemaakt the aangemaakt to set
      */
-    public void setAangemaakt(String aangemaakt) {
+    public void setAangemaakt(Date aangemaakt) {
         this.aangemaakt = aangemaakt;
     }
 
@@ -104,14 +113,14 @@ public class Vermissing {
     /**
      * @return the bagageLabel
      */
-    public String getBagageLabel() {
+    public int getBagageLabel() {
         return bagageLabel;
     }
 
     /**
      * @param bagageLabel the bagageLabel to set
      */
-    public void setBagageLabel(String bagageLabel) {
+    public void setBagageLabel(int bagageLabel) {
         this.bagageLabel = bagageLabel;
     }
 
