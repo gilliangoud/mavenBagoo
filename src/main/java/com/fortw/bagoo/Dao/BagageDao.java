@@ -22,17 +22,17 @@ public interface BagageDao {
     static Bagage extractKlantFromResultSet(ResultSet rs) throws SQLException {
         Bagage bagage = new Bagage();
         bagage.setBagageNr( rs.getInt("idbagage") );
-        bagage.setType(rs.getInt("type"));
+        bagage.setType(rs.getString("type"));
         bagage.setMerk(rs.getString("merk"));
-        bagage.setKleur(rs.getInt("kleur"));
-        bagage.setKleur2( rs.getInt("kleur2") );
+        bagage.setKleur(rs.getString("kleur"));
+        bagage.setKleur2( rs.getString("kleur2") );
         bagage.setGewicht( rs.getString("gewicht") );
         bagage.setOpmerking( rs.getString("opmerking") );
         bagage.setBreedte( rs.getString("breedte") );
         bagage.setDiepte( rs.getString("diepte") );
         bagage.setLocatieNr( rs.getInt("Locaties_idLocaties") );
-        bagage.setVluchtNr( rs.getString("vlucht_vluchtnr") );
-        bagage.setLabelNr( rs.getInt("labelnr") );
+        bagage.setVluchtNr( rs.getInt("vlucht_vluchtnr") );
+        bagage.setLabelNr( rs.getInt("labelNr") );
         
         return bagage;
     }
@@ -116,17 +116,17 @@ public interface BagageDao {
             PreparedStatement ps = connection.prepareStatement("UPDATE bagage SET"
                     + " type=?, merk=?, kleur=?, kleur2=?, gewicht=?, opmerking=?, breedte=?, hoogte=?, diepte=?, labelnr=?"
                     + " WHERE idbagage=?");
-            ps.setInt(1, bagage.getType());
+            ps.setString(1, bagage.getType());
             ps.setString(2, bagage.getMerk());
-            ps.setInt(3, bagage.getKleur());
-            ps.setInt(4, bagage.getKleur2());
+            ps.setString(3, bagage.getKleur());
+            ps.setString(4, bagage.getKleur2());
             ps.setString(5, bagage.getGewicht());
             ps.setString(6, bagage.getOpmerking());
             ps.setString(7, bagage.getBreedte());
             ps.setString(8, bagage.getHoogte());
             ps.setString(9, bagage.getDiepte());
             ps.setInt(10, bagage.getLabelNr());
-            ps.setInt(11, bagage.getBagageNr());
+            ps.setInt(9, bagage.getBagageNr());
             int i = ps.executeUpdate();
           if(i == 1) {
         return true;
@@ -155,19 +155,17 @@ public interface BagageDao {
         if(connection == null) System.exit(1);
         try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO "
-                    + "bagage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            ps.setInt(1, bagage.getType());
+                    + "bagage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setString(1, bagage.getType());
             ps.setString(2, bagage.getMerk());
-            ps.setInt(3, bagage.getKleur());
-            ps.setInt(4, bagage.getKleur2());
+            ps.setString(3, bagage.getKleur());
+            ps.setString(4, bagage.getKleur2());
             ps.setString(5, bagage.getGewicht());
             ps.setString(6, bagage.getOpmerking());
             ps.setString(7, bagage.getBreedte());
             ps.setString(8, bagage.getHoogte());
             ps.setString(9, bagage.getDiepte());
-            ps.setInt(10, bagage.getLocatieNr());
-            ps.setString(11, bagage.getVluchtNr());
-            ps.setInt(12, bagage.getLabelNr());
+            ps.setInt(10, bagage.getLabelNr());
             int i = ps.executeUpdate();
           if(i == 1) {
             return true;
@@ -175,37 +173,5 @@ public interface BagageDao {
         } catch (SQLException ex) {
         }
         return false;
-    }
-
-    public static int insertAndReturnId(Bagage bagage){
-        Connection connection = DbConnection.Connect();
-        if(connection == null) System.exit(1);
-        try {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO "
-                    + "bagage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?)", 
-                    Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, bagage.getType());
-            ps.setString(2, bagage.getMerk());
-            ps.setInt(3, bagage.getKleur());
-            ps.setInt(4, bagage.getKleur2());
-            ps.setString(5, bagage.getGewicht());
-            ps.setString(6, bagage.getOpmerking());
-            ps.setString(7, bagage.getBreedte());
-            ps.setString(8, bagage.getHoogte());
-            ps.setString(9, bagage.getDiepte());
-            ps.setInt(10, bagage.getLocatieNr());
-            ps.setString(11, bagage.getVluchtNr());
-            ps.setInt(12, bagage.getLabelNr());
-            int i = ps.executeUpdate();
-          if(i == 1) {
-            ResultSet rs = ps.getGeneratedKeys();
-                if (rs.next()) {
-                    int nummer = rs.getInt(1);
-                    return nummer;
-                }
-          }
-        } catch (SQLException ex) {
-        }
-        return 0;
     }
 }

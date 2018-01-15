@@ -24,18 +24,18 @@ public interface VermissingDao {
     static Vermissing extractVermissingFromResultSet(ResultSet rs) throws SQLException {
         Vermissing vermissing = new Vermissing();
         vermissing.setVermissingNr(rs.getInt("idvermissing"));
-        vermissing.setDatumGevonden(rs.getString("datumgevonden"));
-        vermissing.setTijdGevonden(rs.getString("tijdgevonden"));
+        vermissing.setDatumGevonden(rs.getString("datum-gevonden"));
+        vermissing.setTijdGevonden(rs.getString("tijd-gevonden"));
         vermissing.setVluchthaven(VluchthavenDao.getVluchthaven(rs.getString("vluchthavens_iata")));
         vermissing.setKlant(KlantDao.getKlant(rs.getInt("klant_idklant")));
         vermissing.setBagage(BagageDao.getBagage(rs.getInt("bagage_idbagage")));
-        vermissing.setAangemaakt(rs.getDate("aangemaakt"));
-        vermissing.setLaatsteUpdate(rs.getString("laatsteupdate"));
-        vermissing.setBagageLabel(rs.getInt("bagagelabel"));
+        vermissing.setAangemaakt(rs.getString("aangemaakt"));
+        vermissing.setLaatsteUpdate(rs.getString("laatste-update"));
+        vermissing.setBagageLabel(rs.getString("bagagelabel"));
         vermissing.setVlucht(VluchtDao.getVlucht(rs.getString("vlucht_vluchtnr")));
         vermissing.setUserAangemaakt(UserDao.getUser(rs.getInt("user_iduser_aangemaakt")));
         vermissing.setUserBewerkt(UserDao.getUser(rs.getInt("user_iduser_bewerkt")));
-        
+
         return vermissing;
     }
 
@@ -102,23 +102,21 @@ public interface VermissingDao {
         }
         try {
             PreparedStatement ps = connection.prepareStatement("UPDATE vermissing SET"
-                    + " datumgevonden=?, tijdgevonden=?, aangemaakt=?, laatsteupdate=?, bagagelabel=?, vlucht_vluchtnr=?, user_iduser_aangemaakt=?, user_iduser_bewerkt=?"
-                    + " WHERE idvermissing=?");
+                    + " datumGevonden=?, tijdGevonden=?, aangemaakt=?, laatsteUpdate=?, bagageLabel=?, vluchtNr=?, userAangemaakt=?, userBewerkt=?"
+                    + " WHERE idbagage=?");
             ps.setString(1, vermissing.getDatumGevonden());
-            ps.setString(2, vermissing.getTijdGevonden());
-            ps.setDate(3, vermissing.getAangemaakt());
-            ps.setString(4, vermissing.getLaatsteUpdate());
-            ps.setInt(5, vermissing.getBagageLabel());
-            ps.setString(6, vermissing.getVlucht().getVluchtNr());
-            ps.setInt(7, vermissing.getUserAangemaakt().getPersoneelNr());
-            ps.setInt(8, vermissing.getUserBewerkt().getPersoneelNr());
-            ps.setInt(9, vermissing.getVermissingNr());
+            ps.setString(1, vermissing.getTijdGevonden());
+            ps.setString(4, vermissing.getAangemaakt());
+            ps.setString(5, vermissing.getLaatsteUpdate());
+            ps.setString(6, vermissing.getBagageLabel());
+            //ps.setInt(7, vermissing.getVlucht());
+            //ps.setString(8, vermissing.getUserAangemaakt());
+            //ps.setString(9, vermissing.getUserBewerkt());
             int i = ps.executeUpdate();
             if (i == 1) {
                 return true;
             }
         } catch (SQLException ex) {
-            System.out.println("++" + ex);
         }
         return false;
     }
@@ -146,26 +144,22 @@ public interface VermissingDao {
         }
         try {
             PreparedStatement ps = connection.prepareStatement("INSERT INTO "
-                    + "vermissing VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    + "vermissing VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, vermissing.getDatumGevonden());
-            ps.setString(2, vermissing.getTijdGevonden());
-            ps.setString(3, vermissing.getVluchthaven().getIata());
-            ps.setInt(4, vermissing.getKlant().getKlantNr());
-            ps.setInt(5, vermissing.getBagage().getBagageNr());
-            ps.setDate(6, vermissing.getAangemaakt());
-            ps.setString(7, vermissing.getLaatsteUpdate());
-            ps.setInt(8, vermissing.getBagageLabel());
+            ps.setString(1, vermissing.getTijdGevonden());
+            ps.setString(4, vermissing.getAangemaakt());
+            ps.setString(5, vermissing.getLaatsteUpdate());
+            ps.setString(6, vermissing.getBagageLabel());
+            //ps.setInt(7, vermissing.getVlucht());
             User user = vermissing.getUserAangemaakt();
+            ps.setInt(8, user.getPersoneelNr());
             ps.setInt(9, user.getPersoneelNr());
-            ps.setInt(10, user.getPersoneelNr());
-            ps.setString(11, vermissing.getVlucht().getVluchtNr());
 
             int i = ps.executeUpdate();
             if (i == 1) {
                 return true;
             }
         } catch (SQLException ex) {
-            System.out.println("++" + ex);
         }
         return false;
     }

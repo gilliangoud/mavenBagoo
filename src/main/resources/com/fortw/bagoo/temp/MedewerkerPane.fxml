@@ -60,7 +60,8 @@
             </Label>
             <TextField fx:id="inputWachtwoord" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <TextField fx:id="inputWachtwoordHerhaal" onKeyTyped="#handleWachtwoordHerhaalInput" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <ComboBox fx:id="inputLevel" prefWidth="150.0" promptText="1" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <ComboBox fx:id="inputLevel" prefWidth="150.0" promptText="1" GridPane.columnIndex="3" GridPane.rowIndex="7" >
+            </ComboBox>
          </children>
       </GridPane>
    </center>

@@ -5,10 +5,8 @@
  */
 package com.fortw.bagoo.panes;
 
-import com.fortw.bagoo.Dao.KlantDao;
 import com.fortw.bagoo.Dao.VermissingDao;
 import com.fortw.bagoo.interfaces.ChildControllerContext;
-import com.fortw.bagoo.models.Klant;
 import com.fortw.bagoo.models.Vermissing;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,21 +31,22 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     @FXML
     private TableColumn vermissingNr;
     @FXML
+    private TableColumn datumGevonden;
+    @FXML
     private TableColumn userAangemaakt;
 
-    private ObservableList<Vermissing> tableList = FXCollections.observableArrayList();
+    private ObservableList<Vermissing> tableList
+            = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
+    @FXML
+    private AnchorPane listPane;
     @FXML
     private TableColumn<?, ?> klant;
+    @FXML
+    private TableColumn<?, ?> bagage;
     @FXML
     private TableColumn<?, ?> vluchthaven;
     @FXML
     private TableColumn<?, ?> vlucht;
-    @FXML
-    private TableColumn<?, ?> aangemaakt;
-    @FXML
-    private TableColumn<?, ?> bagageLabel;
-    @FXML
-    private AnchorPane listPane;
 
     /**
      * Initializes the controller class.
@@ -56,7 +55,6 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     public void initialize(URL url, ResourceBundle rb) {
         VermissingPaneController.setChildContext(this);
         theTableView.setItems(this.tableList);
-        
 
         // associate every tableview collum with its data
         for (int cnr = 0; cnr < theTableView.getColumns().size(); cnr++) {
@@ -69,10 +67,10 @@ public class ListVermissingPaneController implements Initializable, ChildControl
             }
         }
     }
-
+    
     private void refreshTable() {
-        tableList = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
-        //tableList.addAll(VermissingDao.getAllVermissingen());
+        tableList
+                = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
         theTableView.setItems(this.tableList);
     }
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
@@ -10,65 +8,44 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="hoofdSchermService" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.service.HoofdSchermServiceController">
     <children>
-        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-            <bottom>
-                <HBox fillHeight="false" maxWidth="1.7976931348623157E308" BorderPane.alignment="BOTTOM_LEFT">
-                    <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <bottom>
+            <HBox fillHeight="false" maxWidth="1.7976931348623157E308" BorderPane.alignment="BOTTOM_LEFT">
+               <children>
                         <Button fx:id="knopLoguit" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="160.0" text="Log uit" HBox.hgrow="NEVER" />
-                    </children>
-                </HBox>
-            </bottom>
-            <top>
-                <HBox onDragDetected="#handleMoveWindow" onMouseDragged="#moveWindow" onMouseReleased="#endMoveWindow" prefWidth="1024.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
-                            <children>
-                                <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                    <image>
-                                        <Image url="img/bagoo-logo.png" />
-                                    </image>
-                                </ImageView>
-                                <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
-                                    <children>
-                                    </children>
-                                </HBox>
-                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER">
-                            <children>
-                                <Label alignment="BASELINE_RIGHT" contentDisplay="BOTTOM" onMouseClicked="#handleCloseAction" text="X">
-                                    <font>
-                                        <Font size="18.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" />
-                                    </padding>
-                                </Label>
-                            </children>
-                        </HBox>
-                    </children>
-                </HBox>
-            </top>
-            <center>
-                <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-                    <tabs>
-                        <Tab text="Vermissingen">
-                            <content>
-                                <fx:include fx:id="VermissingPane" source="/com/fortw/bagoo/panes/VermissingPane.fxml" visible="true"/>
-                            </content>
-                        </Tab>
-                        <Tab text="Klanten">
-                            <content>
-                                <fx:include fx:id="klantPane" source="/com/fortw/bagoo/panes/KlantPane.fxml" visible="true"/>
-                            </content>
-                        </Tab>
-                    </tabs>
-                </TabPane>
-            </center>
-        </BorderPane>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox prefHeight="50.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+               <children>
+                        <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                        <Image url="img/bagoo-logo.png" />
+                            </image>
+                        </ImageView>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Vermissingen">
+                  <content>
+                    <fx:include fx:id="vermissingPane" source="/com/fortw/bagoo/panes/VermissingPane.fxml" visible="true"/>
+                  </content>
+                </Tab>
+                <Tab text="New Tab">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
     </children>
 </AnchorPane>

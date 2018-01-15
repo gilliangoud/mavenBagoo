@@ -51,6 +51,13 @@ public class MedewerkerPaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        inputLevel.getItems().addAll(
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        );
     }    
 
     @FXML
@@ -63,8 +70,6 @@ public class MedewerkerPaneController implements Initializable {
     private void handleBevestigenAction(ActionEvent event) {
         String gebruikersnaam = inputGebruikersnaam.getText();
         String wachtwoord = inputWachtwoord.getText();
-<<<<<<< HEAD:src/main/java/com/fortw/bagoo/panes/MedewerkerPaneController.java
-<<<<<<< HEAD:src/main/java/com/fortw/bagoo/panes/MedewerkerPaneController.java
         String getLevel = inputLevel.getSelectionModel().
                 getSelectedItem().toString();
         int level = Integer.parseInt(getLevel);
@@ -72,12 +77,6 @@ public class MedewerkerPaneController implements Initializable {
         nieuweGebruiker.setGebruikersnaam(gebruikersnaam);
         nieuweGebruiker.setWachtwoord(wachtwoord);
         nieuweGebruiker.setLevel(level);
-=======
-=======
->>>>>>> parent of d030aea... done fixed it:src/main/java/com/fortw/bagoo/MedewerkerPaneController.java
-        int level = 1;
-        User nieuweGebruiker = new User(gebruikersnaam, wachtwoord, level);
->>>>>>> parent of d030aea... done fixed it:src/main/java/com/fortw/bagoo/MedewerkerPaneController.java
         if (UserDao.insertUser(nieuweGebruiker)){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
