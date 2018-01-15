@@ -62,6 +62,8 @@ public class NieuweKlantPaneController implements Initializable {
     private TextField fieldTussenvoegselNKlant;
     @FXML
     private TextField fieldAchternaamNKlant;
+    @FXML
+    private AnchorPane anchorPaneListKlant;
 
     /**
      * Initializes the controller class.
