@@ -12,12 +12,12 @@
          <center>
             <TableView fx:id="listBagageTableview" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn editable="false" prefWidth="121.0" text="ID Bagage" />
-                <TableColumn editable="false" prefWidth="103.0" text="Type Bagage" />
-                  <TableColumn editable="false" prefWidth="86.0" text="Merk" />
-                  <TableColumn editable="false" prefWidth="87.0" text="Kleur" />
-                  <TableColumn editable="false" prefWidth="75.0" text="Locatie" />
-                  <TableColumn editable="false" prefWidth="127.0" text="Gewicht (KG)" />
+                <TableColumn fx:id="columnIDBagage" editable="false" prefWidth="121.0" text="ID Bagage" />
+                <TableColumn fx:id="columnTypeBagge" editable="false" prefWidth="103.0" text="Type Bagage" />
+                  <TableColumn fx:id="columnMerk" editable="false" prefWidth="86.0" text="Merk" />
+                  <TableColumn fx:id="columnKleur" editable="false" prefWidth="87.0" text="Kleur" />
+                  <TableColumn fx:id="columnLocatie" editable="false" prefWidth="75.0" text="Locatie" />
+                  <TableColumn fx:id="columnGewicht" editable="false" prefWidth="127.0" text="Gewicht (KG)" />
               </columns>
             </TableView>
          </center>

@@ -5,6 +5,7 @@
  */
 package com.fortw.bagoo.panes;
 
+import com.fortw.bagoo.interfaces.ParentControllerContext;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,7 +16,7 @@ import javafx.fxml.Initializable;
  * @author Anouar
  */
 public class NieuwBagagePaneController implements Initializable {
-
+private static ParentControllerContext parentController;
     /**
      * Initializes the controller class.
      */
