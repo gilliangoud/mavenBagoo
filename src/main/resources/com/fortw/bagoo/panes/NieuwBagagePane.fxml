@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="nieuwBagagePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.NieuweKlantPaneController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <center>
+            <StackPane fx:id="StackPaneBagage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane fx:id="nieuwPane">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="3.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="664.0" minWidth="10.0" prefWidth="390.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="432.0" minWidth="10.0" prefWidth="376.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox prefHeight="300.0" prefWidth="417.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Type" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Gewicht (KG)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Kleur 2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Hoogte" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Diepte" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="LocatieID" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Vluchtnummer" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Button fx:id="knopBevestigen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBevestigenAction" text="Bevestigen" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+                        <Button fx:id="knopAnnuleren" cancelButton="true" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAnnulerenAction" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                        <TextField fx:id="fieldType" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="fieldBagageType" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="fieldKleur1" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="fieldKleur2" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <TextField fx:id="fieldGewicht" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <TextField fx:id="fieldBreedte" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <TextField fx:id="fieldHoogte" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                        <TextField fx:id="fieldDiepte" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                        <TextField fx:id="fieldLocatieID" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                        <TextField fx:id="fieldVluchtnummer" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <TextField fx:id="fieldLabelNummer" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                        <TextField fx:id="fieldLabelOpmerking" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="Bagage" GridPane.rowIndex="2" />
+                        <Label prefHeight="35.0" prefWidth="318.0" text="Nieuwe Bagage" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Label nummer" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Merk" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Kleur 1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Breedte" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="opmerking" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                     </children>
+                  </GridPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -34,39 +34,50 @@ public class NieuweKlantPaneController implements Initializable {
     private static ParentControllerContext parentController;
     
     @FXML
-    private AnchorPane anchorPaneNKlant;
-    @FXML
-    private StackPane stackPaneNKlant;
-    @FXML
     private GridPane nieuwPane;
     @FXML
     private Button knopBevestigen;
     @FXML
     private Button knopAnnuleren;
-    @FXML
     private TextField fieldNaamNKlant;
-    @FXML
     private TextField fieldStraatNKlant;
-    @FXML
     private TextField fieldWoonplaatsNKlant;
-    @FXML
     private TextField fieldPostcodeNKlant;
-    @FXML
     private TextField fieldLandNKlant;
-    @FXML
     private TextField fieldTelefoonNKlant;
-    @FXML
     private TextField fieldEmailNKlant;
-    @FXML
     private DatePicker fieldCheckInDatumNKlant;
-    @FXML
     private TextField fieldHuisnummerNKlant;
-    @FXML
     private TextField fieldTussenvoegselNKlant;
-    @FXML
     private TextField fieldAchternaamNKlant;
     @FXML
-    private AnchorPane anchorPaneListKlant;
+    private StackPane StackPaneBagage;
+    @FXML
+    private TextField fieldType;
+    @FXML
+    private TextField fieldBagageType;
+    @FXML
+    private TextField fieldKleur1;
+    @FXML
+    private TextField fieldKleur2;
+    @FXML
+    private TextField fieldGewicht;
+    @FXML
+    private TextField fieldBreedte;
+    @FXML
+    private TextField fieldHoogte;
+    @FXML
+    private TextField fieldDiepte;
+    @FXML
+    private TextField fieldLocatieID;
+    @FXML
+    private TextField fieldVluchtnummer;
+    @FXML
+    private TextField fieldLabelNummer;
+    @FXML
+    private TextField fieldLabelOpmerking;
+    @FXML
+    private AnchorPane nieuweBagagePane;
 
     /**
      * Initializes the controller class.
