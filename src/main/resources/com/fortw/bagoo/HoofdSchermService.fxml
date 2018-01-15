@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,19 +14,17 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="212.0">
                     <children>
-                        <Button fx:id="klantzoeken" layoutX="25.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleOpenKlantZoeken" prefHeight="31.0" prefWidth="164.0" text="Klant opzoeken" />
-                        <Button fx:id="knopVermissingMelden" layoutX="25.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleVermissingAction" prefHeight="31.0" prefWidth="164.0" text="Vermissing melden" />
-                        <Button fx:id="knnopOpenLogboek" layoutX="25.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleOpenlogBoekAction" prefHeight="31.0" prefWidth="164.0" text="Logboek" />
-                        <Button fx:id="knopClaim" layoutX="25.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleClaimAction" prefHeight="31.0" prefWidth="164.0" text="Claim" />
+                        <Button fx:id="klantzoeken" layoutX="25.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleOpenKlantZoeken" prefHeight="31.0" prefWidth="164.0" text="Klant opzoeken" />
+                        <Button fx:id="knopVermissingMelden" layoutX="23.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleVermissingAction" prefHeight="31.0" prefWidth="164.0" text="Vermissing melden" />
+                        <Button fx:id="knnopOpenLogboek" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleOpenlogBoekAction" prefHeight="31.0" prefWidth="164.0" text="Logboek" />
+                        <Button fx:id="knopClaim" layoutX="25.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleClaimAction" prefHeight="31.0" prefWidth="164.0" text="Claim" />
                         <Button fx:id="knopLoguit" layoutX="21.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="31.0" prefWidth="164.0" text="Log uit" />
                         <ImageView fitHeight="72.0" fitWidth="207.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                         <Image url="img/bagoo-logo.png" />
                             </image>
                         </ImageView>
-                  <Button layoutX="25.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExcelAction" prefHeight="31.0" prefWidth="164.0" text="Excel importeren" />
-                  <Button layoutX="25.0" layoutY="410.0" mnemonicParsing="false" onAction="#handlePDFAction" prefHeight="31.0" prefWidth="164.0" text="PDF test" />
-                  <Label fx:id="statusMessage" layoutX="25.0" layoutY="460.0" prefHeight="17.0" prefWidth="164.0" text="status message" />    
+                  <Button layoutX="25.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleExcelAction" prefHeight="31.0" prefWidth="164.0" text="Excel importeren" />    
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="753.0">

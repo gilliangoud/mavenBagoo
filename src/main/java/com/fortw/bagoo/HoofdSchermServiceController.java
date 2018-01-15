@@ -21,7 +21,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -72,8 +71,6 @@ public class HoofdSchermServiceController implements Initializable {
 
     private ObservableList<Vermissing> vermissingList
             = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
-    @FXML
-    private Label statusMessage;
 
     /**
      * Initializes the controller class.
@@ -156,16 +153,6 @@ public class HoofdSchermServiceController implements Initializable {
     private void handleExcelAction(ActionEvent event) {
     
     
-    }
-
-    @FXML
-    private void handlePDFAction(ActionEvent event) {
-        
-        System.out.println("You clicked PDF Test Page");
-        
-        // Todo: export a PDF testpage into 'export.pdf'
-        
-        statusMessage.setText("Saved PDF Test Page in 'Export.pdf");
     }
 
 }
