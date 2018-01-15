@@ -18,7 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import com.fortw.bagoo.models.User;
 import com.fortw.bagoo.Dao.UserDao;
-import com.fortw.bagoo.panes.MedewerkerEditPaneController;
+import com.fortw.bagoo.panes.BewerkUserPaneController;
 import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -96,7 +96,7 @@ public class HoofdSchermManagementController implements Initializable, ParentCon
     //    @FXML
     //    private MedewerkerEditPaneController medewerkerEditPaneController;
     @FXML
-    private MedewerkerEditPaneController medewerkerEditPaneController;
+    private BewerkUserPaneController medewerkerEditPaneController;
     @FXML
     private Label statusMessage;
     

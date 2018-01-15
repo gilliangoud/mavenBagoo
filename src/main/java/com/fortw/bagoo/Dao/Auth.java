@@ -5,12 +5,7 @@
  */
 package com.fortw.bagoo.Dao;
 
-import java.io.IOException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import com.fortw.bagoo.models.User;
 
 /**
  *
@@ -18,14 +13,14 @@ import javafx.stage.Stage;
  */
 public class Auth {
     
-    public final void logout(AnchorPane ap) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/fortw/bagoo/Login.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stageVolgende = new Stage();
-        stageVolgende.setScene(new Scene(root1));
-        Stage stageHuidige = (Stage) ap.getScene().getWindow();
-        stageHuidige.close();
-        stageVolgende.show();
+    private static User currentUser;
+    
+    public static User getUser() {
+        return currentUser;
+    }
+
+    public static void setUser(User user) {
+        Auth.currentUser = user;
     }
     
 }

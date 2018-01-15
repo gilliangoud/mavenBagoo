@@ -27,7 +27,7 @@ import javafx.scene.control.ComboBox;
  *
  * @author Giel
  */
-public class MedewerkerEditPaneController implements Initializable {
+public class BewerkUserPaneController implements Initializable {
 
     @FXML
     private TextField textGebruikersnaam;

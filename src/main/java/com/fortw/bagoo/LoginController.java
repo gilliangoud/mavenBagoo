@@ -6,6 +6,7 @@
  */
 package com.fortw.bagoo;
 
+import com.fortw.bagoo.Dao.Auth;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -74,6 +75,7 @@ public class LoginController implements Initializable {
     private void login(){
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
+            Auth.setUser(user);
             sendNextScene(user.getLevel());
         } else {
             Alert alert = new Alert(AlertType.ERROR);
@@ -88,8 +90,8 @@ public class LoginController implements Initializable {
     private void sendNextScene(int userLevel) {
         String doel;
         switch(userLevel){
-            case 5: doel = "/com/fortw/bagoo/manager/HoofdSchermManagement.fxml";
-            break;
+//            case 5: doel = "/com/fortw/bagoo/manager/HoofdSchermManagement.fxml";
+//            break;
             default: doel = "/com/fortw/bagoo/service/HoofdSchermService.fxml";         
         }
         try {

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="medewerkerPane" prefHeight="365.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.MedewerkerPaneController">
+<BorderPane fx:id="medewerkerPane" prefHeight="365.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.NieuweUserPaneController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -35,7 +35,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="knopAnnuleren" cancelButton="true" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="65.0" prefWidth="167.0" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Button fx:id="knopAnnuleren" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="65.0" prefWidth="167.0" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <Button fx:id="knopBevestigen" defaultButton="true" mnemonicParsing="false" onAction="#handleBevestigenAction" prefHeight="115.0" prefWidth="207.0" text="Bevestigen" GridPane.columnIndex="4" GridPane.rowIndex="10" />
             <TextField fx:id="inputGebruikersnaam" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Label text="Gebruikersnaam:" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -60,7 +60,7 @@
             </Label>
             <TextField fx:id="inputWachtwoord" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <TextField fx:id="inputWachtwoordHerhaal" onKeyTyped="#handleWachtwoordHerhaalInput" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <ComboBox fx:id="inputLevel" prefWidth="150.0" promptText="1" GridPane.columnIndex="3" GridPane.rowIndex="7" >
+            <ComboBox fx:id="inputLevel" prefWidth="150.0" promptText="1" GridPane.columnIndex="3" GridPane.rowIndex="7">
             </ComboBox>
          </children>
       </GridPane>

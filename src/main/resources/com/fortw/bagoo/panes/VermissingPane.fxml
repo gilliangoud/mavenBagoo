@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.VermissingPaneController">
+<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="761.0" prefWidth="1206.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fortw.bagoo.panes.VermissingPaneController">
    <children>
-      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+      <BorderPane maxWidth="1.7976931348623157E308" prefHeight="765.0" prefWidth="1206.0">
          <left>
-            <VBox maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+            <VBox BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="knopVervers" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="160.0" text="Ververs" />
                   <Button fx:id="knopBewerk" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBewerkAction" prefHeight="50.0" prefWidth="160.0" text="Bewerk vermissing" />
@@ -22,7 +22,7 @@
             </VBox>
          </left>
          <center>
-            <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+            <StackPane fx:id="stackPane" maxWidth="1.7976931348623157E308" prefHeight="743.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
                <children>
                   <fx:include fx:id="nieuwVermissingPane" source="NieuweVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="bewerkVermissingPane" source="BewerkVermissingPane.fxml" visible="false" />
