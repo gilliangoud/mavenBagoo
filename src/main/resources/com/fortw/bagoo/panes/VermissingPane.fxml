@@ -24,7 +24,7 @@
          <center>
             <StackPane fx:id="stackPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
                <children>
-                  <fx:include fx:id="nieuweAnchorPane" source="NieuweVermissingPane.fxml" visible="false" />
+                  <fx:include fx:id="nieuwVermissingPane" source="NieuweVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="bewerkVermissingPane" source="BewerkVermissingPane.fxml" visible="false" />
                   <fx:include fx:id="listPane" source="ListVermissingPane.fxml" visible="true" />
                   <fx:include fx:id="singleVermissingPane" source="SingleVermissingPane.fxml" visible="false" />

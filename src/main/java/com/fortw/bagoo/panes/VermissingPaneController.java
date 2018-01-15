@@ -13,7 +13,6 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -21,7 +20,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
@@ -43,7 +41,7 @@ public class VermissingPaneController implements Initializable, ParentController
     @FXML
     private Button knopNieuw;
     @FXML
-    private AnchorPane nieuweAnchorPane;
+    private AnchorPane nieuwVermissingPane;
     @FXML
     private AnchorPane singleVermissingPane;
     @FXML
@@ -60,6 +58,8 @@ public class VermissingPaneController implements Initializable, ParentController
     private BewerkVermissingPaneController bewerkVermissingPaneController;
     @FXML
     private SingleVermissingPaneController singleVermissingPaneController;
+    @FXML
+    private NieuwVermissingPaneController nieuwVermissingPaneController;
     @FXML
     private Button knopSingle;
 
@@ -91,7 +91,7 @@ public class VermissingPaneController implements Initializable, ParentController
 
     private void hideAllPanes() {
         listPane.setVisible(false);
-        nieuweAnchorPane.setVisible(false);
+        nieuwVermissingPane.setVisible(false);
         bewerkVermissingPane.setVisible(false);
         singleVermissingPane.setVisible(false);
 
@@ -134,13 +134,16 @@ public class VermissingPaneController implements Initializable, ParentController
     @FXML
     private void handleNieuwAction(ActionEvent event) {
         hideAllPanes();
-        nieuweAnchorPane.setVisible(true);
-        NieuwVermissingPaneController.setParentContext(this);
+        nieuwVermissingPane.setVisible(true);
+        
+        // knoppen veranderen
         knopVervers.setDisable(true);
         knopBewerk.setDisable(true);
         knopVerwijder.setDisable(true);
         knopNieuw.setDisable(false);
         knopSingle.setDisable(true);
+        
+        nieuwVermissingPaneController.setParentContext(this);
     }
 
     @FXML

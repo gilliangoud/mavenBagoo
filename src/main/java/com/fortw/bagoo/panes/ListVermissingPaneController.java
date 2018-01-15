@@ -55,6 +55,7 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         VermissingPaneController.setChildContext(this);
+        tableList = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
         theTableView.setItems(this.tableList);
         
 

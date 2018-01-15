@@ -46,10 +46,10 @@ public class SingleVermissingPaneController implements Initializable {
     private int logboekPositie;
     private boolean isNieuwe = false;
 
-    private final ObservableList<Kleur> kleuren
-            = FXCollections.observableArrayList(XmlLoader.loadKleurData());
-    private final ObservableList<BagageType> types
-            = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+    private ObservableList<Kleur> kleuren
+            = FXCollections.observableArrayList();
+    private ObservableList<BagageType> types
+            = FXCollections.observableArrayList();
     private ObservableList<Logboek> logboeken
             = FXCollections.observableArrayList();
 
@@ -161,12 +161,13 @@ public class SingleVermissingPaneController implements Initializable {
             fieldLogboekOpmerking.setDisable(false);
             fieldLogboekOpmerking.setEditable(true);
         }
-        //this.initPane();
+        this.initPane();
     }
 
     private void initPane() {
-//        fieldLuchthaven.setItems(vluchthavens);
-//        new AutoCompleteComboBoxListener(fieldLuchthaven);
+        kleuren = FXCollections.observableArrayList(XmlLoader.loadKleurData());
+        types = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+    
     }
 
     private void initVermissingFields(Vermissing vermissing) {

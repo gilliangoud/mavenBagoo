@@ -48,7 +48,7 @@ import javafx.scene.layout.StackPane;
  */
 public class NieuwVermissingPaneController implements Initializable {
 
-    private static ParentControllerContext parentController;
+    private ParentControllerContext parentController;
 
     @FXML
     private StackPane stackPane;
@@ -94,17 +94,16 @@ public class NieuwVermissingPaneController implements Initializable {
     private TextField fieldBagageKenmerken;
 
     private ObservableList<Vluchthaven> vluchthavens
-            = FXCollections.observableArrayList(VluchthavenDao.
-                    getAllVluchthavens());
+            = FXCollections.observableArrayList();
 
     private ObservableList<Vlucht> vluchten
-            = FXCollections.observableArrayList(VluchtDao.getAllVluchten());
+            = FXCollections.observableArrayList();
 
     private ObservableList<Kleur> kleuren
-            = FXCollections.observableArrayList(XmlLoader.loadKleurData());
+            = FXCollections.observableArrayList();
 
     private ObservableList<BagageType> types
-            = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+            = FXCollections.observableArrayList();
     @FXML
     private TextField fieldAdresHuisnummer;
     @FXML
@@ -127,6 +126,21 @@ public class NieuwVermissingPaneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    }
+
+    public void setParentContext(ParentControllerContext pC) {
+        parentController = pC;
+        //pC.displayStatusMessage("status message 404");
+        initPane();
+    }
+
+    private void initPane() {
+        vluchthavens = FXCollections.observableArrayList(VluchthavenDao.
+                    getAllVluchthavens());
+        vluchten = FXCollections.observableArrayList(VluchtDao.getAllVluchten());
+        kleuren = FXCollections.observableArrayList(XmlLoader.loadKleurData());
+        types = FXCollections.observableArrayList(XmlLoader.loadBagageTypeData());
+        
         fieldLuchthaven.setItems(vluchthavens);
         new AutoCompleteComboBoxListener(fieldLuchthaven);
         fieldVluchtNr.setItems(vluchten);
@@ -137,11 +151,6 @@ public class NieuwVermissingPaneController implements Initializable {
         new AutoCompleteComboBoxListener(fieldBagageKleur2);
         fieldBagageType.setItems(types);
         new AutoCompleteComboBoxListener(fieldBagageType);
-    }
-
-    public static void setParentContext(ParentControllerContext pC) {
-        parentController = pC;
-        pC.displayStatusMessage("status message 404");
     }
 
     @FXML
@@ -181,10 +190,10 @@ public class NieuwVermissingPaneController implements Initializable {
             bagage.setDiepte(fieldBagageDiepte.getText());
             bagage.setVluchtNr(fieldVluchtNr.getSelectionModel().getSelectedItem().getVluchtNr());
             bagage.setLabelNr(Integer.valueOf(fieldLabelNr.getText()));
-            
+
             int klantId = KlantDao.insertAndReturnId(klant);
             System.out.println("klantID:" + klantId);
-            
+
             int bagageId = BagageDao.insertAndReturnId(bagage);
             System.out.println("bagageID:" + bagageId);
 
@@ -202,7 +211,7 @@ public class NieuwVermissingPaneController implements Initializable {
             vermissing.setBagage(BagageDao.getBagage(bagageId));
             User currentUser = UserDao.getUser(2);
             vermissing.setUserAangemaakt(currentUser);
-            
+
             if (VermissingDao.insertVermissing(vermissing)) {
                 this.parentController.notifyChildHasUpdated();
                 this.parentController.notifyCloseChild();
