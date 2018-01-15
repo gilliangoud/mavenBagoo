@@ -101,11 +101,12 @@ public class Vluchthaven {
     @Override
     public String toString(){
         String s;
-        if(getNaam().length() <= 1){
-            s = getIata() + " ," + getLocatie() + " ," + getLand();
-        } else {
-            s = getNaam() + " ," + getLocatie() + " ," + getLand();
-        }
+//        if(getNaam().length() <= 1){
+//            s = getIata() + " ," + getLocatie() + " ," + getLand();
+//        } else {
+//            s = getNaam() + " ," + getLocatie() + " ," + getLand();
+//        }
+        s = getIata() + " ," + getLocatie() + " ," + getLand();
         return s; 
     }
 

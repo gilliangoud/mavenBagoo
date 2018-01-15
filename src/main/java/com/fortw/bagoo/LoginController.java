@@ -17,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import com.fortw.bagoo.models.User;
@@ -28,7 +27,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import com.fortw.bagoo.service.*;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -100,8 +99,9 @@ public class LoginController implements Initializable {
             stageVolgende.setScene(new Scene(root1));
             Stage stageHuidige = (Stage) ap.getScene().getWindow();
             stageHuidige.close();
+            stageVolgende.initStyle(StageStyle.TRANSPARENT);
             stageVolgende.show();
-            stageVolgende.setMaximized(true);
+            //stageVolgende.setMaximized(true);
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
