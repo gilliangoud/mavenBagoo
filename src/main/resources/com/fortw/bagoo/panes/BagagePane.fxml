@@ -12,9 +12,9 @@
          <left>
             <VBox prefHeight="599.0" prefWidth="136.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonVerversBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="200.0" text="Ververs" />
-                  <Button fx:id="buttonNieuweBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuweBagageAction" prefHeight="50.0" prefWidth="200.0" text="Nieuwe Bagage" />
-                  <Button fx:id="buttonVerwijderBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderBagageAction" prefHeight="50.0" prefWidth="200.0" text="Verwijder Bagage" />
+                  <Button fx:id="buttonVerversBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="200.0" text="%Ververs" />
+                  <Button fx:id="buttonNieuweBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuweBagageAction" prefHeight="50.0" prefWidth="200.0" text="%Nieuwe Bagage" />
+                  <Button fx:id="buttonVerwijderBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderBagageAction" prefHeight="50.0" prefWidth="200.0" text="%Verwijder Bagage" />
                </children>
             </VBox>
          </left>

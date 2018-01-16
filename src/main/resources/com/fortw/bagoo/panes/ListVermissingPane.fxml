@@ -11,13 +11,13 @@
          <center>
             <TableView fx:id="theTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn fx:id="vermissingNr" prefWidth="111.0" text="Vermissing nr." />
-                  <TableColumn fx:id="aangemaakt" prefWidth="111.0" text="Datum" />
-                <TableColumn fx:id="vluchthaven" prefWidth="111.0" text="Vluchthaven" />
-                <TableColumn fx:id="klant" prefWidth="158.0" text="Klant" />
-                  <TableColumn fx:id="bagageLabel" prefWidth="129.0" text="Bagagelabel" />
-                  <TableColumn fx:id="vlucht" prefWidth="116.0" text="Vlucht nr." />
-                  <TableColumn fx:id="userAangemaakt" prefWidth="148.0" text="Aangemaakt door" />
+                  <TableColumn fx:id="vermissingNr" prefWidth="111.0" text="%VermissingNr" />
+                  <TableColumn fx:id="aangemaakt" prefWidth="111.0" text="%Datum" />
+                <TableColumn fx:id="vluchthaven" prefWidth="111.0" text="%Vluchthaven" />
+                <TableColumn fx:id="klant" prefWidth="158.0" text="%Klant" />
+                  <TableColumn fx:id="bagageLabel" prefWidth="129.0" text="%Bagagelabel" />
+                  <TableColumn fx:id="vlucht" prefWidth="116.0" text="%VluchtNr" />
+                  <TableColumn fx:id="userAangemaakt" prefWidth="148.0" text="%Aangemaakt door" />
               </columns>
             </TableView>
          </center>

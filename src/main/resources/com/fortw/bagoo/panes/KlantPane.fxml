@@ -12,9 +12,9 @@
             <left>
                 <VBox prefHeight="599.0" prefWidth="144.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="knopVervers" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleRefreshAction" prefHeight="50.0" prefWidth="160.0" text="Ververs" />
-                        <Button fx:id="knopNieuweKlant" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuweKlantAction" prefHeight="50.0" prefWidth="160.0" text="Nieuwe klant" />
-                        <Button fx:id="knopVerwijderKlant" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderKlantAction" prefHeight="50.0" prefWidth="160.0" text="Verwijder klant" />
+                        <Button fx:id="knopVervers" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleRefreshAction" prefHeight="50.0" prefWidth="160.0" text="%Ververs" />
+                        <Button fx:id="knopNieuweKlant" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuweKlantAction" prefHeight="50.0" prefWidth="160.0" text="%Nieuwe klant" />
+                        <Button fx:id="knopVerwijderKlant" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderKlantAction" prefHeight="50.0" prefWidth="160.0" text="%Verwijder klant" />
                     </children>
                 </VBox>
             </left>

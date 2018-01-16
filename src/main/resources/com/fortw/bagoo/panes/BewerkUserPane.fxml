@@ -31,41 +31,41 @@
                 <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Edit medewerker" textAlignment="CENTER" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="MedewerkerNr" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Gebruikersnaam" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Wachtwoord" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%Edit medewerker" textAlignment="CENTER" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%MedewerkerNr" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%Gebruikersnaam" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%Wachtwoord" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="textGebruikersnaam" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <TextField fx:id="textWachtwoord" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <children>
-                        <Button fx:id="knopReset" mnemonicParsing="false" onAction="#handleResetAction" text="Reset">
+                        <Button fx:id="knopReset" mnemonicParsing="false" onAction="#handleResetAction" text="%Reset">
                            <HBox.margin>
                               <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="knopClear" mnemonicParsing="false" onAction="#handleClearAction" text="Clear">
+                        <Button fx:id="knopClear" mnemonicParsing="false" onAction="#handleClearAction" text="%Clear">
                            <HBox.margin>
                               <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="knopCancel" mnemonicParsing="false" onAction="#handleCancelAction" text="Cancel">
+                        <Button fx:id="knopCancel" mnemonicParsing="false" onAction="#handleCancelAction" text="%Cancel">
                            <HBox.margin>
                               <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="knopSave" mnemonicParsing="false" onAction="#handleSaveAction" text="Save">
+                        <Button fx:id="knopSave" mnemonicParsing="false" onAction="#handleSaveAction" text="%Save">
                            <HBox.margin>
                               <Insets right="15.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
-                  <Label fx:id="labelMedewerkerNr" prefHeight="17.0" prefWidth="386.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Aangemaakt op" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label fx:id="labelAangemaaktOp" prefHeight="17.0" prefWidth="386.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="labelMedewerkerNr" prefHeight="17.0" prefWidth="386.0" text="%Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%Aangemaakt op" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="labelAangemaaktOp" prefHeight="17.0" prefWidth="386.0" text="%Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <ComboBox fx:id="inputLevel" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="Huidig level" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="125.0" prefWidth="217.0" text="%Huidig level" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
             </GridPane>
          </children>

@@ -22,11 +22,11 @@
                   <TextArea fx:id="textRedenClaim" layoutX="682.0" layoutY="14.0" prefHeight="116.0" prefWidth="226.0" />
                   <TextField fx:id="textDatum" layoutX="318.0" layoutY="60.0" promptText="DD/MM/JJJJ" />
                   <TextField fx:id="textKlantennummer" layoutX="318.0" layoutY="14.0" />
-                  <Button layoutX="940.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="Opslaan" />
-                  <Button layoutX="51.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="Annuleren" />
-                  <Label layoutX="194.0" layoutY="14.0" text="Klantennummer: " />
-                  <Label layoutX="253.0" layoutY="62.0" text="Datum: " />
-                  <Label layoutX="525.0" layoutY="14.0" text="Reden voor claim: " />
+                  <Button layoutX="940.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleOpslaanAction" text="%Opslaan" />
+                  <Button layoutX="51.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleAnnuleerAction" text="%Annuleren" />
+                  <Label layoutX="194.0" layoutY="14.0" text="%Klantennummer: " />
+                  <Label layoutX="253.0" layoutY="62.0" text="%Datum: " />
+                  <Label layoutX="525.0" layoutY="14.0" text="%Reden voor claim: " />
                </children>
             </Pane>
          </bottom>
@@ -38,9 +38,9 @@
                <children>
                   <TableView fx:id="tableClaimAanmaken" layoutX="-35.0" layoutY="-37.0" prefHeight="369.0" prefWidth="721.0">
                     <columns>
-                      <TableColumn fx:id="columnKlantennummer" prefWidth="116.0" text="Klantennummer" />
-                      <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="161.0" text="Datum" />
-                        <TableColumn fx:id="columnReden" minWidth="0.0" prefWidth="443.0" text="Reden" />
+                      <TableColumn fx:id="columnKlantennummer" prefWidth="116.0" text="%Klantennummer" />
+                      <TableColumn fx:id="columnDatum" minWidth="0.0" prefWidth="161.0" text="%Datum" />
+                        <TableColumn fx:id="columnReden" minWidth="0.0" prefWidth="443.0" text="%Reden" />
                     </columns>
                   </TableView>
                </children>
@@ -50,7 +50,7 @@
             <Pane prefHeight="368.0" prefWidth="194.0" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="zoekVeld" layoutX="14.0" layoutY="-1.0" onKeyTyped="#handleZoekVeldAction" prefHeight="31.0" prefWidth="135.0" promptText="Zoeken" />
-                  <Button fx:id="RefreshClaim" layoutX="161.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRefreshClaimAction" prefHeight="25.0" prefWidth="75.0" text="Refresh" />
+                  <Button fx:id="RefreshClaim" layoutX="161.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleRefreshClaimAction" prefHeight="25.0" prefWidth="75.0" text="%Refresh" />
                </children></Pane>
          </left>
          <top>
@@ -61,7 +61,7 @@
                         <Image url="img/bagoo-logo.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="164.0" layoutY="72.0" prefHeight="21.0" prefWidth="167.0" text="Schadeclaim aanmaken">
+                  <Label layoutX="164.0" layoutY="72.0" prefHeight="21.0" prefWidth="167.0" text="%Schadeclaim aanmaken">
                      <font>
                         <Font size="15.0" />
                      </font>

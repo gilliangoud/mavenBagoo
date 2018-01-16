@@ -35,25 +35,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="knopAnnuleren" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="65.0" prefWidth="167.0" text="Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Button fx:id="knopBevestigen" defaultButton="true" mnemonicParsing="false" onAction="#handleBevestigenAction" prefHeight="115.0" prefWidth="207.0" text="Bevestigen" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <Button fx:id="knopAnnuleren" mnemonicParsing="false" onAction="#handleAnnulerenAction" prefHeight="65.0" prefWidth="167.0" text="%Annuleer" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Button fx:id="knopBevestigen" defaultButton="true" mnemonicParsing="false" onAction="#handleBevestigenAction" prefHeight="115.0" prefWidth="207.0" text="%Bevestigen" GridPane.columnIndex="4" GridPane.rowIndex="10" />
             <TextField fx:id="inputGebruikersnaam" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label text="Gebruikersnaam:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Label text="%Gebruikersnaam:" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Wachtwoord:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Label text="%Wachtwoord:" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Toegangsniveau:" GridPane.columnIndex="2" GridPane.rowIndex="7">
+            <Label text="%Toegangsniveau:" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Opnieuw:" GridPane.columnIndex="2" GridPane.rowIndex="5">
+            <Label text="%Opnieuw:" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <font>
                   <Font size="14.0" />
                </font>
@@ -66,7 +66,7 @@
       </GridPane>
    </center>
    <top>
-      <Label text="Nieuwe medewerker aanmaken" BorderPane.alignment="CENTER">
+      <Label text="%Nieuwe medewerker aanmaken" BorderPane.alignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>

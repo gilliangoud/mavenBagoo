@@ -13,10 +13,10 @@
             <left>
                 <VBox prefHeight="599.0" prefWidth="144.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="knopVervers" mnemonicParsing="false" onAction="#handleRefreshAction" prefHeight="50.0" prefWidth="144.0" text="Ververs" />
-                        <Button fx:id="knopNieuw" mnemonicParsing="false" onAction="#handleNieuweAction" prefHeight="50.0" prefWidth="172.0" text="Nieuwe" />
-                        <Button fx:id="knopVerwijder" mnemonicParsing="false" onAction="#handleVerwijderAction" prefHeight="50.0" prefWidth="185.0" text="Verwijder" />
-                  <Button fx:id="knopBewerk" mnemonicParsing="false" onAction="#handleBewerkAction" prefHeight="50.0" prefWidth="172.0" text="Bewerk" />
+                        <Button fx:id="knopVervers" mnemonicParsing="false" onAction="#handleRefreshAction" prefHeight="50.0" prefWidth="144.0" text="%Ververs" />
+                        <Button fx:id="knopNieuw" mnemonicParsing="false" onAction="#handleNieuweAction" prefHeight="50.0" prefWidth="172.0" text="%Nieuwe" />
+                        <Button fx:id="knopVerwijder" mnemonicParsing="false" onAction="#handleVerwijderAction" prefHeight="50.0" prefWidth="185.0" text="%Verwijder" />
+                  <Button fx:id="knopBewerk" mnemonicParsing="false" onAction="#handleBewerkAction" prefHeight="50.0" prefWidth="172.0" text="%Bewerk" />
                     </children>
                 </VBox>
             </left>
@@ -30,7 +30,7 @@
                 </StackPane>
             </center>
          <bottom>
-            <Label fx:id="status" text="Label" BorderPane.alignment="CENTER" />
+            <Label fx:id="status" text="%Label" BorderPane.alignment="CENTER" />
          </bottom>
         </BorderPane>
     </children>
