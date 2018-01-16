@@ -95,7 +95,8 @@ public class LoginController implements Initializable {
             default: doel = "/com/fortw/bagoo/service/HoofdSchermService.fxml";         
         }
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel));
+            ResourceBundle bundle = ResourceBundle.getBundle("com.fortw.bagoo.locale.Locale");
+            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel), bundle);
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stageVolgende = new Stage();
             stageVolgende.setScene(new Scene(root1));
