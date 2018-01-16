@@ -28,18 +28,18 @@ public class Bagage {
 
     // Lege Constructor
     public Bagage() {
-        this.bagageNr = null;
+        this.bagageNr = 0;
         this.type = 0;
-        this.merk = null;
+        this.merk = "0";
         this.kleur = 0;
         this.kleur2 = 0;
-        this.gewicht = null;
-        this.opmerking = null;
-        this.breedte = null;
-        this.hoogte = null;
-        this.diepte = null;
+        this.gewicht = "0";
+        this.opmerking = "0";
+        this.breedte = "0";
+        this.hoogte = "0";
+        this.diepte = "0";
         this.locatieNr = 0;
-        this.vluchtNr = null;
+        this.vluchtNr = "0";
         this.labelNr = 1;
     }
 
