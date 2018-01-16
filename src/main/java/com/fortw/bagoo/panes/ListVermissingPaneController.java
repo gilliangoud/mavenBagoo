@@ -12,10 +12,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -35,17 +38,19 @@ public class ListVermissingPaneController implements Initializable, ChildControl
 
     private ObservableList<Vermissing> tableList = FXCollections.observableArrayList();
     @FXML
-    private TableColumn<?, ?> klant;
+    private TableColumn klant;
     @FXML
-    private TableColumn<?, ?> vluchthaven;
+    private TableColumn vluchthaven;
     @FXML
-    private TableColumn<?, ?> vlucht;
+    private TableColumn vlucht;
     @FXML
-    private TableColumn<?, ?> aangemaakt;
+    private TableColumn aangemaakt;
     @FXML
-    private TableColumn<?, ?> bagageLabel;
+    private TableColumn bagageLabel;
     @FXML
     private AnchorPane listPane;
+    @FXML
+    private TextField filterField;
 
     /**
      * Initializes the controller class.
@@ -54,7 +59,7 @@ public class ListVermissingPaneController implements Initializable, ChildControl
     public void initialize(URL url, ResourceBundle rb) {
         VermissingPaneController.setChildContext(this);
         tableList = FXCollections.observableArrayList(VermissingDao.getAllVermissingen());
-        theTableView.setItems(this.tableList);
+        //theTableView.setItems(this.tableList);
         
 
         // associate every tableview collum with its data
@@ -67,6 +72,38 @@ public class ListVermissingPaneController implements Initializable, ChildControl
                 tc.setCellValueFactory(new PropertyValueFactory<>(propertyName));
             }
         }
+        
+        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+        FilteredList<Vermissing> filteredData = new FilteredList<>(tableList, p -> true);
+        
+        // 2. Set the filter Predicate whenever the filter changes.
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(vermissing -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (vermissing.getKlant().getVoorNaam().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (vermissing.getKlant().getAchterNaam().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+        
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<Vermissing> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(theTableView.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        theTableView.setItems(sortedData);
     }
 
     private void refreshTable() {
