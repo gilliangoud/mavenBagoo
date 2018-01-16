@@ -11,12 +11,12 @@
          <center>
             <TableView fx:id="listBagageTableview" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="bagageNr" editable="false" prefWidth="121.0" text="%ID Bagage" />
-                <TableColumn fx:id="type" editable="false" prefWidth="103.0" text="%Type Bagage" />
+                <TableColumn fx:id="bagageNr" editable="false" prefWidth="121.0" text="%ID_Bagage" />
+                <TableColumn fx:id="type" editable="false" prefWidth="103.0" text="%Type_Bagage" />
                   <TableColumn fx:id="merk" editable="false" prefWidth="86.0" text="%Merk" />
                   <TableColumn fx:id="kleur" editable="false" prefWidth="87.0" text="%Kleur" />
                   <TableColumn fx:id="locatieNr" editable="false" prefWidth="75.0" text="%Locatie" />
-                  <TableColumn fx:id="gewicht" editable="false" prefWidth="127.0" text="%Gewicht (KG)" />
+                  <TableColumn fx:id="gewicht" editable="false" prefWidth="127.0" text="%Gewicht" />
               </columns>
             </TableView>
          </center>

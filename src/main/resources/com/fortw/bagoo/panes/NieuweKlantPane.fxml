@@ -65,12 +65,12 @@
                         <TextField fx:id="fieldTelefoonNKlant" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                         <TextField fx:id="fieldEmailNKlant" GridPane.columnIndex="2" GridPane.rowIndex="12" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="%Klant" GridPane.rowIndex="2" />
-                        <Label prefHeight="35.0" prefWidth="318.0" text="%Nieuwe klant" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
+                        <Label prefHeight="35.0" prefWidth="318.0" text="%Nieuwe_klant" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Check in datum" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Check_in_datum" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Tussenvoegsel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Achternaam" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Huisnummer" GridPane.columnIndex="1" GridPane.rowIndex="8" />

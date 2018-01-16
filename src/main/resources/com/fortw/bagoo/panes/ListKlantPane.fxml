@@ -19,7 +19,7 @@
                   <TableColumn fx:id="huisNummer" editable="false" prefWidth="95.0" text="%HuisNr" />
                   <TableColumn fx:id="telefoonNr" editable="false" prefWidth="158.0" text="%Telefoon" />
                   <TableColumn fx:id="email" editable="false" prefWidth="150.0" text="%E-mail" />
-                  <TableColumn fx:id="checkInDatum" editable="false" prefWidth="136.0" text="%Check In" />
+                  <TableColumn fx:id="checkInDatum" editable="false" prefWidth="136.0" text="%Check_In" />
                </columns>
             </TableView>
          </center>

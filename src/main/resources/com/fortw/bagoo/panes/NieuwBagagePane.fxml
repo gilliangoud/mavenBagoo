@@ -48,8 +48,8 @@
                         <VBox prefHeight="300.0" prefWidth="417.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Type" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Gewicht (KG)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur 2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Gewicht" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Hoogte" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Diepte" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%LocatieID" GridPane.columnIndex="1" GridPane.rowIndex="11" />
@@ -69,16 +69,16 @@
                         <TextField fx:id="fieldLabelNummer" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                         <TextField fx:id="fieldLabelOpmerking" GridPane.columnIndex="2" GridPane.rowIndex="14" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="95.0" text="%Bagage" GridPane.rowIndex="2" />
-                        <Label prefHeight="35.0" prefWidth="318.0" text="%Nieuwe Bagage" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
+                        <Label prefHeight="35.0" prefWidth="318.0" text="%Nieuwe_Bagage" textOverrun="WORD_ELLIPSIS" GridPane.columnIndex="1">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Label nummer" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Label_nummer" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Merk" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur 1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Breedte" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%opmerking" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Opmerking" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                      </children>
                   </GridPane>
                </children>

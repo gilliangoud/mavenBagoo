@@ -18,7 +18,7 @@
             <bottom>
                 <HBox fillHeight="false" maxWidth="1.7976931348623157E308" BorderPane.alignment="BOTTOM_LEFT">
                     <children>
-                        <Button fx:id="knopLoguit" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="160.0" text="%Log uit" HBox.hgrow="NEVER" />
+                        <Button fx:id="knopLoguit" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="25.0" prefWidth="160.0" text="%Log_uit" HBox.hgrow="NEVER" />
                     </children>
                 </HBox>
             </bottom>

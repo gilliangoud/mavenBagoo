@@ -80,12 +80,12 @@
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Land" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Telefoon" GridPane.columnIndex="3" GridPane.rowIndex="8" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%E-mail" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Label nummer" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Vlucht nummer" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Label_nummer" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Vlucht_nummer" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Type" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Merk" GridPane.columnIndex="3" GridPane.rowIndex="11" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Bijzondere kenmerken" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Bijzondere_kenmerken" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                         <Button fx:id="knopAnnuleren" cancelButton="true" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAnnulerenAction" text="%Terug" GridPane.columnIndex="1" GridPane.rowIndex="26" />
                         <TextField fx:id="fieldNaam" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                         <TextField fx:id="fieldAdres" disable="true" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="275.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
@@ -107,10 +107,10 @@
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Huisnummer" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                         <Label alignment="CENTER" text="%Achternaam" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
                         <TextField fx:id="fieldAchternaam" disable="true" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Check-in datum" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Check_in_datum" GridPane.columnIndex="3" GridPane.rowIndex="7" />
                         <DatePicker fx:id="fieldCheckInDatum" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.rowIndex="7" />
                         <ComboBox fx:id="fieldBagageKleur2" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.rowIndex="12" />
-                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Secundaire kleur" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Kleur" GridPane.columnIndex="3" GridPane.rowIndex="12" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Gewicht" GridPane.columnIndex="1" GridPane.rowIndex="16" />
                         <TextField fx:id="fieldBagageGewicht" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="16" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Afmetingen (H,B,D)" GridPane.columnIndex="1" GridPane.rowIndex="13" />
@@ -136,7 +136,7 @@
                         <Button fx:id="buttonOpslaan" mnemonicParsing="false" onAction="#handleOpslaanLogboek" text="Opslaan" GridPane.columnIndex="4" GridPane.rowIndex="24" />
                         <Button fx:id="buttonBewerken" mnemonicParsing="false" onAction="#handleBewerkenLogboek" text="Bewerken" GridPane.columnIndex="3" GridPane.rowIndex="24" />
                         <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%Log" GridPane.rowIndex="18" />
-                        <Label fx:id="fieldLogboekGrootte" text="%(* van de *)" GridPane.columnIndex="2" GridPane.rowIndex="24">
+                        <Label fx:id="fieldLogboekGrootte" text="(* van de *)" GridPane.columnIndex="2" GridPane.rowIndex="24">
                            <GridPane.margin>
                               <Insets left="70.0" />
                            </GridPane.margin>

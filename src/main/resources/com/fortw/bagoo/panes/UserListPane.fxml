@@ -16,7 +16,7 @@
                     <columns>
                       <TableColumn fx:id="personeelNr" prefWidth="167.0" text="%Personeelsnummer" />
                       <TableColumn fx:id="gebruikersnaam" minWidth="7.0" prefWidth="159.0" text="%Gebruikersnaam" />
-                        <TableColumn fx:id="aangemaaktDatum" minWidth="0.0" prefWidth="114.0" text="%Aangemaakt op" />
+                        <TableColumn fx:id="aangemaaktDatum" minWidth="0.0" prefWidth="114.0" text="%Aangemaakt_op" />
                         <TableColumn fx:id="level" prefWidth="60.0" text="%Level" />
                         <TableColumn fx:id="wachtwoord" prefWidth="131.0" text="%Wachtwoord" />
                     </columns>

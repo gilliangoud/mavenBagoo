@@ -17,7 +17,7 @@
                 <TableColumn fx:id="klant" prefWidth="158.0" text="%Klant" />
                   <TableColumn fx:id="bagageLabel" prefWidth="129.0" text="%Bagagelabel" />
                   <TableColumn fx:id="vlucht" prefWidth="116.0" text="%VluchtNr" />
-                  <TableColumn fx:id="userAangemaakt" prefWidth="148.0" text="%Aangemaakt door" />
+                  <TableColumn fx:id="userAangemaakt" prefWidth="148.0" text="%Aangemaakt_door" />
               </columns>
             </TableView>
          </center>
