@@ -9,7 +9,7 @@
    <children>
       <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
          <center>
-            <TableView fx:id="tableViewListKlant" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableViewListKlant" editable="true" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1046.0" BorderPane.alignment="CENTER">
                <columns>
                   <TableColumn fx:id="klantNr" editable="false" prefWidth="73.0" text="Klant Nr" />
                   <TableColumn fx:id="voorNaam" editable="false" prefWidth="111.0" text="Voornaam" />
