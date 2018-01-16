@@ -27,7 +27,7 @@ import javax.mail.internet.MimeMessage;
  *
  * @author Ramon
  */
-public class HoofdSchermSchadeAfhandelaarController implements Initializable {
+public class MailController implements Initializable {
 
     @FXML
     private Button knopClaim1;
