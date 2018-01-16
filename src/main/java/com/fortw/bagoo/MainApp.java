@@ -1,19 +1,20 @@
 package com.fortw.bagoo;
 
+import java.util.ResourceBundle;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        ResourceBundle bundle = ResourceBundle.getBundle("com.fortw.bagoo.locale.Locale");
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"), bundle);
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
