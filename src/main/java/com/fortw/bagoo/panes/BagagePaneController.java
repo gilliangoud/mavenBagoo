@@ -6,10 +6,14 @@
 package com.fortw.bagoo.panes;
 
 import com.fortw.bagoo.Dao.BagageDao;
+import com.fortw.bagoo.helpers.ExcelImport;
+import com.fortw.bagoo.helpers.FileSelector;
 import com.fortw.bagoo.interfaces.ChildControllerContext;
 import com.fortw.bagoo.interfaces.ParentControllerContext;
 import com.fortw.bagoo.models.Bagage;
+import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -20,6 +24,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -43,6 +49,8 @@ public class BagagePaneController implements Initializable, ParentControllerCont
     @FXML
     private NieuwBagagePaneController nieuwBagagePaneController;
     private static ChildControllerContext listController;
+    @FXML
+    private Button buttonImport;
 
     /**
      * Initializes the controller class.
@@ -113,6 +121,18 @@ public class BagagePaneController implements Initializable, ParentControllerCont
     @Override
     public void displayStatusMessage(String message) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @FXML
+    private void handleImportAction(ActionEvent event) {
+        File file = FileSelector.selectFile("*.xlsx");
+        if(file != null){
+            String fileName = file.getAbsolutePath();  
+            List<Bagage> list = ExcelImport.importBagageVanExcel(fileName);
+            System.out.println(list.toString());
+        } else {
+            // do error
+        }
     }
 
 }

@@ -5,6 +5,9 @@
  */
 package com.fortw.bagoo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Rayman

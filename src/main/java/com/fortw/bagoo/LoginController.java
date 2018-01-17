@@ -44,6 +44,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private AnchorPane ap;
+    
+    public static Stage mainStage;
 
     /**
      * Initializes the controller class.
@@ -64,15 +66,15 @@ public class LoginController implements Initializable {
     private void handleLoginAction(ActionEvent event) {
         login();
     }
-    
+
     @FXML
     private void handleKeyPressedAction(KeyEvent event) {
         if (event.getCode().equals(KeyCode.ENTER)) {
             login();
         }
     }
-    
-    private void login(){
+
+    private void login() {
         User user = UserDao.getUserByUserNameAndPassword(gebruikersnaam.getText(), wachtwoord.getText());
         if (user != null) {
             Auth.setUser(user);
@@ -86,28 +88,30 @@ public class LoginController implements Initializable {
             alert.showAndWait();
         }
     }
-    
+
     private void sendNextScene(int userLevel) {
         String doel;
-        switch(userLevel){
+        switch (userLevel) {
 //            case 5: doel = "/com/fortw/bagoo/manager/HoofdSchermManagement.fxml";
 //            break;
-            default: doel = "/com/fortw/bagoo/service/HoofdSchermService.fxml";         
+            default:
+                doel = "/com/fortw/bagoo/service/HoofdSchermService.fxml";
         }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("com.fortw.bagoo.locale.Locale");
-            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource(doel), bundle);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(doel), bundle);
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stageVolgende = new Stage();
             stageVolgende.setScene(new Scene(root1));
             Stage stageHuidige = (Stage) ap.getScene().getWindow();
             stageHuidige.close();
             stageVolgende.initStyle(StageStyle.TRANSPARENT);
+            mainStage = stageVolgende;
             stageVolgende.show();
+
             //stageVolgende.setMaximized(true);
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
-

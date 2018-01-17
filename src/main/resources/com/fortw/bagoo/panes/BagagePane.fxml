@@ -15,6 +15,7 @@
                   <Button fx:id="buttonVerversBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerversAction" prefHeight="50.0" prefWidth="200.0" text="%Ververs" />
                   <Button fx:id="buttonNieuweBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleNieuweBagageAction" prefHeight="50.0" prefWidth="200.0" text="%Nieuwe_Bagage" />
                   <Button fx:id="buttonVerwijderBagage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVerwijderBagageAction" prefHeight="50.0" prefWidth="200.0" text="%Verwijder_Bagage" />
+                  <Button fx:id="buttonImport" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleImportAction" prefHeight="50.0" prefWidth="200.0" text="Import" />
                </children>
             </VBox>
          </left>
